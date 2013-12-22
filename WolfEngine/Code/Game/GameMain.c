@@ -1,4 +1,4 @@
-#include "../includes.h"
+#include "../Includes.h"
 
 SDL_Surface* screen = NULL;
 

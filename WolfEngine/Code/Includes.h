@@ -7,8 +7,8 @@
 		#include <SDL.h>
 		#include <SDL_image.h>
 	#else
-		#include <SDL/SDL.h>
-		#include <SDL_image/SDL_image.h>
+		#include <SDL2/SDL.h>
+		//#include <SDL_image/SDL_image.h>
 	#endif
 #include <stdio.h>
 #endif

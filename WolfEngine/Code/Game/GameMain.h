@@ -1,5 +1,6 @@
 #ifndef _GAMEMAIN_H
 #define _GAMEMAIN_H
+#include "../Includes.h"
 void GameMain();
 
 SDL_Surface* Game_GetScreen();
