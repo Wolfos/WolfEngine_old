@@ -77,11 +77,14 @@
   <ItemGroup>
     <ClCompile Include="Code\Game\GameMain.c" />
     <ClCompile Include="Code\main.c" />
+    <ClCompile Include="Code\Map\MapLoad.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Game\GameMain.h" />
     <ClInclude Include="Code\Includes.h" />
-    <ClInclude Include="Code\Window.h" />
+    <ClInclude Include="Code\Map\MapLoad.h" />
+    <ClInclude Include="Code\Models\Map.h" />
+    <ClInclude Include="Code\Models\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -24,6 +24,9 @@
     <ClCompile Include="Code\Game\GameMain.c">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Map\MapLoad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Game\GameMain.h">
@@ -32,7 +35,13 @@
     <ClInclude Include="Code\Includes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Window.h">
+    <ClInclude Include="Code\Models\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Models\Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Map\MapLoad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
