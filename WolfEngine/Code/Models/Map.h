@@ -8,5 +8,6 @@ struct Map{
 	int height;
 	int layers;
 	int *data;
+	int *events;
 };
 #endif

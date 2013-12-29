@@ -16,7 +16,7 @@ void GameStart()
 ///
 void GameMain()
 {
-	//SDL_FillRect( screen, NULL, SDL_MapRGB( screen->format, 0xFF, 0x00, 0x00 ) );
+	SDL_FillRect( screen, NULL, SDL_MapRGB( screen->format, 0xFF, 0x00, 0x00 ) );
 }
 
 SDL_Surface* Game_GetScreen()
