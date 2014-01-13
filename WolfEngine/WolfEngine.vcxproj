@@ -78,12 +78,14 @@
     <ClCompile Include="Code\Game\GameMain.c" />
     <ClCompile Include="Code\main.c" />
     <ClCompile Include="Code\Map\MapLoad.c" />
+    <ClCompile Include="Code\Map\MapRender.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Game\GameMain.h" />
     <ClInclude Include="Code\Includes.h" />
     <ClInclude Include="Code\Map\MapLoad.h" />
-    <ClInclude Include="Code\Models\Map.h" />
+    <ClInclude Include="Code\Map\Map.h" />
+    <ClInclude Include="Code\Map\MapRender.h" />
     <ClInclude Include="Code\Models\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

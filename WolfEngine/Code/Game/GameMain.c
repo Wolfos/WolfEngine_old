@@ -1,6 +1,6 @@
 #include "../Includes.h"
 #include "../Map/MapLoad.h"
-#include "../Models/Map.h"
+#include "../Map/Map.h"
 
 SDL_Surface* screen = NULL;
 struct Map* map;
@@ -9,6 +9,7 @@ struct Map* map;
 void GameStart()
 {
 	map = LoadMap("Maps/Test.WolfMap");
+	//printf("%d",map->height);
 }
 
 ///
@@ -16,7 +17,7 @@ void GameStart()
 ///
 void GameMain()
 {
-	SDL_FillRect( screen, NULL, SDL_MapRGB( screen->format, 0xFF, 0x00, 0x00 ) );
+	
 }
 
 SDL_Surface* Game_GetScreen()

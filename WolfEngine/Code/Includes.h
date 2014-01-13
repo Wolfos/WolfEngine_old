@@ -11,4 +11,6 @@
 		//#include <SDL_image/SDL_image.h>
 	#endif
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #endif
