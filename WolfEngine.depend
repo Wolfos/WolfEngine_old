@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1389957739 source:/home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Game/GameMain.c
+	"../Includes.h"
+	"../Map/MapLoad.h"
+	"../Map/Map.h"
+
+1389957739 /home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Includes.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL2/SDL.h>
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
+1389275874 /home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Map/MapLoad.h
+
+1389957739 /home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Map/Map.h
+
+1389275874 source:/home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/main.c
+	"Includes.h"
+	"Game/GameMain.h"
+	"Models/Window.h"
+
+1389275874 /home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Game/GameMain.h
+	"../Includes.h"
+
+1389275874 /home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Models/Window.h
+
+1389957739 source:/home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Map/MapLoad.c
+	"../Includes.h"
+	"../Map/Map.h"
+
+1389957739 source:/home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Map/MapRender.c
+	"MapRender.h"
+
+1389957739 /home/wolfos/Documents/Projects/WolfEngine/WolfEngine/Code/Map/MapRender.h
+	"../Includes.h"
+	"Map.h"
+

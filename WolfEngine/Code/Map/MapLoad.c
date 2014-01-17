@@ -8,7 +8,7 @@ struct Map* LoadMap(char *filename)
 	long filesize; //Total number of characters in file
 	char * strval;
 	int * filearray = NULL; //All the data from the file as an array
-	
+
 
 	int layers = 0, width = 0, height = 0;
 
@@ -21,7 +21,7 @@ struct Map* LoadMap(char *filename)
 	FILE* file = fopen(filename, "r");
 	if(!file)
 	{
-		printf("Error while opening file!\n");
+		printf("Error while opening file: %s\n", filename);
 		return 0;
 	}
 
@@ -73,6 +73,6 @@ struct Map* LoadMap(char *filename)
 	map->layers = layers;
 	map->data = mapdata;
 	map->events = events;
-	 
+
 	return map;
 }
