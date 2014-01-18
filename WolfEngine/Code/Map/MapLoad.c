@@ -32,6 +32,8 @@ struct Map* LoadMap(char *filename)
 	filedata = malloc(sizeof(char)*filesize);
 	fread(filedata, 1, filesize, file);
 
+	fclose(file);
+
 
 	//Separate all the values (and convert them to integers) by looping through the string using strtok
 	strval = strtok(filedata, ";");
@@ -42,6 +44,8 @@ struct Map* LoadMap(char *filename)
 		strval = strtok(NULL, ";");
 		i++;
 	}
+
+	free(filedata);
 
 	layers=filearray[0];
 	width=filearray[1];
@@ -67,6 +71,8 @@ struct Map* LoadMap(char *filename)
 		events[i]=filearray[i+3+layers*width*height];
 		i++;
 	}
+
+	free(filearray);
 
 	map->width = width;
 	map->height = height;

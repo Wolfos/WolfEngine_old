@@ -2,8 +2,9 @@
 #define _GAMEMAIN_H
 #include "../Includes.h"
 
-void GameStart();
-void GameMain();
+void Game_Start();
+void Game_Update();
+void Game_Exit();
 
 SDL_Surface* Game_GetScreen();
 void Game_SetScreen(SDL_Surface* source);

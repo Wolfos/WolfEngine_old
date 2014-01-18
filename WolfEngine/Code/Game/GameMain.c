@@ -6,7 +6,7 @@ SDL_Surface* screen = NULL;
 struct Map* map;
 
 //Called only once when the game starts
-void GameStart()
+void Game_Start()
 {
 	map = LoadMap("../Maps/Test.WolfMap");
 	//printf("%d",map->height);
@@ -15,9 +15,14 @@ void GameStart()
 ///
 /// The game's main loop
 ///
-void GameMain()
+void Game_Update()
 {
 
+}
+
+void Game_Exit()
+{
+    SDL_FreeSurface(screen);
 }
 
 SDL_Surface* Game_GetScreen()

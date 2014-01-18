@@ -44,7 +44,7 @@ void MainLoop(enum Window mode)
 	while(!quit)
 	{
 		while(SDL_PollEvent(&eventHandler)!=0)
-		{
+		{rface* s; //the screen surface), and the SDL2 tutorial is still in the works but SDL1.2 should be pretty much the same process.
 			if(eventHandler.type == SDL_QUIT)
 			{
 				quit = 1;
@@ -53,15 +53,15 @@ void MainLoop(enum Window mode)
 		switch(mode){
 			case game:
 			{
-				GameMain();
+				Game_Update();
 				//Blit the game screen to the main screen so that GameMain has full control over what to render there
 				SDL_BlitSurface(Game_GetScreen(), NULL, screenSurface, NULL);
 				break;
 			}
 		}
 
-			
-		SDL_UpdateWindowSurface( window );
+
+		SDL_UpdateWindowSurface(window);
 	}
 }
 
@@ -78,12 +78,14 @@ int main( int argc, char* args[] )
 	switch(mode){
 			case game:
 			{
-				GameStart();
+				Game_Start();
 			}
 	}
 	MainLoop(mode);
 
-	SDL_DestroyWindow( window );
+	Game_Exit();
+
+	SDL_DestroyWindow(window);
 
 	SDL_Quit();
 
