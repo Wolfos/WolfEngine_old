@@ -40,6 +40,7 @@
 		<Linker>
 			<Add option="`sdl-config --libs`" />
 			<Add library="SDL2" />
+			<Add library="SDL2_image" />
 		</Linker>
 		<Unit filename="WolfEngine/Code/Game/GameMain.c">
 			<Option compilerVar="CC" />

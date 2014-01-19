@@ -44,7 +44,7 @@ void MainLoop(enum Window mode)
 	while(!quit)
 	{
 		while(SDL_PollEvent(&eventHandler)!=0)
-		{rface* s; //the screen surface), and the SDL2 tutorial is still in the works but SDL1.2 should be pretty much the same process.
+		{
 			if(eventHandler.type == SDL_QUIT)
 			{
 				quit = 1;

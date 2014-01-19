@@ -4,5 +4,5 @@
 	#include "../Includes.h"
 	#include "Map.h"
 
-	SDL_Surface* Render(struct Map* map, int layer);
+	SDL_Surface* Render(struct Map* map, int layer,SDL_Surface* spritesheet, int tilewidth, int tileheight, int offset);
 #endif
