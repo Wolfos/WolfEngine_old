@@ -42,8 +42,8 @@ SDL_Surface* Render(struct Map* map, int layer, SDL_Surface* spritesheet, int ti
             targetrect.x = x*tilewidth;
             targetrect.y = x*tileheight;
 
-            sourcerect.x = clip[map->data[i]].x;
-            sourcerect.y = clip[map->data[i]].y;
+            sourcerect.x = clip[map->data[i*layer]].x;
+            sourcerect.y = clip[map->data[i*layer]].y;
 
             SDL_BlitSurface(spritesheet,&sourcerect,target,&targetrect);
 
