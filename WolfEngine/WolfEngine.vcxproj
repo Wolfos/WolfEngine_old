@@ -79,6 +79,7 @@
     <ClCompile Include="Code\main.c" />
     <ClCompile Include="Code\Map\MapLoad.c" />
     <ClCompile Include="Code\Map\MapRender.c" />
+    <ClCompile Include="Code\Rendering\Image.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Game\GameMain.h" />
@@ -87,6 +88,7 @@
     <ClInclude Include="Code\Map\Map.h" />
     <ClInclude Include="Code\Map\MapRender.h" />
     <ClInclude Include="Code\Models\Window.h" />
+    <ClInclude Include="Code\Rendering\Image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

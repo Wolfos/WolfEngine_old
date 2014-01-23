@@ -27,7 +27,17 @@ int Init()
 		}
 		else
 		{
-			screenSurface = SDL_GetWindowSurface( window );
+			//Initialize SDL_Image
+			int imgflags = IMG_INIT_PNG;
+			if(!(IMG_Init(imgflags) & imgflags))
+			{
+				printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
+				return 0;
+			}
+			else
+			{
+				screenSurface = SDL_GetWindowSurface( window );
+			}
 		}
 	}
 	return 1;
@@ -76,10 +86,10 @@ int main( int argc, char* args[] )
 	}
 	Game_SetScreen(SDL_GetWindowSurface(window)); //Initializes the game screen
 	switch(mode){
-			case game:
-			{
-				Game_Start();
-			}
+		case game:
+		{
+			Game_Start();
+		}
 	}
 	MainLoop(mode);
 

@@ -9,7 +9,6 @@ struct Map* LoadMap(char *filename)
 	char * strval;
 	int * filearray = NULL; //All the data from the file as an array
 
-
 	int layers = 0, width = 0, height = 0;
 
 	struct Map *map = malloc(sizeof(struct Map));
