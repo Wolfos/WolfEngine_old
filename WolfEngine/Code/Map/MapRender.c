@@ -1,6 +1,7 @@
 #include "MapRender.h"
 
 SDL_Surface* target = NULL;
+SDL_Rect* clip;
 
 void MapRender_Init(SDL_Surface* source)
 {
@@ -14,7 +15,7 @@ SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int
     SDL_Rect sourcerect;
     SDL_Rect targetrect;
 	int x, y, i;
-	SDL_Rect* clip;
+	
 	int sheetwidth;
 	int sheetheight;
 
@@ -63,6 +64,8 @@ SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int
 	}
 
 	//SDL_BlitSurface(spritesheet,NULL,target,NULL);
+
+	free(clip);
 
 	return target;
 }
