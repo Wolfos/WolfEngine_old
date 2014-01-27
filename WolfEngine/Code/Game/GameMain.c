@@ -25,6 +25,7 @@ void Game_Update()
 {
 	SDL_BlitSurface(MapRender(map,0,spritesheet,70,70,2),NULL,screen,NULL);
 	//screen = MapRender(map,0,spritesheet,70,70,2);
+
 }
 
 void Game_Exit()

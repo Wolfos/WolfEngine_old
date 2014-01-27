@@ -75,6 +75,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code\Entities\Entity.c" />
     <ClCompile Include="Code\Game\GameMain.c" />
     <ClCompile Include="Code\main.c" />
     <ClCompile Include="Code\Map\MapLoad.c" />
@@ -82,6 +83,7 @@
     <ClCompile Include="Code\Rendering\Image.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code\Entities\Entity.h" />
     <ClInclude Include="Code\Game\GameMain.h" />
     <ClInclude Include="Code\Includes.h" />
     <ClInclude Include="Code\Map\MapLoad.h" />
