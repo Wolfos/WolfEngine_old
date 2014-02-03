@@ -6,6 +6,7 @@
 
 SDL_Surface* screen = NULL;
 SDL_Surface* spritesheet;
+Camera camera;
 
 struct Map* map;
 
@@ -15,6 +16,10 @@ void Game_Start()
 	map = LoadMap("../Maps/Test.WolfMap");
 	spritesheet = LoadImage("../Sprites/tiles_spritesheet.png",screen->format);
 	MapRender_Init(screen);
+	camera.x = 0;
+	camera.y = 0;
+	camera.w = screen->w;
+	camera.h = screen->h;
 	//printf("%d",map->height);
 }
 
@@ -23,7 +28,7 @@ void Game_Start()
 ///
 void Game_Update()
 {
-	SDL_BlitSurface(MapRender(map,0,spritesheet,70,70,2),NULL,screen,NULL);
+	SDL_BlitSurface(MapRender(map,0,spritesheet,70,70,2,camera),NULL,screen,NULL);
 	//screen = MapRender(map,0,spritesheet,70,70,2);
 
 }

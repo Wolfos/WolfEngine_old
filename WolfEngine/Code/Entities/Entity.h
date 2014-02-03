@@ -6,6 +6,7 @@
 typedef struct
 {
 	char* name;
+	int x, y, w, h;
 	void(*Update)();
 } Entity;
 

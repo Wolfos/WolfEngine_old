@@ -6,11 +6,11 @@ SDL_Rect* clip;
 void MapRender_Init(SDL_Surface* source)
 {
 	//Create a new surface for target
-	target = SDL_CreateRGBSurfaceFrom(source->pixels,source->w,source->h,source->format->BitsPerPixel,
-		source->pitch,source->format->Rmask,source->format->Gmask,source->format->Bmask,source->format->Amask);
+	target = SDL_CreateRGBSurface(0,source->w,source->h,source->format->BitsPerPixel,
+		source->format->Rmask,source->format->Gmask,source->format->Bmask,source->format->Amask);
 }
 
-SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int tilewidth, int tileheight, int offset)
+SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int tilewidth, int tileheight, int offset, Camera camera)
 {
     SDL_Rect sourcerect;
     SDL_Rect targetrect;
@@ -51,8 +51,8 @@ SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int
 	{
 		for(x = 0; x<map->width;x++)
 		{
-            targetrect.x = x*tilewidth;
-            targetrect.y = y*tileheight;
+            targetrect.x = x*tilewidth + camera.x;
+            targetrect.y = y*tileheight + camera.y;
 
             sourcerect.x = clip[map->data[i*(layer+1)]].x;
             sourcerect.y = clip[map->data[i*(layer+1)]].y;

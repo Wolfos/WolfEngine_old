@@ -1,4 +1,4 @@
-﻿Build started 27/01/2014 16:44:19.
+﻿Build started 03/02/2014 19:38:12.
      1>Project "F:\Git\WolfEngine\WolfEngine\WolfEngine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          F:\Applications\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Code\Game\GameMain.c
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.53
+Time Elapsed 00:00:00.23

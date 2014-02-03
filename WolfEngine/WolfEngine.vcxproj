@@ -90,6 +90,7 @@
     <ClInclude Include="Code\Map\Map.h" />
     <ClInclude Include="Code\Map\MapRender.h" />
     <ClInclude Include="Code\Models\Window.h" />
+    <ClInclude Include="Code\Rendering\Camera.h" />
     <ClInclude Include="Code\Rendering\Image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
