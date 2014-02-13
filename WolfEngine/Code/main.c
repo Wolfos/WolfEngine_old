@@ -1,6 +1,7 @@
 #include "Includes.h"
 #include "Game/GameMain.h"
 #include "Models/Window.h"
+#include "Input/Input.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -55,6 +56,7 @@ void MainLoop(enum Window mode)
 	{
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
+			Input_Update(&eventHandler);
 			if(eventHandler.type == SDL_QUIT)
 			{
 				quit = 1;

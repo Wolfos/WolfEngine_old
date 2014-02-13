@@ -12,6 +12,9 @@ void MapRender_Init(SDL_Surface* source)
 
 SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int tilewidth, int tileheight, int offset, Camera camera)
 {
+	//Fill target with black to clear it before rendering
+	SDL_FillRect(target, &target->clip_rect, 0);
+
     SDL_Rect sourcerect;
     SDL_Rect targetrect;
 	int x, y, i;
