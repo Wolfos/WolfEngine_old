@@ -50,10 +50,10 @@ void Game_Update()
 {
 	SDL_BlitSurface(MapRender(map,0,spritesheet,70,70,2,camera),NULL,screen,NULL);
 
-	if (Input_Keys.ArrowLeft)camera.x++;
-	if (Input_Keys.ArrowUp)camera.y++;
-	if (Input_Keys.ArrowDown)camera.y--;
-	if (Input_Keys.ArrowRight)camera.x--;
+	if (Input_Keys.ArrowLeft)camera.x--;
+	if (Input_Keys.ArrowUp)camera.y--;
+	if (Input_Keys.ArrowDown)camera.y++;
+	if (Input_Keys.ArrowRight)camera.x++;
 }
 
 void Game_Exit()
