@@ -55,6 +55,7 @@ SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int
 	targetrect.w = tilewidth;
 	targetrect.h = tileheight;
 
+
 	//Occlussion culling, but need to make sure we CAN cull first
 	//If we can't cull (ergo, the map is too small or we're off the map), we just render the whole map
 	if (camera.x >= 0)startX = camera.x/tilewidth;
@@ -63,17 +64,11 @@ SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int
 	if (camera.y >= 0)startY = camera.y/tileheight;
 	else startY = 0;
 
-	if ((camera.x + camera.w) / tilewidth <= map->width)endX = (camera.x + camera.w) / tilewidth;
+	if (((camera.x + camera.w) / tilewidth) + 1 <= map->width)endX = ((camera.x + camera.w) / tilewidth) + 1;
 	else endX = map->width;
 
-	if ((camera.y + camera.h) / tileheight <= map->height)endY = (camera.y + camera.h) / tileheight;
+	if (((camera.y + camera.h) / tileheight) + 1 <= map->height)endY = ((camera.y + camera.h) / tileheight) + 1;
 	else endY = map->height;
-
-	/*startX = 1;
-	camera.x = tilewidth*startX;
-	startY = 0;
-	endX = map->width;
-	endY = map->height;*/
 
     i = startX + startY * endY;
 	for(y = startY; y<endY;y++)
@@ -91,7 +86,9 @@ SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int
 			//i = x + y*endY;
 			i++;
 		}
-		i += startX;
+		//Skip over the tiles we're not rendering
+		i += startX; 
+		i += map->width - endX;
 	}
 
 	//SDL_BlitSurface(spritesheet,NULL,target,NULL);
