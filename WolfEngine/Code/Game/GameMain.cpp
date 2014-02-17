@@ -3,6 +3,7 @@
 #include "../Rendering/Image.h"
 #include "../Input/Input.h"
 
+#include "../Scripting/ScriptMain.h"
 
 
 SDL_Surface* screen = NULL;
@@ -14,6 +15,7 @@ Map map;
 //Called only once when the game starts
 void Game_Start()
 {
+	ScriptMain();
 	map.Load("../Maps/Test.WolfMap");
 	spritesheet = Image::Load("../Sprites/tiles_spritesheet.png",screen->format);
 	camera.x = 0;

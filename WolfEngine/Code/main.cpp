@@ -11,6 +11,8 @@ const int SCREEN_HEIGHT = 640;
 SDL_Window* window = NULL;
 SDL_Surface* screenSurface = NULL;
 
+const int MAXFPS = 60; //FPS to cap at. Set to -1 to disable
+
 int Init()
 {
 	//Initialize SDL
@@ -59,9 +61,12 @@ void MainLoop(enum Window mode)
 	while (!quit)
 	{
 		curFrameTime = SDL_GetTicks();
-		Time_deltaTime = (float)(curFrameTime - lastFrameTime) * 1000;
-
-		//printf("%d\n", 1 / ((curFrameTime - lastFrameTime) * 1000));
+		
+		Time_deltaTime = (float)(curFrameTime - lastFrameTime) / 1000;
+		int fps = 1.f / Time_deltaTime;
+		//printf("%d\n",SDL_GetTicks());
+		//int fps = Time_deltaTime;
+		printf("FPS:%i\n", fps);
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
@@ -80,10 +85,13 @@ void MainLoop(enum Window mode)
 				break;
 			}
 		}
-
+		
 
 		SDL_UpdateWindowSurface(window);
 		lastFrameTime = curFrameTime;
+
+		if (MAXFPS!=-1 && SDL_GetTicks() - curFrameTime < 1000 / MAXFPS)
+			SDL_Delay((1000 / MAXFPS) - (SDL_GetTicks() - curFrameTime));
 	}
 }
 
