@@ -3,11 +3,6 @@
 #include "../Map/Map.h"
 #include "../Map/MapRender.h"
 #include "../Rendering/Image.h"
-
-#include "../Scripting/lua.h"
-#include "../Scripting/lauxlib.h"
-#include "../Scripting/lualib.h"
-
 #include "../Input/Input.h"
 
 
@@ -21,21 +16,8 @@ struct Map* map;
 //Called only once when the game starts
 void Game_Start()
 {
-	lua_State *L = luaL_newstate();
-
-	
-	luaL_openlibs(L);
-	//lua_close(L);
-
-	int x = luaL_loadfile(L, "../Scripts/main.lua");
-	lua_pcall(L,0,0,0);
-
-	lua_close(L);
-
-
 	map = LoadMap("../Maps/Test.WolfMap");
 	spritesheet = LoadImage("../Sprites/tiles_spritesheet.png",screen->format);
-	MapRender_Init(screen);
 	camera.x = 0;
 	camera.y = 0;
 	camera.w = screen->w;
@@ -48,7 +30,10 @@ void Game_Start()
 ///
 void Game_Update()
 {
-	SDL_BlitSurface(MapRender(map,0,spritesheet,70,70,2,camera),NULL,screen,NULL);
+	//Fill screen with black to clear it before rendering
+	SDL_FillRect(screen, &screen->clip_rect, 0);
+
+	MapRender(screen, map, 0, spritesheet, 70, 70, 2, camera);
 
 	if (Input_Keys.ArrowLeft)camera.x--;
 	if (Input_Keys.ArrowUp)camera.y--;

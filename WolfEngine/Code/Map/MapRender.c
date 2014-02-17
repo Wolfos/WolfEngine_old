@@ -1,19 +1,10 @@
 #include "MapRender.h"
 
-SDL_Surface* target = NULL;
 SDL_Rect* clip;
 
-void MapRender_Init(SDL_Surface* source)
+void MapRender(SDL_Surface* target, struct Map* map, int layer, SDL_Surface* spritesheet, 
+	int tilewidth, int tileheight, int offset, Camera camera)
 {
-	//Create a new surface for target
-	target = SDL_CreateRGBSurface(0,source->w,source->h,source->format->BitsPerPixel,
-		source->format->Rmask,source->format->Gmask,source->format->Bmask,source->format->Amask);
-}
-
-SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int tilewidth, int tileheight, int offset, Camera camera)
-{
-	//Fill target with black to clear it before rendering
-	SDL_FillRect(target, &target->clip_rect, 0);
 
 	//Tiles to start and finish render on
 	int startX;
@@ -94,6 +85,4 @@ SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int
 	//SDL_BlitSurface(spritesheet,NULL,target,NULL);
 
 	free(clip);
-
-	return target;
 }

@@ -5,6 +5,6 @@
 	#include "../Rendering/Camera.h"
 	#include "Map.h"
 
-	void MapRender_Init(SDL_Surface* source);
-	SDL_Surface* MapRender(struct Map* map, int layer, SDL_Surface* spritesheet, int tilewidth, int tileheight, int offset, Camera camera);
+void MapRender(SDL_Surface* surface, struct Map* map, int layer, SDL_Surface* spritesheet, 
+	int tilewidth, int tileheight, int offset, Camera camera);
 #endif

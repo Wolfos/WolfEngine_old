@@ -2,6 +2,7 @@
 #include "Game/GameMain.h"
 #include "Models/Window.h"
 #include "Input/Input.h"
+#include "Utilities/Time.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 960;
@@ -51,9 +52,16 @@ void MainLoop(enum Window mode)
 {
 	int quit = 0;
 	SDL_Event eventHandler;
+	Uint32 curFrameTime = 0;
+	Uint32 lastFrameTime  = 0;
 
-	while(!quit)
+	while (!quit)
 	{
+		curFrameTime = SDL_GetTicks();
+		Time_deltaTime = (float)(curFrameTime - lastFrameTime) * 1000;
+
+		//printf("%d\n", 1 / ((curFrameTime - lastFrameTime) * 1000));
+
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
 			Input_Update(&eventHandler);
@@ -74,6 +82,7 @@ void MainLoop(enum Window mode)
 
 
 		SDL_UpdateWindowSurface(window);
+		lastFrameTime = curFrameTime;
 	}
 }
 
