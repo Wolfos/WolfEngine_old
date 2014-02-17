@@ -1,6 +1,6 @@
 #include "Image.h";
 
-SDL_Surface* LoadImage(char* filename, SDL_PixelFormat* format)
+SDL_Surface* Image::Load(char* filename, SDL_PixelFormat* format)
 {
 	SDL_Surface* optimized = NULL;
 

@@ -3,8 +3,9 @@
 #include "Keys.h"
 #include "../Includes.h"
 
-extern Keys Input_Keys;
-
-void Input_Update(SDL_Event * eventHandler);
-
+class Input{
+	public:
+		static Keys keys;
+		void Update(SDL_Event * eventHandler);
+};
 #endif

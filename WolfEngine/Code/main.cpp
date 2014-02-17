@@ -54,6 +54,7 @@ void MainLoop(enum Window mode)
 	SDL_Event eventHandler;
 	Uint32 curFrameTime = 0;
 	Uint32 lastFrameTime  = 0;
+	Input input;
 
 	while (!quit)
 	{
@@ -64,7 +65,7 @@ void MainLoop(enum Window mode)
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
-			Input_Update(&eventHandler);
+			input.Update(&eventHandler);
 			if(eventHandler.type == SDL_QUIT)
 			{
 				quit = 1;

@@ -1,7 +1,8 @@
 #include "Input.h"
-Keys Input_Keys;
 
-void Input_Update(SDL_Event * eventHandler)
+Keys Input::keys;
+
+void Input::Update(SDL_Event * eventHandler)
 {
 	if (eventHandler->type == SDL_KEYDOWN)
 	{
@@ -9,129 +10,129 @@ void Input_Update(SDL_Event * eventHandler)
 		{
 			//Letter Keys
 			case SDLK_a:
-				Input_Keys.A = 1;
+				keys.A = 1;
 				break;
 			case SDLK_b:
-				Input_Keys.B = 1;
+				keys.B = 1;
 				break;
 			case SDLK_c:
-				Input_Keys.C = 1;
+				keys.C = 1;
 				break;
 			case SDLK_d:
-				Input_Keys.D = 1;
+				keys.D = 1;
 				break;
 			case SDLK_e:
-				Input_Keys.E = 1;
+				keys.E = 1;
 				break;
 			case SDLK_f:
-				Input_Keys.F = 1;
+				keys.F = 1;
 				break;
 			case SDLK_g:
-				Input_Keys.G = 1;
+				keys.G = 1;
 				break;
 			case SDLK_h:
-				Input_Keys.H = 1;
+				keys.H = 1;
 				break;
 			case SDLK_i:
-				Input_Keys.I = 1;
+				keys.I = 1;
 				break;
 			case SDLK_j:
-				Input_Keys.J = 1;
+				keys.J = 1;
 				break;
 			case SDLK_k:
-				Input_Keys.K = 1;
+				keys.K = 1;
 				break;
 			case SDLK_l:
-				Input_Keys.L = 1;
+				keys.L = 1;
 				break;
 			case SDLK_m:
-				Input_Keys.M = 1;
+				keys.M = 1;
 				break;
 			case SDLK_n:
-				Input_Keys.N = 1;
+				keys.N = 1;
 				break;
 			case SDLK_o:
-				Input_Keys.O = 1;
+				keys.O = 1;
 				break;
 			case SDLK_p:
-				Input_Keys.P = 1;
+				keys.P = 1;
 				break;
 			case SDLK_q:
-				Input_Keys.Q = 1;
+				keys.Q = 1;
 				break;
 			case SDLK_r:
-				Input_Keys.R = 1;
+				keys.R = 1;
 				break;
 			case SDLK_s:
-				Input_Keys.S = 1;
+				keys.S = 1;
 				break;
 			case SDLK_t:
-				Input_Keys.T = 1;
+				keys.T = 1;
 				break;
 			case SDLK_u:
-				Input_Keys.U = 1;
+				keys.U = 1;
 				break;
 			case SDLK_v:
-				Input_Keys.V = 1;
+				keys.V = 1;
 				break;
 			case SDLK_w:
-				Input_Keys.W = 1;
+				keys.W = 1;
 				break;
 			case SDLK_x:
-				Input_Keys.X = 1;
+				keys.X = 1;
 				break;
 			case SDLK_y:
-				Input_Keys.Y = 1;
+				keys.Y = 1;
 				break;
 			case SDLK_z:
-				Input_Keys.Z = 1;
+				keys.Z = 1;
 				break;
 			//Bottom row
 			case SDLK_LSHIFT:
-				Input_Keys.LeftShift = 1;
+				keys.LeftShift = 1;
 				break;
 			case SDLK_LCTRL:
-				Input_Keys.LeftControl = 1;
+				keys.LeftControl = 1;
 				break;
 			case SDLK_LALT:
-				Input_Keys.LeftAlt = 1;
+				keys.LeftAlt = 1;
 				break;
 			case SDLK_SPACE:
-				Input_Keys.Space = 1;
+				keys.Space = 1;
 				break;
 			case SDLK_RALT:
-				Input_Keys.RightAlt = 1;
+				keys.RightAlt = 1;
 				break;
 			case SDLK_RCTRL:
-				Input_Keys.RightControl = 1;
+				keys.RightControl = 1;
 				break;
 			case SDLK_RSHIFT:
-				Input_Keys.RightShift = 1;
+				keys.RightShift = 1;
 				break;
 			
 			//Arrow Keys
 			case SDLK_UP:
-				Input_Keys.ArrowUp = 1;
+				keys.ArrowUp = 1;
 				break;
 			case SDLK_LEFT:
-				Input_Keys.ArrowLeft = 1;
+				keys.ArrowLeft = 1;
 				break;
 			case SDLK_DOWN:
-				Input_Keys.ArrowDown = 1;
+				keys.ArrowDown = 1;
 				break;
 			case SDLK_RIGHT:
-				Input_Keys.ArrowRight = 1;
+				keys.ArrowRight = 1;
 				break;
 
 			//Other Keys
 			case SDLK_RETURN:
-				Input_Keys.Return = 1;
+				keys.Return = 1;
 				break;
 			case SDLK_RETURN2:
-				Input_Keys.KeypadReturn = 1;
+				keys.KeypadReturn = 1;
 				break;
 			case SDLK_TAB:
-				Input_Keys.Tab = 1;
+				keys.Tab = 1;
 				break;
 		}
 	}
@@ -141,129 +142,129 @@ void Input_Update(SDL_Event * eventHandler)
 		{
 			//Letter Keys
 			case SDLK_a:
-				Input_Keys.A = 0;
+				keys.A = 0;
 				break;
 			case SDLK_b:
-				Input_Keys.B = 0;
+				keys.B = 0;
 				break;
 			case SDLK_c:
-				Input_Keys.C = 0;
+				keys.C = 0;
 				break;
 			case SDLK_d:
-				Input_Keys.D = 0;
+				keys.D = 0;
 				break;
 			case SDLK_e:
-				Input_Keys.E = 0;
+				keys.E = 0;
 				break;
 			case SDLK_f:
-				Input_Keys.F = 0;
+				keys.F = 0;
 				break;
 			case SDLK_g:
-				Input_Keys.G = 0;
+				keys.G = 0;
 				break;
 			case SDLK_h:
-				Input_Keys.H = 0;
+				keys.H = 0;
 				break;
 			case SDLK_i:
-				Input_Keys.I = 0;
+				keys.I = 0;
 				break;
 			case SDLK_j:
-				Input_Keys.J = 0;
+				keys.J = 0;
 				break;
 			case SDLK_k:
-				Input_Keys.K = 0;
+				keys.K = 0;
 				break;
 			case SDLK_l:
-				Input_Keys.L = 0;
+				keys.L = 0;
 				break;
 			case SDLK_m:
-				Input_Keys.M = 0;
+				keys.M = 0;
 				break;
 			case SDLK_n:
-				Input_Keys.N = 0;
+				keys.N = 0;
 				break;
 			case SDLK_o:
-				Input_Keys.O = 0;
+				keys.O = 0;
 				break;
 			case SDLK_p:
-				Input_Keys.P = 0;
+				keys.P = 0;
 				break;
 			case SDLK_q:
-				Input_Keys.Q = 0;
+				keys.Q = 0;
 				break;
 			case SDLK_r:
-				Input_Keys.R = 0;
+				keys.R = 0;
 				break;
 			case SDLK_s:
-				Input_Keys.S = 0;
+				keys.S = 0;
 				break;
 			case SDLK_t:
-				Input_Keys.T = 0;
+				keys.T = 0;
 				break;
 			case SDLK_u:
-				Input_Keys.U = 0;
+				keys.U = 0;
 				break;
 			case SDLK_v:
-				Input_Keys.V = 0;
+				keys.V = 0;
 				break;
 			case SDLK_w:
-				Input_Keys.W = 0;
+				keys.W = 0;
 				break;
 			case SDLK_x:
-				Input_Keys.X = 0;
+				keys.X = 0;
 				break;
 			case SDLK_y:
-				Input_Keys.Y = 0;
+				keys.Y = 0;
 				break;
 			case SDLK_z:
-				Input_Keys.Z = 0;
+				keys.Z = 0;
 				break;
 				//Bottom row
 			case SDLK_LSHIFT:
-				Input_Keys.LeftShift = 0;
+				keys.LeftShift = 0;
 				break;
 			case SDLK_LCTRL:
-				Input_Keys.LeftControl = 0;
+				keys.LeftControl = 0;
 				break;
 			case SDLK_LALT:
-				Input_Keys.LeftAlt = 0;
+				keys.LeftAlt = 0;
 				break;
 			case SDLK_SPACE:
-				Input_Keys.Space = 0;
+				keys.Space = 0;
 				break;
 			case SDLK_RALT:
-				Input_Keys.RightAlt = 0;
+				keys.RightAlt = 0;
 				break;
 			case SDLK_RCTRL:
-				Input_Keys.RightControl = 0;
+				keys.RightControl = 0;
 				break;
 			case SDLK_RSHIFT:
-				Input_Keys.RightShift = 0;
+				keys.RightShift = 0;
 				break;
 
 				//Arrow Keys
 			case SDLK_UP:
-				Input_Keys.ArrowUp = 0;
+				keys.ArrowUp = 0;
 				break;
 			case SDLK_LEFT:
-				Input_Keys.ArrowLeft = 0;
+				keys.ArrowLeft = 0;
 				break;
 			case SDLK_DOWN:
-				Input_Keys.ArrowDown = 0;
+				keys.ArrowDown = 0;
 				break;
 			case SDLK_RIGHT:
-				Input_Keys.ArrowRight = 0;
+				keys.ArrowRight = 0;
 				break;
 
 				//Other Keys
 			case SDLK_RETURN:
-				Input_Keys.Return = 0;
+				keys.Return = 0;
 				break;
 			case SDLK_RETURN2:
-				Input_Keys.KeypadReturn = 0;
+				keys.KeypadReturn = 0;
 				break;
 			case SDLK_TAB:
-				Input_Keys.Tab = 0;
+				keys.Tab = 0;
 				break;
 		}
 	}
