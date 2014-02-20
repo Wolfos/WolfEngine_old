@@ -11,7 +11,7 @@ class Map{
 		int *data;
 		int *events;
 		void Load(char* filename);
-		void Render(SDL_Surface* target, struct Map* map, int layer, SDL_Surface* spritesheet,
+		void Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 			int tilewidth, int tileheight, int offset, Camera camera);
 };
 

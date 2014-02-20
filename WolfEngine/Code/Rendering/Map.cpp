@@ -67,7 +67,7 @@ void Map::Load(char *filename)
 	free(filearray);
 }
 
-void Map::Render(SDL_Surface* target, struct Map* map, int layer, SDL_Surface* spritesheet,
+void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 	int tilewidth, int tileheight, int offset, Camera camera)
 {
 	SDL_Rect* clip;
@@ -121,11 +121,12 @@ void Map::Render(SDL_Surface* target, struct Map* map, int layer, SDL_Surface* s
 	if (camera.y >= 0)startY = camera.y / tileheight;
 	else startY = 0;
 
-	if (((camera.x + camera.w) / tilewidth) + 1 <= map->width)endX = ((camera.x + camera.w) / tilewidth) + 1;
-	else endX = map->width;
 
-	if (((camera.y + camera.h) / tileheight) + 1 <= map->height)endY = ((camera.y + camera.h) / tileheight) + 1;
-	else endY = map->height;
+	if (((camera.x + camera.w) / tilewidth) + 1 <= width)endX = ((camera.x + camera.w) / tilewidth) + 1;
+	else endX = width;
+
+	if (((camera.y + camera.h) / tileheight) + 1 <= height)endY = ((camera.y + camera.h) / tileheight) + 1;
+	else endY = height;
 
 	i = startX + startY * endY;
 	for (y = startY; y<endY; y++)
@@ -135,8 +136,8 @@ void Map::Render(SDL_Surface* target, struct Map* map, int layer, SDL_Surface* s
 			targetrect.x = x*tilewidth - camera.x;
 			targetrect.y = y*tileheight - camera.y;
 
-			sourcerect.x = clip[map->data[i*(layer + 1)]].x;
-			sourcerect.y = clip[map->data[i*(layer + 1)]].y;
+			sourcerect.x = clip[data[i*(layer + 1)]].x;
+			sourcerect.y = clip[data[i*(layer + 1)]].y;
 
 			SDL_BlitSurface(spritesheet, &sourcerect, target, &targetrect);
 
@@ -145,7 +146,7 @@ void Map::Render(SDL_Surface* target, struct Map* map, int layer, SDL_Surface* s
 		}
 		//Skip over the tiles we're not rendering
 		i += startX;
-		i += map->width - endX;
+		i += width - endX;
 	}
 
 	//SDL_BlitSurface(spritesheet,NULL,target,NULL);

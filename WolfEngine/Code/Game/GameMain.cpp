@@ -1,21 +1,21 @@
 #include "../Includes.h"
-#include "../Map/Map.h"
+#include "../Rendering/Map.h"
 #include "../Rendering/Image.h"
 #include "../Input/Input.h"
-
-#include "../Scripting/ScriptMain.h"
 
 
 SDL_Surface* screen = NULL;
 SDL_Surface* spritesheet;
 Camera camera;
 
+TTF_Font* testFont = NULL;
+
 Map map;
 
 //Called only once when the game starts
 void Game_Start()
 {
-	ScriptMain();
+	testFont = TTF_OpenFont("../Fonts/Oregon LDO.ttf", 20);
 	map.Load("../Maps/Test.WolfMap");
 	spritesheet = Image::Load("../Sprites/tiles_spritesheet.png",screen->format);
 	camera.x = 0;
@@ -33,12 +33,14 @@ void Game_Update()
 	//Fill screen with black to clear it before rendering
 	SDL_FillRect(screen, &screen->clip_rect, 0);
 
-	map.Render(screen, &map, 0, spritesheet, 70, 70, 2, camera);
+	map.Render(screen, 0, spritesheet, 70, 70, 2, camera);
 
-	if (Input::keys.ArrowLeft)camera.x--;
-	if (Input::keys.ArrowUp)camera.y--;
-	if (Input::keys.ArrowDown)camera.y++;
-	if (Input::keys.ArrowRight)camera.x++;
+	int camspeed = 5;
+
+	if (Input::keys.ArrowLeft)camera.x-=camspeed;
+	if (Input::keys.ArrowUp)camera.y -= camspeed;
+	if (Input::keys.ArrowDown)camera.y += camspeed;
+	if (Input::keys.ArrowRight)camera.x += camspeed;
 }
 
 void Game_Exit()

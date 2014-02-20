@@ -66,8 +66,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Developer\SDL2_image-2.0.0\include;C:\Developer\SDL2-2.0.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Developer\SDL2_image-2.0.0\lib\x86;C:\Developer\SDL2-2.0.0\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Developer\SDL2_ttf-2.0.12\include;C:\Developer\SDL2_image-2.0.0\include;C:\Developer\SDL2-2.0.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Developer\SDL2_ttf-2.0.12\lib\x86;C:\Developer\SDL2_image-2.0.0\lib\x86;C:\Developer\SDL2-2.0.0\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">
     <IncludePath>C:\Developer\SDL2_image-2.0.0\include;C:\Developer\SDL2-2.0.0\include;$(IncludePath)</IncludePath>
@@ -89,7 +89,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <Profile>true</Profile>
     </Link>
@@ -143,29 +143,8 @@
     <ClCompile Include="Code\Game\GameMain.cpp" />
     <ClCompile Include="Code\Input\Input.cpp" />
     <ClCompile Include="Code\main.cpp" />
-    <ClCompile Include="Code\Map\Map.cpp" />
+    <ClCompile Include="Code\Rendering\Map.cpp" />
     <ClCompile Include="Code\Rendering\Image.cpp" />
-    <ClCompile Include="Code\Scripting\ScriptMain.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdaux.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdblob.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdio.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdmath.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdrex.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdstream.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdstring.cpp" />
-    <ClCompile Include="Code\Scripting\sqstdlib\sqstdsystem.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqapi.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqbaselib.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqclass.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqcompiler.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqdebug.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqfuncstate.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqlexer.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqmem.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqobject.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqstate.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqtable.cpp" />
-    <ClCompile Include="Code\Scripting\squirrel\sqvm.cpp" />
     <ClCompile Include="Code\Utilities\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -173,41 +152,11 @@
     <ClInclude Include="Code\Includes.h" />
     <ClInclude Include="Code\Input\Input.h" />
     <ClInclude Include="Code\Input\Keys.h" />
-    <ClInclude Include="Code\Map\Map.h" />
+    <ClInclude Include="Code\Rendering\Map.h" />
     <ClInclude Include="Code\Models\Window.h" />
     <ClInclude Include="Code\Rendering\Camera.h" />
     <ClInclude Include="Code\Rendering\Image.h" />
-    <ClInclude Include="Code\Scripting\include\sqstdaux.h" />
-    <ClInclude Include="Code\Scripting\include\sqstdblob.h" />
-    <ClInclude Include="Code\Scripting\include\sqstdio.h" />
-    <ClInclude Include="Code\Scripting\include\sqstdmath.h" />
-    <ClInclude Include="Code\Scripting\include\sqstdstring.h" />
-    <ClInclude Include="Code\Scripting\include\sqstdsystem.h" />
-    <ClInclude Include="Code\Scripting\include\squirrel.h" />
-    <ClInclude Include="Code\Scripting\ScriptMain.h" />
-    <ClInclude Include="Code\Scripting\sqstdlib\sqstdblobimpl.h" />
-    <ClInclude Include="Code\Scripting\sqstdlib\sqstdstream.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqarray.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqclass.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqclosure.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqcompiler.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqfuncproto.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqfuncstate.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqlexer.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqobject.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqopcodes.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqpcheader.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqstate.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqstring.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqtable.h" />
-    <ClInclude Include="Code\Scripting\squirrel\squserdata.h" />
-    <ClInclude Include="Code\Scripting\squirrel\squtils.h" />
-    <ClInclude Include="Code\Scripting\squirrel\sqvm.h" />
     <ClInclude Include="Code\Utilities\Time.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Code\Scripting\sqstdlib\sqstdlib.dsp" />
-    <None Include="Code\Scripting\squirrel\squirrel.dsp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

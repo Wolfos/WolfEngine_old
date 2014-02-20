@@ -42,6 +42,12 @@ int Init()
 			{
 				screenSurface = SDL_GetWindowSurface( window );
 			}
+
+			//Initialize SDL_TTF
+			if (TTF_Init())
+			{
+				printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", SDL_GetError());
+			}
 		}
 	}
 	return 1;
@@ -64,9 +70,6 @@ void MainLoop(enum Window mode)
 		
 		Time_deltaTime = (float)(curFrameTime - lastFrameTime) / 1000;
 		int fps = 1.f / Time_deltaTime;
-		//printf("%d\n",SDL_GetTicks());
-		//int fps = Time_deltaTime;
-		printf("FPS:%i\n", fps);
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
