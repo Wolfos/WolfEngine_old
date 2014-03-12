@@ -67,7 +67,7 @@ void MainLoop(enum Window mode)
 	while (!quit)
 	{
 		curFrameTime = SDL_GetTicks();
-		
+
 		Time_deltaTime = (float)(curFrameTime - lastFrameTime) / 1000;
 		int fps = 1.f / Time_deltaTime;
 
@@ -88,7 +88,7 @@ void MainLoop(enum Window mode)
 				break;
 			}
 		}
-		
+
 
 		SDL_UpdateWindowSurface(window);
 		lastFrameTime = curFrameTime;
