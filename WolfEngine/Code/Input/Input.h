@@ -3,9 +3,12 @@
 #include "Keys.h"
 #include "../Includes.h"
 
+///
+/// Handles all input
+///
 class Input{
 	public:
-		static Keys keys;
-		void Update(SDL_Event * eventHandler);
+		static Keys keys; /// What keys are currently being pressed?
+		void Update(SDL_Event * eventHandler); 
 };
 #endif

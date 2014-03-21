@@ -2,6 +2,9 @@
 
 Keys Input::keys;
 
+///
+/// Updates the keys struct, ran each frame by main
+///
 void Input::Update(SDL_Event * eventHandler)
 {
 	if (eventHandler->type == SDL_KEYDOWN)

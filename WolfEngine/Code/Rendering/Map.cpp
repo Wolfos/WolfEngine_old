@@ -1,6 +1,9 @@
 #define _CRT_SECURE_NO_DEPRECATE //So MSVC doesn't bitch about fopen()
 #include "Map.h"
 
+///
+/// Loads the map from a file
+///
 void Map::Load(char *filename)
 {
 	char * filedata; //The whole file as a single string
@@ -67,6 +70,9 @@ void Map::Load(char *filename)
 	free(filearray);
 }
 
+///
+/// Renders the map to an SDL_Surface you specify as a target
+///
 void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 	int tilewidth, int tileheight, int offset, Camera camera)
 {
