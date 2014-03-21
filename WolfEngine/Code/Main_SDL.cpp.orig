@@ -6,8 +6,6 @@
 #include "Utilities/Time.h"
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 960;
-const int SCREEN_HEIGHT = 640;
 int SCREEN_WIDTH = 960;
 int SCREEN_HEIGHT = 640;
 
@@ -26,7 +24,6 @@ int Init()
 	}
 	else
 	{
-		window = SDL_CreateWindow( "WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 		window = SDL_CreateWindow("WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_RESIZABLE);
 		if( window == NULL )
 		{
@@ -71,13 +68,17 @@ void MainLoop(enum Window mode)
 	while (!quit)
 	{
 		curFrameTime = SDL_GetTicks();
+<<<<<<< HEAD:WolfEngine/Code/Main_SDL.cpp
 		
-		Time_deltaTime = (float)(curFrameTime - lastFrameTime) / 1000;
-		int fps = 1.f / Time_deltaTime;
 		Time::frameTimeS = (float)(curFrameTime - lastFrameTime) / 1000;
 		int fps = 1.f / Time::frameTimeS;
 
 		printf("%d\n", fps);
+=======
+
+		Time_deltaTime = (float)(curFrameTime - lastFrameTime) / 1000;
+		int fps = 1.f / Time_deltaTime;
+>>>>>>> 18d307a993de99a7b841470894685544c81a702c:WolfEngine/Code/main.cpp
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
@@ -102,9 +103,8 @@ void MainLoop(enum Window mode)
 				SDL_BlitSurface(Editor_GetScreen(), NULL, screenSurface, NULL);
 				break;
 			}
-		
 		}
-		
+
 
 		SDL_UpdateWindowSurface(window);
 		lastFrameTime = curFrameTime;

@@ -17,6 +17,7 @@
 				</Compiler>
 				<Linker>
 					<Add library="SDL2" />
+					<Add library="SDL2_ttf" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -42,24 +43,21 @@
 			<Add library="SDL2" />
 			<Add library="SDL2_image" />
 		</Linker>
-		<Unit filename="WolfEngine/Code/Game/GameMain.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="WolfEngine/Code/Game/GameMain.cpp" />
 		<Unit filename="WolfEngine/Code/Game/GameMain.h" />
 		<Unit filename="WolfEngine/Code/Includes.h" />
-		<Unit filename="WolfEngine/Code/Map/Map.h" />
-		<Unit filename="WolfEngine/Code/Map/MapLoad.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="WolfEngine/Code/Map/MapLoad.h" />
-		<Unit filename="WolfEngine/Code/Map/MapRender.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="WolfEngine/Code/Map/MapRender.h" />
+		<Unit filename="WolfEngine/Code/Input/Input.cpp" />
+		<Unit filename="WolfEngine/Code/Input/Input.h" />
+		<Unit filename="WolfEngine/Code/Input/Keys.h" />
 		<Unit filename="WolfEngine/Code/Models/Window.h" />
-		<Unit filename="WolfEngine/Code/main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="WolfEngine/Code/Rendering/Camera.h" />
+		<Unit filename="WolfEngine/Code/Rendering/Image.cpp" />
+		<Unit filename="WolfEngine/Code/Rendering/Image.h" />
+		<Unit filename="WolfEngine/Code/Rendering/Map.cpp" />
+		<Unit filename="WolfEngine/Code/Rendering/Map.h" />
+		<Unit filename="WolfEngine/Code/Utilities/Time.cpp" />
+		<Unit filename="WolfEngine/Code/Utilities/Time.h" />
+		<Unit filename="WolfEngine/Code/main.cpp" />
 		<Unit filename="cb.bmp" />
 		<Extensions>
 			<code_completion />
