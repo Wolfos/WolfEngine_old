@@ -1,5 +1,8 @@
 #include "Image.h";
 
+///
+///	Returns a pointer to an SDL_Surface from a filename
+///
 SDL_Surface* Image::Load(char* filename, SDL_PixelFormat* format)
 {
 	SDL_Surface* optimized = NULL;

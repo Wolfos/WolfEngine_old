@@ -1,5 +1,6 @@
 #include "Includes.h"
 #include "Game/GameMain.h"
+#include "Editor/EditorMain.h"
 #include "Models/Window.h"
 #include "Input/Input.h"
 #include "Utilities/Time.h"
@@ -7,6 +8,8 @@
 //Screen dimension constants
 const int SCREEN_WIDTH = 960;
 const int SCREEN_HEIGHT = 640;
+int SCREEN_WIDTH = 960;
+int SCREEN_HEIGHT = 640;
 
 SDL_Window* window = NULL;
 SDL_Surface* screenSurface = NULL;
@@ -24,6 +27,7 @@ int Init()
 	else
 	{
 		window = SDL_CreateWindow( "WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+		window = SDL_CreateWindow("WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_RESIZABLE);
 		if( window == NULL )
 		{
 			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
@@ -67,9 +71,13 @@ void MainLoop(enum Window mode)
 	while (!quit)
 	{
 		curFrameTime = SDL_GetTicks();
-
+		
 		Time_deltaTime = (float)(curFrameTime - lastFrameTime) / 1000;
 		int fps = 1.f / Time_deltaTime;
+		Time::frameTimeS = (float)(curFrameTime - lastFrameTime) / 1000;
+		int fps = 1.f / Time::frameTimeS;
+
+		printf("%d\n", fps);
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
@@ -87,8 +95,16 @@ void MainLoop(enum Window mode)
 				SDL_BlitSurface(Game_GetScreen(), NULL, screenSurface, NULL);
 				break;
 			}
+			case editor:
+			{
+				Editor_Update();
+				//Blit the editor screen to the main screen so that EditorMain has full control over what to render there
+				SDL_BlitSurface(Editor_GetScreen(), NULL, screenSurface, NULL);
+				break;
+			}
+		
 		}
-
+		
 
 		SDL_UpdateWindowSurface(window);
 		lastFrameTime = curFrameTime;
@@ -108,10 +124,17 @@ int main( int argc, char* args[] )
 		return 1;
 	}
 	Game_SetScreen(SDL_GetWindowSurface(window)); //Initializes the game screen
+	Editor_SetScreen(SDL_GetWindowSurface(window));
 	switch(mode){
 		case game:
 		{
 			Game_Start();
+			break;
+		}
+		case editor:
+		{
+			Editor_Start();
+			break;
 		}
 	}
 	MainLoop(mode);

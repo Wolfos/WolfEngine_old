@@ -1,1 +1,2 @@
-float Time_deltaTime;
+#include "Time.h"
+float Time::frameTimeS;
