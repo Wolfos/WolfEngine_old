@@ -55,6 +55,9 @@
 		<Unit filename="WolfEngine/Code/Rendering/Image.h" />
 		<Unit filename="WolfEngine/Code/Rendering/Map.cpp" />
 		<Unit filename="WolfEngine/Code/Rendering/Map.h" />
+		<Unit filename="WolfEngine/Code/Utilities/Component.h" />
+		<Unit filename="WolfEngine/Code/Utilities/GameObject.cpp" />
+		<Unit filename="WolfEngine/Code/Utilities/GameObject.h" />
 		<Unit filename="WolfEngine/Code/Utilities/Time.cpp" />
 		<Unit filename="WolfEngine/Code/Utilities/Time.h" />
 		<Unit filename="WolfEngine/Code/main.cpp" />

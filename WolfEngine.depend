@@ -133,3 +133,12 @@
 
 1394637742 source:/home/robin/Documents/Projects/WolfEngine/WolfEngine/Code/Utilities/Time.cpp
 
+1396000654 source:/home/robin/Documents/Projects/WolfEngine/WolfEngine/Code/Utilities/GameObject.cpp
+	"GameObject.h"
+	"stdlib.h"
+
+1396000562 /home/robin/Documents/Projects/WolfEngine/WolfEngine/Code/Utilities/GameObject.h
+	"Component.h"
+
+1395413743 /home/robin/Documents/Projects/WolfEngine/WolfEngine/Code/Utilities/Component.h
+
