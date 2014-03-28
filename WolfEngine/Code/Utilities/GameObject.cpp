@@ -4,7 +4,9 @@ void GameObject::Update()
 {
 	for(int i = 0; i<numComponents; i++)
 	{
-		components[i].Update();
+		//components[i].Update();
+		Component comp;
+		comp.Update();
 	}
 }
 

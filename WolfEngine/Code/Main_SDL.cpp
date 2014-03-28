@@ -6,15 +6,13 @@
 #include "Utilities/Time.h"
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 960;
-const int SCREEN_HEIGHT = 640;
 int SCREEN_WIDTH = 960;
 int SCREEN_HEIGHT = 640;
 
 SDL_Window* window = NULL;
 SDL_Surface* screenSurface = NULL;
 
-const int MAXFPS = 60; //FPS to cap at. Set to -1 to disable
+const int MAXFPS = -1; //FPS to cap at. Set to -1 to disable
 
 int Init()
 {
@@ -26,7 +24,6 @@ int Init()
 	}
 	else
 	{
-		window = SDL_CreateWindow( "WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 		window = SDL_CreateWindow("WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_RESIZABLE);
 		if( window == NULL )
 		{
@@ -68,16 +65,22 @@ void MainLoop(enum Window mode)
 	Uint32 lastFrameTime  = 0;
 	Input input;
 
+	int counter = 0;
+
 	while (!quit)
 	{
 		curFrameTime = SDL_GetTicks();
 		
-		Time_deltaTime = (float)(curFrameTime - lastFrameTime) / 1000;
-		int fps = 1.f / Time_deltaTime;
 		Time::frameTimeS = (float)(curFrameTime - lastFrameTime) / 1000;
 		int fps = 1.f / Time::frameTimeS;
 
-		printf("%d\n", fps);
+		counter++;
+		if (counter > 30)
+		{
+			printf("%d\n", fps);
+			counter = 0;
+		}
+		
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{

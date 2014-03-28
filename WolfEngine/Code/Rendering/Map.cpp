@@ -6,68 +6,60 @@
 ///
 void Map::Load(char *filename)
 {
-	char * filedata; //The whole file as a single string
-	long filesize; //Total number of characters in file
-	char * strval;
-	int * filearray = NULL; //All the data from the file as an array
+	FILE *f = fopen(filename, "rb");
 
-	int i = 0;
-
-	FILE* file = fopen(filename, "r");
-	if (!file)
+	if (!f)
 	{
-		printf("Error while opening file: %s\n", filename);
+		printf("Could not load %s", filename);
 		return;
 	}
 
-	//Get size of file, then read the file into a c string
-	fseek(file, 0, SEEK_END);
-	filesize = ftell(file);
-	fseek(file, 0, SEEK_SET);
-	filedata = (char*)malloc(sizeof(char)*filesize);
-	fread(filedata, 1, filesize, file);
+	int w, h, l;
 
-	fclose(file);
+	fread(&w, sizeof(int), 1, f);
+	fread(&h, sizeof(int), 1, f);
+	fread(&l, sizeof(int), 1, f);
 
-
-	//Separate all the values (and convert them to integers) by looping through the string using strtok
-	strval = strtok(filedata, ";");
-	while (strval)
-	{
-		filearray = (int*)realloc(filearray, sizeof(int*)* (i + 1));
-		filearray[i] = atoi(strval);
-		strval = strtok(NULL, ";");
-		i++;
-	}
-
-	free(filedata);
-
-	layers = filearray[0];
-	width = filearray[1];
-	height = filearray[2];
-
-	//printf("%d\n%d\n%d\n",layers,width,height);
+	layers = l;
+	width = w;
+	height = h;
 
 	data = (int*)calloc(width*height*layers, sizeof(int));
-	events = (int*)calloc(width*height, sizeof(int));
 
-	//Load mapdata
-	i = 0;
-	while (i<layers*width*height)
+	for (int i = 0; i < width*height*layers; i++)
 	{
-		data[i] = filearray[i + 3]; //Using i+3 because the first 3 values are width, height and number of layers
-		i++;
+		fread(&data[i], sizeof(int), 1, f);
 	}
 
-	//Load eventdata
-	i = 0;
-	while (i<width*height)
+	fclose(f);
+}
+
+void Map::Write(char* filename)
+{
+	FILE *f = fopen(filename, "wb");
+	if (!f)
 	{
-		events[i] = filearray[i + 3 + layers*width*height];
-		i++;
+		printf("Error opening %s for writing", filename);
 	}
 
-	free(filearray);
+	fwrite(&width, sizeof(int), 1, f);
+	fwrite(&height, sizeof(int), 1, f);
+	fwrite(&layers, sizeof(int), 1, f);
+	fwrite(data, sizeof(int), width*height*layers, f);
+
+	fclose(f);
+}
+
+int Map::Get(int x, int y, int l)
+{
+	int pos = x + (y*width);
+
+	//Move to correct layer
+	pos += (width*height)*l;
+
+	int val = data[pos];
+
+	return val;
 }
 
 ///
@@ -119,7 +111,7 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 	targetrect.h = tileheight;
 
 
-	//Occlussion culling, but need to make sure we CAN cull first
+	//Occlusion culling, but need to make sure we CAN cull first
 	//If we can't cull (ergo, the map is too small or we're off the map), we just render the whole map
 	if (camera.x >= 0)startX = camera.x / tilewidth;
 	else startX = 0;
@@ -142,10 +134,14 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 			targetrect.x = x*tilewidth - camera.x;
 			targetrect.y = y*tileheight - camera.y;
 
-			sourcerect.x = clip[data[i*(layer + 1)]].x;
-			sourcerect.y = clip[data[i*(layer + 1)]].y;
+			int val = Get(x, y, layer);
+			if (val<=sheetwidth*sheetheight)
+			{
+				sourcerect.x = clip[val].x;
+				sourcerect.y = clip[val].y;
 
-			SDL_BlitSurface(spritesheet, &sourcerect, target, &targetrect);
+				SDL_BlitSurface(spritesheet, &sourcerect, target, &targetrect);
+			}
 
 			//i = x + y*endY;
 			i++;
