@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_DEPRECATE //So MSVC doesn't bitch about fopen()
 #include "Map.h"
+#include "../Utilities/Debug.h"
+#include "../Components/Transform.h"
 
 ///
 /// Loads the map from a file
@@ -10,7 +12,7 @@ void Map::Load(char *filename)
 
 	if (!f)
 	{
-		printf("Could not load %s", filename);
+		Debug::Log("Could not load %s", filename);
 		return;
 	}
 
@@ -39,7 +41,7 @@ void Map::Write(char* filename)
 	FILE *f = fopen(filename, "wb");
 	if (!f)
 	{
-		printf("Error opening %s for writing", filename);
+		Debug::Log("Error opening %s for writing", filename);
 	}
 
 	fwrite(&width, sizeof(int), 1, f);
@@ -66,9 +68,10 @@ int Map::Get(int x, int y, int l)
 /// Renders the map to an SDL_Surface you specify as a target
 ///
 void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
-	int tilewidth, int tileheight, int offset, Camera camera)
+	int tilewidth, int tileheight, int offset, GameObject* camera)
 {
 	SDL_Rect* clip;
+
 
 	//Tiles to start and finish render on
 	int startX;
@@ -103,7 +106,6 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 		}
 	}
 
-	//printf("%d,%d\n",clip[1].x,clip[1].y);
 
 	sourcerect.w = tilewidth;
 	sourcerect.h = tileheight;
@@ -113,17 +115,23 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 
 	//Occlusion culling, but need to make sure we CAN cull first
 	//If we can't cull (ergo, the map is too small or we're off the map), we just render the whole map
-	if (camera.x >= 0)startX = camera.x / tilewidth;
+	if (camera->transform->position.x >= 0)startX = camera->transform->position.x / tilewidth;
 	else startX = 0;
 
-	if (camera.y >= 0)startY = camera.y / tileheight;
+	if (camera->transform->position.y >= 0)startY = camera->transform->position.y / tileheight;
 	else startY = 0;
 
 
-	if (((camera.x + camera.w) / tilewidth) + 1 <= width)endX = ((camera.x + camera.w) / tilewidth) + 1;
+	if (((camera->transform->position.x + camera->transform->scale.x) / tilewidth) + 1 <= width)
+	{
+		endX = ((camera->transform->position.x + camera->transform->scale.x) / tilewidth) + 1;
+	}
 	else endX = width;
 
-	if (((camera.y + camera.h) / tileheight) + 1 <= height)endY = ((camera.y + camera.h) / tileheight) + 1;
+	if (((camera->transform->position.y + camera->transform->scale.y) / tileheight) + 1 <= height)
+	{
+		endY = ((camera->transform->position.y + camera->transform->scale.y) / tileheight) + 1;
+	}
 	else endY = height;
 
 	i = startX + startY * endY;
@@ -131,8 +139,8 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 	{
 		for (x = startX; x<endX; x++)
 		{
-			targetrect.x = x*tilewidth - camera.x;
-			targetrect.y = y*tileheight - camera.y;
+			targetrect.x = x*tilewidth - camera->transform->position.x;
+			targetrect.y = y*tileheight - camera->transform->position.y;
 
 			int val = Get(x, y, layer);
 			if (val<=sheetwidth*sheetheight)

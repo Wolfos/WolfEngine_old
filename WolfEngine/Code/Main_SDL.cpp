@@ -4,6 +4,8 @@
 #include "Models/Window.h"
 #include "Input/Input.h"
 #include "Utilities/Time.h"
+#include "Utilities/Debug.h"
+#include "ECS/ObjectManager.h"
 
 //Screen dimension constants
 int SCREEN_WIDTH = 960;
@@ -19,16 +21,16 @@ int Init()
 	//Initialize SDL
 	if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
 	{
-		printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
-		return 0;
+		Debug::Log("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+		return 1;
 	}
 	else
 	{
 		window = SDL_CreateWindow("WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_RESIZABLE);
 		if( window == NULL )
 		{
-			printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
-			return 0;
+			Debug::Log("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+			return 1;
 		}
 		else
 		{
@@ -36,8 +38,8 @@ int Init()
 			int imgflags = IMG_INIT_PNG;
 			if(!(IMG_Init(imgflags) & imgflags))
 			{
-				printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
-				return 0;
+				Debug::Log("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+				return 1;
 			}
 			else
 			{
@@ -47,11 +49,12 @@ int Init()
 			//Initialize SDL_TTF
 			if (TTF_Init())
 			{
-				printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", SDL_GetError());
+				Debug::Log("SDL_ttf could not initialize! SDL_ttf Error: %s\n", SDL_GetError());
+				return 1;
 			}
 		}
 	}
-	return 1;
+	return 0;
 }
 
 ///
@@ -65,7 +68,6 @@ void MainLoop(enum Window mode)
 	Uint32 lastFrameTime  = 0;
 	Input input;
 
-	int counter = 0;
 
 	while (!quit)
 	{
@@ -74,13 +76,8 @@ void MainLoop(enum Window mode)
 		Time::frameTimeS = (float)(curFrameTime - lastFrameTime) / 1000;
 		int fps = 1.f / Time::frameTimeS;
 
-		counter++;
-		if (counter > 30)
-		{
-			printf("%d\n", fps);
-			counter = 0;
-		}
-		
+		//Update the gameObjects
+		ObjectManager::Update();
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
@@ -121,13 +118,15 @@ int main( int argc, char* args[] )
 {
 	enum Window mode = game; //What mode are we going to run this in? Game or Editor?
 
-	if(!Init())
+	if(Init())
 	{
-		printf("WolfEngine has failed to initialize. \n");
+		Debug::Log("WolfEngine has failed to initialize.\n");
+		Debug::Log("¦¦¦¦¦¦¦¦¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦	Wow!\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¯¦¦¦¦¦\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¯¦¦¦¦¦¦¦\n¦¦¦¦¦¦¦¦_¯¦¦¯¯¯¯___¯¦¦¦¦¦¦¦¦¦\n¦¦¦¦¦__¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦¦¦\n¦¦¦_¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯¦¦¯¦¦¦¦¦\n¦¦¦¦¦¦__¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯_¦¦¦¦¦		Much error :(\n¦¦¦¦¦¦¦¯¦¦¦¦¦_¯¦_¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯¦¦¦¦¦¦¦¦¯_¦¦\n¦¦¦¦_¦¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¯¦¯¦_¦_¦¦_¦¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¯¦¯¦¦__¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¯¯__¦¦¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¦¦¦¦¯¯¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦	Many wrong\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦¦\n¦¦¯_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦¦¦¦\n¦¦¦¦¯_¦¦¦¦¦¦¦¦¦¦___¯¦¦¦¦_¯¦¦¦\n¦¦¦¦¦¦¯______¯¯¯¦¦¦¦¦__¯¦¦¦¦¦\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯¯¦¦¦¦¦¦¦¦\n");
 		return 1;
 	}
 	Game_SetScreen(SDL_GetWindowSurface(window)); //Initializes the game screen
 	Editor_SetScreen(SDL_GetWindowSurface(window));
+	ObjectManager::Load();
 	switch(mode){
 		case game:
 		{
@@ -140,6 +139,7 @@ int main( int argc, char* args[] )
 			break;
 		}
 	}
+
 	MainLoop(mode);
 
 	Game_Exit();

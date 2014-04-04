@@ -1,11 +1,14 @@
 #ifndef _TRANSFORM_H
 #define _TRANSFORM_H
 #include "../ECS/Component.h"
+#include "../Models/Point.h"
 class Transform : public Component
 {
 public:
-	int x, y;
+	Point position;
+	Point scale;
 	void Move(int x, int y);
+	virtual void Start();
 	virtual void Update();
 };
 #endif

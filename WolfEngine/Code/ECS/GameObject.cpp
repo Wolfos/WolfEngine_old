@@ -1,33 +1,33 @@
 #include "GameObject.h"
 #include "stdlib.h"
+#include "../Utilities/Debug.h"
 void GameObject::Update()
 {
-	for(int i = 0; i<numComponents; i++)
+	for(unsigned i = 0(); i!=components.bucket_count(); ++i)
 	{
-		static_cast<Component*>(components[i])->Update();
+		for (auto local_it = components.begin(i); local_it != components.end(i); ++local_it)
+		{
+			local_it->second->Update();
+		}
+		
 	}
 }
 
 void GameObject::Load()
 {
-	numComponents = 0;
+	//Every GameObject gets a transform component
+	Transform* t = (Transform*)malloc(sizeof(Transform*));
+	t = new Transform;
+	AddComponent(t);
+	transform = GetComponent<Transform>();
+	transform->position.x = 0;
+	transform->position.y = 0;
 }
 
-Component* GameObject::GetComponent(char* name)
-{
-	for(int i = 0; i < numComponents; i++)
-	{
-		if(components[i]->name == name)
-		{
-			return components[i];
-		}
-	}
-	return 0;
-}
 
 void GameObject::AddComponent(Component* component)
 {
-	components = (Component**)realloc(components, numComponents*sizeof(Component*));
-	components[numComponents] = component;
-	numComponents++;
+	components[&typeid(*component)] = component;
+	component->Start();
+	component->gameObject = this;
 }

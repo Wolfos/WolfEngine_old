@@ -4,7 +4,8 @@
 ///
 ///	Class with time based variables and functions
 ///
-class Time{
+class Time
+{
 public:
 	static float frameTimeS; /// Time in seconds it took the last frame to render
 };

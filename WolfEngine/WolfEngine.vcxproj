@@ -71,7 +71,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">
     <IncludePath>C:\Developer\SDL2_image-2.0.0\include;C:\Developer\SDL2-2.0.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Developer\SDL2_image-2.0.0\lib\x86;C:\Developer\SDL2-2.0.0\lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Developer\SDL2-2.0.0\lib\Android;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Developer\SDL2_image-2.0.0\include;C:\Developer\SDL2-2.0.0\include;$(IncludePath)</IncludePath>
@@ -102,7 +102,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libSDL2.so;libSDL2_image.so;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <Profile>true</Profile>
     </Link>
@@ -140,28 +140,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code\Components\CameraMovement.cpp" />
+    <ClCompile Include="Code\Components\Transform.cpp" />
+    <ClCompile Include="Code\ECS\ObjectManager.cpp" />
     <ClCompile Include="Code\Editor\EditorMain.cpp" />
     <ClCompile Include="Code\Game\GameMain.cpp" />
     <ClCompile Include="Code\Input\Input.cpp" />
     <ClCompile Include="Code\Main_SDL.cpp" />
     <ClCompile Include="Code\Rendering\Map.cpp" />
     <ClCompile Include="Code\Rendering\Image.cpp" />
-    <ClCompile Include="Code\Utilities\Component.cpp" />
-    <ClCompile Include="Code\Utilities\GameObject.cpp" />
+    <ClCompile Include="Code\ECS\Component.cpp" />
+    <ClCompile Include="Code\ECS\GameObject.cpp" />
+    <ClCompile Include="Code\Utilities\Debug.cpp" />
     <ClCompile Include="Code\Utilities\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code\Components\CameraMovement.h" />
+    <ClInclude Include="Code\Components\Transform.h" />
+    <ClInclude Include="Code\ECS\ObjectManager.h" />
     <ClInclude Include="Code\Editor\EditorMain.h" />
     <ClInclude Include="Code\Game\GameMain.h" />
     <ClInclude Include="Code\Includes.h" />
+    <ClInclude Include="Code\Includes\ECS.h" />
     <ClInclude Include="Code\Input\Input.h" />
     <ClInclude Include="Code\Input\Keys.h" />
+    <ClInclude Include="Code\Models\Point.h" />
     <ClInclude Include="Code\Rendering\Map.h" />
     <ClInclude Include="Code\Models\Window.h" />
-    <ClInclude Include="Code\Rendering\Camera.h" />
     <ClInclude Include="Code\Rendering\Image.h" />
-    <ClInclude Include="Code\Utilities\Component.h" />
-    <ClInclude Include="Code\Utilities\GameObject.h" />
+    <ClInclude Include="Code\ECS\Component.h" />
+    <ClInclude Include="Code\ECS\GameObject.h" />
+    <ClInclude Include="Code\Utilities\Debug.h" />
     <ClInclude Include="Code\Utilities\Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
