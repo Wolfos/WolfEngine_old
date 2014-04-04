@@ -24,9 +24,7 @@ void Game_Start()
 	camera->transform->scale.x = gameScreen->w;
 	camera->transform->scale.y = gameScreen->h;
 
-	CameraMovement* cMovement = (CameraMovement*)malloc(sizeof(CameraMovement*));
-	cMovement = new CameraMovement;
-	camera->AddComponent(cMovement);
+	camera->AddComponent<CameraMovement>();
 }
 
 ///

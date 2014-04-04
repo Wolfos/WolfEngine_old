@@ -16,18 +16,10 @@ void GameObject::Update()
 void GameObject::Load()
 {
 	//Every GameObject gets a transform component
-	Transform* t = (Transform*)malloc(sizeof(Transform*));
-	t = new Transform;
-	AddComponent(t);
+	AddComponent<Transform>();
 	transform = GetComponent<Transform>();
 	transform->position.x = 0;
 	transform->position.y = 0;
 }
 
 
-void GameObject::AddComponent(Component* component)
-{
-	components[&typeid(*component)] = component;
-	component->Start();
-	component->gameObject = this;
-}

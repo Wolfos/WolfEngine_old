@@ -24,7 +24,17 @@ class GameObject
 				return 0;
 			}
 		}
-		void AddComponent(Component* component);
+
+		template <typename C>
+		C* AddComponent()
+		{
+			C* component = (C*)malloc(sizeof(C*));
+			component = new C;
+			components[&typeid(*component)] = component;
+			component->Start();
+			component->gameObject = this;
+			return component;
+		}
 
 		char* name;
 
