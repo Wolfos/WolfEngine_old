@@ -1,37 +1,41 @@
-#include "../Includes.h"
+#include "EditorMain.h"
 #include "../Rendering/Map.h"
 #include "../Rendering/Image.h"
-
-SDL_Surface* editorScreen = NULL;
+#include "../Components/SpriteRenderer.h"
+#include "../Components/Camera.h"
 
 
 //Called only once when the editor starts
-void Editor_Start()
+void EditorMain::Start()
 {
-
+	test = ObjectManager::NewGameObject("Test");
+	test->AddComponent<SpriteRenderer>();
+	test->GetComponent<SpriteRenderer>()->spriteSheet = Image::Load("../Sprites/tiles_spritesheet.png", editorScreen->format);
+	test->GetComponent<SpriteRenderer>()->width = 70;
+	test->GetComponent<SpriteRenderer>()->height = 70;
+	test->GetComponent<SpriteRenderer>()->frame = 0;
 }
 
 ///
 /// The game's main loop
 ///
-void Editor_Update()
+void EditorMain::Update()
 {
 	//Fill screen with black to clear it before rendering
 	SDL_FillRect(editorScreen, &editorScreen->clip_rect, 0);
-
 }
 
-void Editor_Exit()
+void EditorMain::Exit()
 {
 	SDL_FreeSurface(editorScreen);
 }
 
-SDL_Surface* Editor_GetScreen()
+SDL_Surface* EditorMain::GetScreen()
 {
 	return editorScreen;
 }
 
-void Editor_SetScreen(SDL_Surface* source)
+void EditorMain::SetScreen(SDL_Surface* source)
 {
 	editorScreen = source;
 }

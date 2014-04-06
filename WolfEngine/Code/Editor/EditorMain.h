@@ -1,9 +1,17 @@
 #ifndef _EDITORMAIN_H
 #define _EDITORMAIN_H
 #include "../Includes.h"
-void Editor_Start();
-void Editor_Update();
-void Editor_Exit();
-SDL_Surface* Editor_GetScreen();
-void Editor_SetScreen(SDL_Surface* source);
+#include "../Includes/ECS.h"
+class EditorMain
+{
+	public:
+		void Start();
+		void Update();
+		void Exit();
+		SDL_Surface* GetScreen();
+		void SetScreen(SDL_Surface* source);
+	private:
+		SDL_Surface* editorScreen = NULL;
+		GameObject* test;
+};
 #endif

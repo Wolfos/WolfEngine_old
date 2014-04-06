@@ -1,11 +1,11 @@
 #include "Includes.h"
 #include "Game/GameMain.h"
 #include "Editor/EditorMain.h"
-#include "Models/Window.h"
 #include "Input/Input.h"
 #include "Utilities/Time.h"
 #include "Utilities/Debug.h"
 #include "ECS/ObjectManager.h"
+#include "Rendering\Screen.h"
 
 //Screen dimension constants
 int SCREEN_WIDTH = 960;
@@ -14,7 +14,17 @@ int SCREEN_HEIGHT = 640;
 SDL_Window* window = NULL;
 SDL_Surface* screenSurface = NULL;
 
-const int MAXFPS = -1; //FPS to cap at. Set to -1 to disable
+EditorMain editorMain;
+GameMain gameMain;
+
+ObjectManager objMgr;
+
+const int MAXFPS = 60; //FPS to cap at. Set to -1 to disable
+
+//List of modes the application can run in
+enum Window{
+	game, editor
+};
 
 int Init()
 {
@@ -75,9 +85,10 @@ void MainLoop(enum Window mode)
 		
 		Time::frameTimeS = (float)(curFrameTime - lastFrameTime) / 1000;
 		int fps = 1.f / Time::frameTimeS;
+		//Debug::Log("%d\n",fps);
 
-		//Update the gameObjects
-		ObjectManager::Update();
+		//Fill screen with black to clear it before rendering
+		SDL_FillRect(screenSurface, &Screen::mainCamera->screen->clip_rect, 0);
 
 		while(SDL_PollEvent(&eventHandler)!=0)
 		{
@@ -90,21 +101,18 @@ void MainLoop(enum Window mode)
 		switch(mode){
 			case game:
 			{
-				Game_Update();
-				//Blit the game screen to the main screen so that GameMain has full control over what to render there
-				SDL_BlitSurface(Game_GetScreen(), NULL, screenSurface, NULL);
+				gameMain.Update();
 				break;
 			}
 			case editor:
 			{
-				Editor_Update();
-				//Blit the editor screen to the main screen so that EditorMain has full control over what to render there
-				SDL_BlitSurface(Editor_GetScreen(), NULL, screenSurface, NULL);
+				editorMain.Update();
 				break;
-			}
-		
+			}	
 		}
-		
+
+		//Update the gameObjects
+		ObjectManager::Update();
 
 		SDL_UpdateWindowSurface(window);
 		lastFrameTime = curFrameTime;
@@ -116,7 +124,7 @@ void MainLoop(enum Window mode)
 
 int main( int argc, char* args[] )
 {
-	enum Window mode = game; //What mode are we going to run this in? Game or Editor?
+	Window mode = game; //What mode are we going to run this in? Game or Editor?
 
 	if(Init())
 	{
@@ -124,25 +132,32 @@ int main( int argc, char* args[] )
 		Debug::Log("¦¦¦¦¦¦¦¦¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦	Wow!\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¯¦¦¦¦¦\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¯¦¦¦¦¦¦¦\n¦¦¦¦¦¦¦¦_¯¦¦¯¯¯¯___¯¦¦¦¦¦¦¦¦¦\n¦¦¦¦¦__¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦¦¦\n¦¦¦_¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯¦¦¯¦¦¦¦¦\n¦¦¦¦¦¦__¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯_¦¦¦¦¦		Much error :(\n¦¦¦¦¦¦¦¯¦¦¦¦¦_¯¦_¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯¦¦¦¦¦¦¦¦¯_¦¦\n¦¦¦¦_¦¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¯¦¯¦_¦_¦¦_¦¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¯¦¯¦¦__¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¯¯__¦¦¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n¦¦¦¦¦¦¦¦¯¯¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦	Many wrong\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦¦\n¦¦¯_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦¦¦¦\n¦¦¦¦¯_¦¦¦¦¦¦¦¦¦¦___¯¦¦¦¦_¯¦¦¦\n¦¦¦¦¦¦¯______¯¯¯¦¦¦¦¦__¯¦¦¦¦¦\n¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯¯¦¦¦¦¦¦¦¦\n");
 		return 1;
 	}
-	Game_SetScreen(SDL_GetWindowSurface(window)); //Initializes the game screen
-	Editor_SetScreen(SDL_GetWindowSurface(window));
+	editorMain.SetScreen(SDL_GetWindowSurface(window));
+
+	//Initialize the camera
+	GameObject* camera = ObjectManager::NewGameObject("Camera");
+	camera->AddComponent<Camera>();
+	camera->GetComponent<Camera>()->screen = SDL_GetWindowSurface(window);
+	camera->GetComponent<Camera>()->width = screenSurface->w;
+	camera->GetComponent<Camera>()->height = screenSurface->h;
+
 	ObjectManager::Load();
 	switch(mode){
 		case game:
 		{
-			Game_Start();
+			gameMain.Start();
 			break;
 		}
 		case editor:
 		{
-			Editor_Start();
+			editorMain.Start();
 			break;
 		}
 	}
 
 	MainLoop(mode);
 
-	Game_Exit();
+	gameMain.Exit();
 
 	SDL_DestroyWindow(window);
 

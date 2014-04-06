@@ -19,4 +19,5 @@ void CameraMovement::Update()
 	if (Input::keys.ArrowDown)yspeed = camspeed;
 
 	gameObject->transform->Move(xspeed*Time::frameTimeS, yspeed*Time::frameTimeS);
+	//gameObject->transform->Move(xspeed, yspeed);
 }

@@ -1,12 +1,12 @@
 #ifndef _GAMEMAIN_H
 #define _GAMEMAIN_H
-#include "../Includes.h"
 
-void Game_Start();
-void Game_Update();
-void Game_Exit();
-
-SDL_Surface* Game_GetScreen();
-void Game_SetScreen(SDL_Surface* source);
+class GameMain
+{
+	public:
+		void Start();
+		void Update();
+		void Exit();
+};
 
 #endif

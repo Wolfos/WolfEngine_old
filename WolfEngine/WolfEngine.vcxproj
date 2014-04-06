@@ -140,7 +140,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code\Components\Camera.cpp" />
     <ClCompile Include="Code\Components\CameraMovement.cpp" />
+    <ClCompile Include="Code\Components\SpriteRenderer.cpp" />
     <ClCompile Include="Code\Components\Transform.cpp" />
     <ClCompile Include="Code\ECS\ObjectManager.cpp" />
     <ClCompile Include="Code\Editor\EditorMain.cpp" />
@@ -151,11 +153,14 @@
     <ClCompile Include="Code\Rendering\Image.cpp" />
     <ClCompile Include="Code\ECS\Component.cpp" />
     <ClCompile Include="Code\ECS\GameObject.cpp" />
+    <ClCompile Include="Code\Rendering\Screen.cpp" />
     <ClCompile Include="Code\Utilities\Debug.cpp" />
     <ClCompile Include="Code\Utilities\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code\Components\Camera.h" />
     <ClInclude Include="Code\Components\CameraMovement.h" />
+    <ClInclude Include="Code\Components\SpriteRenderer.h" />
     <ClInclude Include="Code\Components\Transform.h" />
     <ClInclude Include="Code\ECS\ObjectManager.h" />
     <ClInclude Include="Code\Editor\EditorMain.h" />
@@ -166,10 +171,10 @@
     <ClInclude Include="Code\Input\Keys.h" />
     <ClInclude Include="Code\Models\Point.h" />
     <ClInclude Include="Code\Rendering\Map.h" />
-    <ClInclude Include="Code\Models\Window.h" />
     <ClInclude Include="Code\Rendering\Image.h" />
     <ClInclude Include="Code\ECS\Component.h" />
     <ClInclude Include="Code\ECS\GameObject.h" />
+    <ClInclude Include="Code\Rendering\Screen.h" />
     <ClInclude Include="Code\Utilities\Debug.h" />
     <ClInclude Include="Code\Utilities\Time.h" />
   </ItemGroup>

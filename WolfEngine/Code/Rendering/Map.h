@@ -7,7 +7,7 @@
 ///
 /// A WolfEngine map object
 ///
-class Map{
+class Map {
 	public:
 		int width; /// Map width
 		int height; /// Map height

@@ -159,7 +159,6 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 		i += width - endX;
 	}
 
-	//SDL_BlitSurface(spritesheet,NULL,target,NULL);
 
 	free(clip);
 }

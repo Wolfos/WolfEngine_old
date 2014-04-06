@@ -1,6 +1,7 @@
 #ifndef _OBJECTMANAGER_H
 #define _OBJECTMANAGER_H
 #include "GameObject.h"
+#include "../Includes.h"
 
 class ObjectManager{
 	public:
