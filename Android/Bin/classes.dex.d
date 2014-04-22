@@ -1,0 +1,23 @@
+C:\Shared\Git\IKC_app\Android\Bin\classes.dex : \
+C:\Shared\Git\IKC_app\Android\Bin\classes\nl\rvanee\wolfengine\BuildConfig.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\nl\rvanee\wolfengine\R$attr.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\nl\rvanee\wolfengine\R$drawable.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\nl\rvanee\wolfengine\R$layout.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\nl\rvanee\wolfengine\R$string.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\nl\rvanee\wolfengine\R.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\nl\rvanee\wolfengine\WolfEngine.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\DummyEdit.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLActivity$1.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLActivity$SDLCommandHandler.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLActivity$ShowTextInputTask.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLActivity.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLGenericMotionListener_API12.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLInputConnection.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLJoystickHandler.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLJoystickHandler_API12$RangeComparator.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLJoystickHandler_API12$SDLJoystick.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLJoystickHandler_API12.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLMain.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLSurface$1.class \
+C:\Shared\Git\IKC_app\Android\Bin\classes\org\libsdl\app\SDLSurface.class \
+C:\Shared\Git\IKC_app\Android\Bin\dexedLibs\annotations-6865d278797e29f45d2d74a7ff3c20f6.jar \
