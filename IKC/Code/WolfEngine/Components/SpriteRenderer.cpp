@@ -1,3 +1,9 @@
+/*
+WolfEngine © 2013-2014 Robin van Ee
+http://wolfengine.net
+Contact:
+rvanee@wolfengine.net
+*/
 #include "SpriteRenderer.h"
 #include "../Rendering/Screen.h"
 #include "../ECS/GameObject.h"
@@ -39,8 +45,8 @@ void SpriteRenderer::Update()
 	dst->w = (int)(width*gameObject->transform->scale.x);
 	dst->h = (int)(height*gameObject->transform->scale.y);
 
-	center->x = (width*gameObject->transform->scale.x) / 2;
-	center->y = (width*gameObject->transform->scale.y) / 2;
+	center->x = (int)((width*gameObject->transform->scale.x) / 2);
+	center->y = (int)((width*gameObject->transform->scale.y) / 2);
 
 	SDL_RenderCopyEx(Screen::mainCamera->screen, spriteSheet, rect, dst, gameObject->transform->angle, center, SDL_FLIP_NONE);
 	free(clip);

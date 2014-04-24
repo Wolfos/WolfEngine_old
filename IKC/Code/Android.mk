@@ -14,7 +14,6 @@ WOLFENGINE_FILES := WolfEngine/Main_SDL.cpp \
 WolfEngine/Components/Camera.cpp \
 WolfEngine/Components/SpriteRenderer.cpp \
 WolfEngine/Components/Transform.cpp \
-WolfEngine/ECS/Component.cpp \
 WolfEngine/ECS/GameObject.cpp \
 WolfEngine/ECS/ObjectManager.cpp \
 WolfEngine/Input/Input.cpp \

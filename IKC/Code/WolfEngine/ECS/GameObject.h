@@ -11,7 +11,8 @@ class GameObject
 	public:
 		Transform* transform;
 		void Update();
-		void Load();
+		GameObject();
+		~GameObject();
 		template <typename T>
 		T* GetComponent()
 		{
@@ -28,8 +29,7 @@ class GameObject
 		template <typename C>
 		C* AddComponent()
 		{
-			C* component = (C*)malloc(sizeof(C*));
-			component = new C;
+			C* component = new C;
 			components[&typeid(*component)] = component;
 			component->gameObject = this;
 			component->Start();

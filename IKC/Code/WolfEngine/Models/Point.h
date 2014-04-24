@@ -1,12 +1,16 @@
 #ifndef _POINT_H
 #define _POINT_H
-typedef struct{
+class Point{
+public:
 	int x;
 	int y;
-}Point;
+	static Point Lerp(Point from, Point to, float t);
+};
 
-typedef struct{
+class PointF{
+public:
 	float x;
 	float y;
-}PointF;
+	static PointF Lerp(PointF from, PointF to, float t);
+};
 #endif

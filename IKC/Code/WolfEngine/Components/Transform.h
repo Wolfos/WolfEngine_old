@@ -11,5 +11,6 @@ public:
 	double angle = 0;
 	virtual void Start();
 	virtual void Update();
+
 };
 #endif

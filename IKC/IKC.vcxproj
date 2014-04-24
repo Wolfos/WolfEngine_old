@@ -88,11 +88,11 @@
     <ClCompile Include="Code\WolfEngine\Components\Camera.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\SpriteRenderer.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\Transform.cpp" />
-    <ClCompile Include="Code\WolfEngine\ECS\Component.cpp" />
     <ClCompile Include="Code\WolfEngine\ECS\GameObject.cpp" />
     <ClCompile Include="Code\WolfEngine\ECS\ObjectManager.cpp" />
     <ClCompile Include="Code\WolfEngine\Input\Input.cpp" />
     <ClCompile Include="Code\WolfEngine\Main_SDL.cpp" />
+    <ClCompile Include="Code\WolfEngine\Models\Point.cpp" />
     <ClCompile Include="Code\WolfEngine\Rendering\Image.cpp" />
     <ClCompile Include="Code\WolfEngine\Rendering\Map.cpp" />
     <ClCompile Include="Code\WolfEngine\Rendering\Screen.cpp" />

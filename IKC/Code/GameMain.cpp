@@ -40,7 +40,7 @@ void GameMain::Start()
 	int y = 0;
 
 	//Set random seed to current time in seconds
-	srand(time(0));
+	srand((unsigned int)time(0));
 	//Shuffle the cards
 	std::random_shuffle(&cards[0], &cards[numCards * 2]);
 

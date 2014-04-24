@@ -1,3 +1,9 @@
+/*
+	WolfEngine © 2013-2014 Robin van Ee
+	http://wolfengine.net
+	Contact:
+	rvanee@wolfengine.net
+*/
 #include "Includes.h"
 #include "../GameMain.h"
 #include "Input/Input.h"
@@ -131,14 +137,14 @@ int main( int argc, char* args[] )
 	camera->GetComponent<Camera>()->height = screenHeight;
 	camera->GetComponent<Camera>()->window = window;
 
-	ObjectManager::Load();
-
 	gameMain.Start();
 
 	MainLoop();
 
 	gameMain.Exit();
+	ObjectManager::Exit();
 
+	SDL_DestroyRenderer(screenRenderer);
 	SDL_DestroyWindow(window);
 
 	SDL_Quit();

@@ -5,8 +5,8 @@
 
 class ObjectManager{
 	public:
-		static void Load();
 		static void Update();
+		static void Exit();
 		static GameObject* NewGameObject(char* name);
 
 	private:

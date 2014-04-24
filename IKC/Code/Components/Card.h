@@ -1,5 +1,6 @@
 #ifndef _CARD_H
 #define _CARD_H
+
 #include "../WolfEngine/WolfEngine.h"
 class Card : public Component
 {

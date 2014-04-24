@@ -1,3 +1,9 @@
+/*
+WolfEngine © 2013-2014 Robin van Ee
+http://wolfengine.net
+Contact:
+rvanee@wolfengine.net
+*/
 #include "GameObject.h"
 #include "stdlib.h"
 #include "../Utilities/Debug.h"
@@ -9,11 +15,10 @@ void GameObject::Update()
 		{
 			local_it->second->Update();
 		}
-		
 	}
 }
 
-void GameObject::Load()
+GameObject::GameObject()
 {
 	//Every GameObject gets a transform component
 	AddComponent<Transform>();
@@ -22,4 +27,7 @@ void GameObject::Load()
 	transform->position.y = 0;
 }
 
-
+GameObject::~GameObject()
+{
+	components.clear();
+}

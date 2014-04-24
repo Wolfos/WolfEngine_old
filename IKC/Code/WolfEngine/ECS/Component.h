@@ -6,8 +6,8 @@ class GameObject;
 class Component
 {
 	public:
-		virtual void Start(void);
-		virtual void Update(void);
+		virtual void Start() = 0;
+		virtual void Update() = 0;
 		GameObject* gameObject;
 };
 #endif

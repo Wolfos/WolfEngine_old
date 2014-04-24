@@ -1,3 +1,9 @@
+/*
+WolfEngine © 2013-2014 Robin van Ee
+http://wolfengine.net
+Contact:
+rvanee@wolfengine.net
+*/
 #define _CRT_SECURE_NO_DEPRECATE //MICROSOOOOOOOOFT!
 #include "ObjectManager.h"
 #include <malloc.h>
@@ -8,10 +14,6 @@
 GameObject** ObjectManager::gameObjects;
 int ObjectManager::numObjects = 0;
 
-void ObjectManager::Load()
-{
-}
-
 void ObjectManager::Update()
 {
 	for (int i = 0; i<numObjects; i++)
@@ -19,11 +21,18 @@ void ObjectManager::Update()
 		static_cast<GameObject*>(gameObjects[i])->Update();
 	}
 }
+void ObjectManager::Exit()
+{
+	for (int i = 0; i < numObjects; i++)
+	{
+		delete gameObjects[i];
+	}
+	if(gameObjects) free(gameObjects);
+}
 
 GameObject* ObjectManager::NewGameObject(char* name)
 {
-	GameObject* newObject = (GameObject*)malloc(sizeof(GameObject));
-	newObject = new GameObject;
+	GameObject* newObject = new GameObject;
 
 	newObject->name = name;
 
@@ -36,7 +45,6 @@ GameObject* ObjectManager::NewGameObject(char* name)
 		return 0;
 	}
 	gameObjects[numObjects] = newObject;
-	newObject->Load();
 	numObjects++;
 
 	return newObject;

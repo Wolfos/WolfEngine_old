@@ -1,3 +1,9 @@
+/*
+WolfEngine © 2013-2014 Robin van Ee
+http://wolfengine.net
+Contact:
+rvanee@wolfengine.net
+*/
 #include "Debug.h"
 #ifdef __ANDROID__
 	#include <android/log.h>

@@ -1,7 +1,7 @@
 cd /d %~dp0
 color A
 call ndk-build
-timeout /t 300
+pause
 call ant debug
 call adb uninstall nl.rvanee.wolfengine
 call adb install Android/Bin/wolfengine-debug.apk
