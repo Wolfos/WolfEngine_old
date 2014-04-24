@@ -10,7 +10,7 @@
 #include "Utilities/Time.h"
 #include "Utilities/Debug.h"
 #include "ECS/ObjectManager.h"
-#include "Rendering\Screen.h"
+#include "Rendering/Screen.h"
 
 //Screen dimension constants
 int screenWidth = 1280;

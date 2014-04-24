@@ -1,5 +1,4 @@
 #include "Card.h"
-#include "../WolfEngine/WolfEngine.h"
 #ifdef __ANDROID__
 #include <android/log.h>
 #endif
@@ -21,7 +20,6 @@ void Card::Reset()
 
 void Card::Update()
 {
-	gameObject->transform->angle+=10*Time::frameTimeS;
 	if (Input::mouseKeyDown&&!checked&&!reset)
 	{
 		if (Input::mousePosition.x > gameObject->transform->position.x && Input::mousePosition.x < gameObject->transform->position.x + width*gameObject->transform->scale.x)

@@ -1,6 +1,6 @@
 #include "GameMain.h"
-#include "WolfEngine\WolfEngine.h"
-#include "Components\Card.h"
+#include "WolfEngine/WolfEngine.h"
+#include "Components/Card.h"
 #include <algorithm> //Random shuffle
 #include <time.h>
 

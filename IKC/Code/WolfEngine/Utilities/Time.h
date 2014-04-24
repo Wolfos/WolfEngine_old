@@ -1,5 +1,5 @@
-#ifndef _TIME_H
-#define _TIME_H
+#ifndef _WOLFTIME_H //Apparently _TIME_H is defined in the file <Time.h> from the default C library.
+#define _WOLFTIME_H
 
 ///
 ///	Class with time based variables and functions
