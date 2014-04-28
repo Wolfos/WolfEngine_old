@@ -4,7 +4,7 @@ http://wolfengine.net
 Contact:
 rvanee@wolfengine.net
 */
-#define _CRT_SECURE_NO_DEPRECATE //So MSVC doesn't bitch about fopen()
+#define _CRT_SECURE_NO_DEPRECATE //MICROSOOOOOOOOFT!
 #include "Map.h"
 #include "../Utilities/Debug.h"
 #include "../Components/Transform.h"

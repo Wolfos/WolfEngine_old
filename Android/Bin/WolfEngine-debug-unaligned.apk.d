@@ -6,4 +6,5 @@ C:\Shared\Git\IKC_app\libs\armeabi\libgnustl_shared.so \
 C:\Shared\Git\IKC_app\libs\armeabi\libmain.so \
 C:\Shared\Git\IKC_app\libs\armeabi\libSDL2.so \
 C:\Shared\Git\IKC_app\libs\armeabi\libSDL2_image.so \
+C:\Shared\Git\IKC_app\libs\armeabi\libSDL2_mixer.so \
 C:\Shared\Git\IKC_app\libs\armeabi\libSDL2_ttf.so \

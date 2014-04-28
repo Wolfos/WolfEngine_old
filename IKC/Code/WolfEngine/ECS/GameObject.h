@@ -10,15 +10,19 @@ class GameObject
 		std::unordered_map<const std::type_info*, Component*> components;
 	public:
 		Transform* transform;
+		char* name;
+		int id;
+
 		void Update();
 		GameObject();
 		~GameObject();
-		template <typename T>
-		T* GetComponent()
+
+		template <typename C>
+		C* GetComponent()
 		{
-			if (components.count(&typeid(T)) != 0)
+			if (components.count(&typeid(C)) != 0)
 			{
-				return static_cast<T*>(components[&typeid(T)]);
+				return static_cast<C*>(components[&typeid(C)]);
 			}
 			else
 			{
@@ -36,7 +40,17 @@ class GameObject
 			return component;
 		}
 
-		char* name;
+		template <typename C>
+		void RemoveComponent()
+		{
+			if (components.count(&typeid(C)) != 0)
+			{
+				C* component = components[&typeid(C)];
+				components.erase(component);
+				free(component);
+			}
+		}
+
 
 };
 #endif

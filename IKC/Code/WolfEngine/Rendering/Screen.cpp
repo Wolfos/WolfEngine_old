@@ -6,3 +6,4 @@ rvanee@wolfengine.net
 */
 #include "Screen.h"
 Camera* Screen::mainCamera;
+int Screen::layers = 0;

@@ -4,6 +4,8 @@
 #include <algorithm> //Random shuffle
 #include <time.h>
 
+#include "WolfEngine\GUI\GUIBox.h"
+
 SDL_Texture* spritesheet;
 int numCards = 15;
 GameObject** cards;
@@ -38,6 +40,9 @@ void GameMain::Start()
 	
 	int x = 0;
 	int y = 0;
+
+	Sound* sound = new Sound("sound.ogg");
+	sound->Play();
 
 	//Set random seed to current time in seconds
 	srand((unsigned int)time(0));

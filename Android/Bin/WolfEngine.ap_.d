@@ -9,10 +9,12 @@ C:\Shared\Git\IKC_app\Android\Bin\res\drawable-hdpi\ic_launcher.png \
 C:\Shared\Git\IKC_app\Android\Bin\res\drawable-mdpi\ic_launcher.png \
 C:\Shared\Git\IKC_app\Android\Bin\res\drawable-xhdpi\ic_launcher.png \
 C:\Shared\Git\IKC_app\Android\Bin\res\drawable-xxhdpi\ic_launcher.png \
+C:\Shared\Git\IKC_app\assets\Audio \
 C:\Shared\Git\IKC_app\assets\Fonts \
 C:\Shared\Git\IKC_app\assets\Maps \
 C:\Shared\Git\IKC_app\assets\Scripts \
 C:\Shared\Git\IKC_app\assets\Sprites \
+C:\Shared\Git\IKC_app\assets\Audio\sound.ogg \
 C:\Shared\Git\IKC_app\assets\Fonts\Oregon LDO.ttf \
 C:\Shared\Git\IKC_app\assets\Maps\map.WolfMap \
 C:\Shared\Git\IKC_app\assets\Maps\Test.WolfMap \

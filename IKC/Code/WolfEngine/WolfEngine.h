@@ -5,6 +5,7 @@
 #ifndef _WOLFENGINE_H
 #define _WOLFENGINE_H
 #include "Includes.h"
+#include "Audio/Sound.h"
 #include "Components/Camera.h"
 #include "Components/SpriteRenderer.h"
 #include "Components/Transform.h"

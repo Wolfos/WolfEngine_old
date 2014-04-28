@@ -25,7 +25,7 @@ SDL_Texture* Image::Load(char* filename, SDL_Renderer* renderer)
 
 	//Load image at specified path
 	SDL_Surface* loadedSurface = IMG_Load(newFilename);
-	if (loadedSurface == NULL)
+	if (!loadedSurface)
 	{
 		printf("Unable to load image %s! SDL_image Error: %s\n", newFilename, IMG_GetError());
 	}
@@ -33,7 +33,7 @@ SDL_Texture* Image::Load(char* filename, SDL_Renderer* renderer)
 	{
 		//Create texture from surface pixels
 		newTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
-		if (newTexture == NULL)
+		if (!newTexture)
 		{
 			printf("Unable to create texture from %s! SDL Error: %s\n", newFilename, SDL_GetError());
 		}

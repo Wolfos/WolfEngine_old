@@ -11,9 +11,11 @@ public:
 	int height = 0;
 	int frame = 0;
 	int sheetOffset = 0;
+	int layer = 0;
 	SDL_Point* center;
 	virtual void Start();
 	virtual void Update();
+	void Render();
 private:
 	int sheetwidth, sheetheight;
 	SDL_Rect* clip;

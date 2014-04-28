@@ -1,8 +1,8 @@
 obj/local/armeabi/objs/main/GameMain.o: \
  C:/Shared/Git/IKC_app/IKC/Code/GameMain.cpp \
  C:/Shared/Git/IKC_app/IKC/Code/GameMain.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\WolfEngine.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/WolfEngine.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_main.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h \
@@ -92,46 +92,56 @@ obj/local/armeabi/objs/main/GameMain.o: \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_version.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h \
- jni/SDL2_ttf/SDL_ttf.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/Camera.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/../ECS/Component.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/../Includes.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/SpriteRenderer.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/Transform.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/../Models/Point.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/ECS.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/Component.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/GameObject.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/Component.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/../Components/Transform.h \
+ jni/SDL2_ttf/SDL_ttf.h jni/SDL2_mixer/SDL_mixer.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_rwops.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_audio.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/Sound.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/../Includes.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/Camera.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../ECS/Component.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Includes.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/SpriteRenderer.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/Transform.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Models/Point.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/ECS.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/Component.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/GameObject.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/Component.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/../Components/Transform.h \
  C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/typeinfo \
  C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/ObjectManager.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/GameObject.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/../Includes.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/Input.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/Keys.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/../Models/Point.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/../Includes.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/Keys.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Models/Point.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/Image.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/../Includes.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/Map.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/../Includes/ECS.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/Screen.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/../Components/Camera.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Utilities/Debug.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Utilities/Time.h \
- C:/Shared/Git/IKC_app/IKC/Code/Components\Card.h \
- C:/Shared/Git/IKC_app/IKC/Code/Components\../WolfEngine/WolfEngine.h \
- C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/ObjectManager.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/GameObject.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/../Includes.h \
+ C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/Input.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/Keys.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/../Models/Point.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/../Includes.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/Keys.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Models/Point.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/Image.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/../Includes.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/Map.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/../Includes/ECS.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/Screen.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/../Components/Camera.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Utilities/Debug.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Utilities/Time.h \
+ C:/Shared/Git/IKC_app/IKC/Code/Components/Card.h \
+ C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/WolfEngine.h \
+ C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\GUIBox.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../Models/Point.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../ECS/GameObject.h
 
 C:/Shared/Git/IKC_app/IKC/Code/GameMain.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\WolfEngine.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/WolfEngine.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL.h:
 
@@ -313,68 +323,90 @@ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h:
 
 jni/SDL2_ttf/SDL_ttf.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/Camera.h:
+jni/SDL2_mixer/SDL_mixer.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/../ECS/Component.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/../Includes.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_rwops.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/SpriteRenderer.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_audio.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/Transform.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Components/../Models/Point.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/Sound.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/ECS.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/../Includes.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/Component.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/Camera.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/GameObject.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../ECS/Component.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/Component.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Includes.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/../Components/Transform.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/SpriteRenderer.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/Transform.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Models/Point.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/ECS.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/Component.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/GameObject.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/Component.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/../Components/Transform.h:
 
 C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/typeinfo:
 
 C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/ObjectManager.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/ObjectManager.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/GameObject.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/GameObject.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Includes/../ECS/../Includes.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Includes/../ECS/../Includes.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/Input.h:
+C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/Keys.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/Input.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/../Models/Point.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/Keys.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/../Includes.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/../Models/Point.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Input/Keys.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/../Includes.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Models/Point.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Input/Keys.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/Image.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Models/Point.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/../Includes.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/Image.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/Map.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/../Includes.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/../Includes/ECS.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/Map.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/Screen.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/../Includes/ECS.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Rendering/../Components/Camera.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/Screen.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Utilities/Debug.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Rendering/../Components/Camera.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\Utilities/Time.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Utilities/Debug.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/Components\Card.h:
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Utilities/Time.h:
 
-C:/Shared/Git/IKC_app/IKC/Code/Components\../WolfEngine/WolfEngine.h:
+C:/Shared/Git/IKC_app/IKC/Code/Components/Card.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/WolfEngine.h:
 
 C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\GUIBox.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../Models/Point.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../ECS/GameObject.h:

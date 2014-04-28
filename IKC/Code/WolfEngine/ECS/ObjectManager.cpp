@@ -4,49 +4,61 @@ http://wolfengine.net
 Contact:
 rvanee@wolfengine.net
 */
-#define _CRT_SECURE_NO_DEPRECATE //MICROSOOOOOOOOFT!
 #include "ObjectManager.h"
 #include <malloc.h>
 #include "../Utilities/Debug.h"
 #include "../Components/SpriteRenderer.h"
 #include "../Rendering/Screen.h"
 
-GameObject** ObjectManager::gameObjects;
-int ObjectManager::numObjects = 0;
+std::vector<GameObject*> ObjectManager::gameObjects;
 
 void ObjectManager::Update()
 {
-	for (int i = 0; i<numObjects; i++)
+	for (unsigned int i = 0; i<gameObjects.size(); i++)
 	{
 		static_cast<GameObject*>(gameObjects[i])->Update();
 	}
 }
+
+void ObjectManager::Render()
+{
+	for (unsigned int i = 0; i < gameObjects.size(); i++)
+	{
+		if (gameObjects[i]->GetComponent<SpriteRenderer>()!=NULL)
+		{
+			for (int j = 0; j < Screen::layers; j++)
+			{
+				if (gameObjects[i]->GetComponent<SpriteRenderer>()->layer == j)
+				{
+					gameObjects[i]->GetComponent<SpriteRenderer>()->Render();
+				}
+			}
+		}
+	}
+}
+
+
 void ObjectManager::Exit()
 {
-	for (int i = 0; i < numObjects; i++)
-	{
-		delete gameObjects[i];
-	}
-	if(gameObjects) free(gameObjects);
+	gameObjects.clear();
 }
+
 
 GameObject* ObjectManager::NewGameObject(char* name)
 {
 	GameObject* newObject = new GameObject;
 
 	newObject->name = name;
+	newObject->id = gameObjects.size();
 
-	GameObject** oldPointer = gameObjects;
-	gameObjects = (GameObject**)realloc(gameObjects, (numObjects + 1)*sizeof(GameObject*));
-	if (!gameObjects)
-	{
-		free(oldPointer); //prevent the memory from being leaked in case realloc returns a nullpointer
-		Debug::Log("Could not allocate memory for gameObjects array");
-		return 0;
-	}
-	gameObjects[numObjects] = newObject;
-	numObjects++;
+	gameObjects.push_back(newObject);
 
 	return newObject;
 }
 
+
+void ObjectManager::DeleteObject(GameObject* object)
+{
+	gameObjects.erase(gameObjects.begin() + object->id);
+	if(object)delete object;
+}

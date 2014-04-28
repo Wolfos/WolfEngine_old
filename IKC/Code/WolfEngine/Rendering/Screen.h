@@ -5,5 +5,6 @@ class Screen
 {
 	public:
 		static Camera* mainCamera;
+		static int layers;
 };
 #endif

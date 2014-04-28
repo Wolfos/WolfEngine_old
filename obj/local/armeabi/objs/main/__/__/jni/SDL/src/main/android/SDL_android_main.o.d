@@ -1,13 +1,13 @@
 obj/local/armeabi/objs/main/__/__/jni/SDL/src/main/android/SDL_android_main.o: \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/src/main/android/SDL_android_main.c \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_platform.h \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config_android.h \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_main.h \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h \
- C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/src/main/android/SDL_android_main.c \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_platform.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config_android.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_main.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h \
  C:/NVPACK/android-ndk-r9b/platforms/android-13/arch-arm/usr/include/sys/types.h \
  C:/NVPACK/android-ndk-r9b/platforms/android-13/arch-arm/usr/include/stdint.h \
  C:/NVPACK/android-ndk-r9b/platforms/android-13/arch-arm/usr/include/sys/_types.h \
@@ -43,21 +43,21 @@ obj/local/armeabi/objs/main/__/__/jni/SDL/src/main/android/SDL_android_main.o: \
  C:/NVPACK/android-ndk-r9b/platforms/android-13/arch-arm/usr/include/asm/page.h \
  C:/NVPACK/android-ndk-r9b/platforms/android-13/arch-arm/usr/include/jni.h
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h:
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_platform.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_platform.h:
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h:
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h:
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config_android.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config_android.h:
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_main.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_main.h:
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h:
 
-C:/Users/Robin/Documents/Projects/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h:
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_config.h:
 
 C:/NVPACK/android-ndk-r9b/platforms/android-13/arch-arm/usr/include/sys/types.h:
 

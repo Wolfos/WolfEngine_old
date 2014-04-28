@@ -92,7 +92,13 @@ obj/local/armeabi/objs/main/Components/Card.o: \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_version.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h \
- jni/SDL2_ttf/SDL_ttf.h \
+ jni/SDL2_ttf/SDL_ttf.h jni/SDL2_mixer/SDL_mixer.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_rwops.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_audio.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h \
+ C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/Sound.h \
+ C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/../Includes.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/Camera.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/../ECS/Component.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/../Includes.h \
@@ -109,6 +115,7 @@ obj/local/armeabi/objs/main/Components/Card.o: \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Includes/../ECS/ObjectManager.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Includes/../ECS/GameObject.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Includes/../ECS/../Includes.h \
+ C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Input/Input.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Input/Keys.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Input/../Models/Point.h \
@@ -311,6 +318,20 @@ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h:
 
 jni/SDL2_ttf/SDL_ttf.h:
 
+jni/SDL2_mixer/SDL_mixer.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_rwops.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_audio.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/Sound.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/../Includes.h:
+
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/Camera.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/../ECS/Component.h:
@@ -342,6 +363,8 @@ C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Includes/../ECS/ObjectMa
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Includes/../ECS/GameObject.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Includes/../ECS/../Includes.h:
+
+C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
 
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Input/Input.h:
 

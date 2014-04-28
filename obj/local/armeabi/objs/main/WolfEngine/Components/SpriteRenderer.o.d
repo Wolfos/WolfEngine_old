@@ -92,7 +92,11 @@ obj/local/armeabi/objs/main/WolfEngine/Components/SpriteRenderer.o: \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_version.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h \
- jni/SDL2_ttf/SDL_ttf.h \
+ jni/SDL2_ttf/SDL_ttf.h jni/SDL2_mixer/SDL_mixer.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_rwops.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_audio.h \
+ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Rendering/Screen.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Rendering/../Components/Camera.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Rendering/../Components/../ECS/Component.h \
@@ -290,6 +294,16 @@ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/begin_code.h:
 C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/close_code.h:
 
 jni/SDL2_ttf/SDL_ttf.h:
+
+jni/SDL2_mixer/SDL_mixer.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_stdinc.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_rwops.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_audio.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Rendering/Screen.h:
 

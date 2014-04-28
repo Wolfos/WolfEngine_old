@@ -9,23 +9,31 @@ rvanee@wolfengine.net
 #include "../ECS/GameObject.h"
 void SpriteRenderer::Start()
 {
-	center = (SDL_Point*)malloc(sizeof(SDL_Point));
+	center = new SDL_Point;
 }
 
 void SpriteRenderer::Update()
 {
+	if (layer >= Screen::layers)
+	{
+		Screen::layers = layer + 1;
+	}
+}
+
+void SpriteRenderer::Render()
+{
 	SDL_Rect* rect = new SDL_Rect;
 	rect->w = width;
 	rect->h = height;
-	
+
 	SDL_QueryTexture(spriteSheet, 0, 0, &sheetwidth, &sheetheight);
 	sheetwidth /= width;
 	sheetheight /= height;
 
-	clip = (SDL_Rect*)calloc((sheetwidth*sheetheight)+2*sheetwidth, sizeof(SDL_Rect));
+	clip = (SDL_Rect*)calloc((sheetwidth*sheetheight) + 2 * sheetwidth, sizeof(SDL_Rect));
 
 	int i = 0;
-	for (int y = 0; y<=sheetheight; y++)
+	for (int y = 0; y <= sheetheight; y++)
 	{
 		for (int x = 0; x<sheetwidth; x++)
 		{

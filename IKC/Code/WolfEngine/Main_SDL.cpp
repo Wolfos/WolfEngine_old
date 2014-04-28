@@ -4,6 +4,7 @@
 	Contact:
 	rvanee@wolfengine.net
 */
+#define _CRT_SECURE_NO_DEPRECATE //MICROSOOOOOOOOFT!
 #include "Includes.h"
 #include "../GameMain.h"
 #include "Input/Input.h"
@@ -12,7 +13,7 @@
 #include "ECS/ObjectManager.h"
 #include "Rendering/Screen.h"
 
-//Screen dimension constants
+//Screen dimensions
 int screenWidth = 1280;
 int screenHeight = 720;
 
@@ -28,7 +29,7 @@ const int MAXFPS = 60; //FPS to cap at. Set to -1 to disable
 int Init()
 {
 	//Initialize SDL
-	if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+	if (SDL_Init(SDL_INIT_VIDEO || SDL_INIT_EVENTS) < 0)
 	{
 		Debug::Log("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 		return 1;
@@ -46,34 +47,73 @@ int Init()
 		window = SDL_CreateWindow("WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, screenWidth, screenHeight, SDL_WINDOW_SHOWN | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_RESIZABLE);
 		if( window == NULL )
 		{
-			Debug::Log("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 			return 1;
 		}
 		else
 		{
-			//Initialize SDL_Image
-			int imgflags = IMG_INIT_PNG;
-			if(!(IMG_Init(imgflags) & imgflags))
+			//Initialize SDL_Image, returns 0 on failure
+			if(!IMG_Init(IMG_INIT_PNG))
 			{
-				Debug::Log("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+				printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+				return 1;
+			}
+
+			//Initialize SDL_TTF, returns -1 on failure
+			if (TTF_Init()<0)
+			{
+				printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
+				return 1;
+			}
+
+			//Initialize SDL_Mixer, returns 0 on failure
+			if (!Mix_Init(MIX_INIT_OGG))
+			{
+				printf("SDL_Mixer could not initialize! SDL_ttf Error: %s\n", Mix_GetError());
 				return 1;
 			}
 			else
 			{
-				screenRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-				SDL_SetRenderDrawColor(screenRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+				Mix_OpenAudio(22050, AUDIO_S16, 2, 4096);
 			}
 
-			//Initialize SDL_TTF
-			if (TTF_Init())
-			{
-				Debug::Log("SDL_ttf could not initialize! SDL_ttf Error: %s\n", SDL_GetError());
-				return 1;
-			}
+			screenRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+			SDL_SetRenderDrawColor(screenRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		}
 	}
+
 	return 0;
 }
+
+void Pause()
+{
+	//Pause all sounds and music
+	Mix_Pause(-1);
+	Mix_PauseMusic();
+}
+
+void Resume()
+{
+	//Resume all sounds and music
+	Mix_Resume(-1);
+	Mix_ResumeMusic();
+}
+
+#ifdef ANDROID
+#include <jni.h>
+extern "C" 
+{
+	void Java_nl_rvanee_wolfengine_WolfEngine_Pause()
+	{
+		Pause();
+	}
+	void Java_nl_rvanee_wolfengine_WolfEngine_Resume()
+	{
+		Resume();
+	}
+}
+#endif
+
 
 ///
 /// WolfEngine main loop
@@ -85,7 +125,6 @@ void MainLoop()
 	Uint32 curFrameTime = 0;
 	Uint32 lastFrameTime  = 0;
 	Input input;
-
 
 	while (!quit)
 	{
@@ -111,6 +150,9 @@ void MainLoop()
 
 		//Update the gameObjects
 		ObjectManager::Update();
+
+		//Render the SpriteRenderers
+		ObjectManager::Render();
 
 		SDL_RenderPresent(screenRenderer);
 		lastFrameTime = curFrameTime;
