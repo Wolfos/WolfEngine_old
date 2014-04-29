@@ -13,7 +13,7 @@ rvanee@wolfengine.net
 void Debug::Log(char* text, ...)
 {
 	#ifdef __ANDROID__
-		//__android_log_print(ANDROID_LOG_DEBUG, "WolfEngine", text);
+		__android_log_write(ANDROID_LOG_DEBUG, "WolfEngine", text);
 	#else
 		printf(text);
 	#endif

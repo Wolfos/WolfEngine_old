@@ -99,6 +99,7 @@ obj/local/armeabi/objs/main/Components/Card.o: \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/Sound.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/../Includes.h \
+ C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/Music.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/Camera.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/../ECS/Component.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/../Includes.h \
@@ -331,6 +332,8 @@ C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h:
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/Sound.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/../Includes.h:
+
+C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Audio/Music.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/Components/Camera.h:
 

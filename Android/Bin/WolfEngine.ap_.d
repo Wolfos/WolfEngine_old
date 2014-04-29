@@ -15,11 +15,14 @@ C:\Shared\Git\IKC_app\assets\Maps \
 C:\Shared\Git\IKC_app\assets\Scripts \
 C:\Shared\Git\IKC_app\assets\Sprites \
 C:\Shared\Git\IKC_app\assets\Audio\sound.ogg \
+C:\Shared\Git\IKC_app\assets\Audio\sound2.ogg \
 C:\Shared\Git\IKC_app\assets\Fonts\Oregon LDO.ttf \
 C:\Shared\Git\IKC_app\assets\Maps\map.WolfMap \
 C:\Shared\Git\IKC_app\assets\Maps\Test.WolfMap \
 C:\Shared\Git\IKC_app\assets\Scripts\test.ws \
 C:\Shared\Git\IKC_app\assets\Sprites\Background.png \
+C:\Shared\Git\IKC_app\assets\Sprites\GUI \
 C:\Shared\Git\IKC_app\assets\Sprites\MemoryCards.png \
 C:\Shared\Git\IKC_app\assets\Sprites\tiles_spritesheet.png \
+C:\Shared\Git\IKC_app\assets\Sprites\GUI\Box.png \
 C:\Shared\Git\IKC_app\Android\Bin\AndroidManifest.xml \

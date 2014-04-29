@@ -9,17 +9,21 @@ rvanee@wolfengine.net
 Keys Input::keys;
 Point Input::mousePosition;
 int Input::mouseKeyDown = 0;
+int Input::mouseClick = 0;
 
 ///
 /// Updates the keys struct, ran each frame by main
 ///
 void Input::Update(SDL_Event * eventHandler)
 {
-	if (eventHandler->type == SDL_KEYDOWN)
+	mouseClick = 0;
+	while (SDL_PollEvent(eventHandler) != 0)
 	{
-		switch (eventHandler->key.keysym.sym)
+		if (eventHandler->type == SDL_KEYDOWN)
 		{
-			//Letter Keys
+			switch (eventHandler->key.keysym.sym)
+			{
+				//Letter Keys
 			case SDLK_a:
 				keys.A = 1;
 				break;
@@ -98,7 +102,7 @@ void Input::Update(SDL_Event * eventHandler)
 			case SDLK_z:
 				keys.Z = 1;
 				break;
-			//Bottom row
+				//Bottom row
 			case SDLK_LSHIFT:
 				keys.LeftShift = 1;
 				break;
@@ -120,8 +124,8 @@ void Input::Update(SDL_Event * eventHandler)
 			case SDLK_RSHIFT:
 				keys.RightShift = 1;
 				break;
-			
-			//Arrow Keys
+
+				//Arrow Keys
 			case SDLK_UP:
 				keys.ArrowUp = 1;
 				break;
@@ -135,7 +139,7 @@ void Input::Update(SDL_Event * eventHandler)
 				keys.ArrowRight = 1;
 				break;
 
-			//Other Keys
+				//Other Keys
 			case SDLK_RETURN:
 				keys.Return = 1;
 				break;
@@ -145,13 +149,13 @@ void Input::Update(SDL_Event * eventHandler)
 			case SDLK_TAB:
 				keys.Tab = 1;
 				break;
+			}
 		}
-	}
-	if (eventHandler->type == SDL_KEYUP)
-	{
-		switch (eventHandler->key.keysym.sym)
+		if (eventHandler->type == SDL_KEYUP)
 		{
-			//Letter Keys
+			switch (eventHandler->key.keysym.sym)
+			{
+				//Letter Keys
 			case SDLK_a:
 				keys.A = 0;
 				break;
@@ -277,19 +281,16 @@ void Input::Update(SDL_Event * eventHandler)
 			case SDLK_TAB:
 				keys.Tab = 0;
 				break;
+			}
 		}
-	}
-	if (eventHandler->type == SDL_MOUSEMOTION)
-	{
-		SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
-		int x, y;
-		SDL_GetMouseState(&x, &y);
-		//printf("%d,%d\n", x, y);
-	}
-	if (eventHandler->type == SDL_MOUSEBUTTONDOWN)
-	{
-		switch (eventHandler->button.button)
+		if (eventHandler->type == SDL_MOUSEMOTION)
 		{
+			SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
+		}
+		if (eventHandler->type == SDL_MOUSEBUTTONDOWN)
+		{
+			switch (eventHandler->button.button)
+			{
 			case SDL_BUTTON_LEFT:
 				mouseKeyDown = 1;
 				break;
@@ -299,10 +300,23 @@ void Input::Update(SDL_Event * eventHandler)
 			case SDL_BUTTON_MIDDLE:
 				mouseKeyDown = 3;
 				break;
+			}
 		}
-	}
-	else if (eventHandler->type == SDL_MOUSEBUTTONUP)
-	{
-		mouseKeyDown = 0;
+		else if (eventHandler->type == SDL_MOUSEBUTTONUP)
+		{
+			mouseKeyDown = 0;
+			switch (eventHandler->button.button)
+			{
+			case SDL_BUTTON_LEFT:
+				mouseClick = 1;
+				break;
+			case SDL_BUTTON_RIGHT:
+				mouseClick = 2;
+				break;
+			case SDL_BUTTON_MIDDLE:
+				mouseClick = 3;
+				break;
+			}
+		}
 	}
 }

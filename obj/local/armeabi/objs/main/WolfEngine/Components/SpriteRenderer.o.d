@@ -107,7 +107,8 @@ obj/local/armeabi/objs/main/WolfEngine/Components/SpriteRenderer.o: \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../ECS/../Components/../ECS/Component.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../ECS/../Components/../Models/Point.h \
  C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/typeinfo \
- C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map
+ C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Utilities/Debug.h
 
 C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/SpriteRenderer.h:
 
@@ -326,3 +327,5 @@ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../ECS/../Components/../Mod
 C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/typeinfo:
 
 C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/unordered_map:
+
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Utilities/Debug.h:

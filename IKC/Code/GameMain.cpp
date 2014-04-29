@@ -4,7 +4,6 @@
 #include <algorithm> //Random shuffle
 #include <time.h>
 
-#include "WolfEngine\GUI\GUIBox.h"
 
 SDL_Texture* spritesheet;
 int numCards = 15;
@@ -23,6 +22,7 @@ void GameMain::Start()
 		Debug::Log("Could not allocate memory for cards array");
 		return;	
 	}
+
 	cardSize.x = 137;
 	cardSize.y = 136;
 
@@ -41,8 +41,8 @@ void GameMain::Start()
 	int x = 0;
 	int y = 0;
 
-	Sound* sound = new Sound("sound.ogg");
-	sound->Play();
+	//Music* sound2 = new Music("sound2.ogg");
+	//sound2->Play();
 
 	//Set random seed to current time in seconds
 	srand((unsigned int)time(0));

@@ -1,3 +1,9 @@
+/*
+WolfEngine © 2013-2014 Robin van Ee
+http://wolfengine.net
+Contact:
+rvanee@wolfengine.net
+*/
 #define _CRT_SECURE_NO_DEPRECATE //MICROSOOOOOOOOFT!
 #include "Sound.h"
 
@@ -9,7 +15,7 @@ Sound::Sound(char* filename)
 		char newFilename[1024] = "../Assets/Audio/";
 	#endif
 	strcat(newFilename, filename);
-	sound = Mix_LoadMUS(newFilename);
+	sound = Mix_LoadWAV(newFilename);
 	if (!sound)
 	{
 		printf("Unable to load audio file %s! SDL_Mixer Error: %s\n", newFilename, Mix_GetError());
@@ -18,15 +24,15 @@ Sound::Sound(char* filename)
 
 void Sound::Play(int loop)
 {
-	Mix_PlayMusic(sound, loop);
+	channel = Mix_PlayChannel(-1, sound, loop);
 }
 
 void Sound::Stop()
 {
-	Mix_HaltMusic();
+	Mix_HaltChannel(channel);
 }
 Sound::~Sound()
 {
-	Mix_HaltMusic();
-	Mix_FreeMusic(sound);
+	Mix_HaltChannel(channel);
+	Mix_FreeChunk(sound);
 }

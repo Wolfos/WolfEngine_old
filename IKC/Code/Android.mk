@@ -13,6 +13,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include \ $(LOCAL_PATH)/$(SDL_IMAG
 
 WOLFENGINE_FILES := WolfEngine/Main_SDL.cpp \
 WolfEngine/Audio/Sound.cpp \
+WolfEngine/Audio/Music.cpp \
 WolfEngine/Components/Camera.cpp \
 WolfEngine/Components/SpriteRenderer.cpp \
 WolfEngine/Components/Transform.cpp \

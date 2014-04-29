@@ -99,6 +99,7 @@ obj/local/armeabi/objs/main/GameMain.o: \
  C:/Shared/Git/IKC_app/IKC/Code/../../jni/SDL/include/SDL_endian.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/Sound.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/../Includes.h \
+ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/Music.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/Camera.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../ECS/Component.h \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../Includes.h \
@@ -132,10 +133,7 @@ obj/local/armeabi/objs/main/GameMain.o: \
  C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Utilities/Time.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/Card.h \
  C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/WolfEngine.h \
- C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\GUIBox.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../Models/Point.h \
- C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../ECS/GameObject.h
+ C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm
 
 C:/Shared/Git/IKC_app/IKC/Code/GameMain.h:
 
@@ -337,6 +335,8 @@ C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/Sound.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/../Includes.h:
 
+C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Audio/Music.h:
+
 C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/Camera.h:
 
 C:/Shared/Git/IKC_app/IKC/Code/WolfEngine/Components/../ECS/Component.h:
@@ -404,9 +404,3 @@ C:/Shared/Git/IKC_app/IKC/Code/Components/Card.h:
 C:/Shared/Git/IKC_app/IKC/Code/Components/../WolfEngine/WolfEngine.h:
 
 C:/NVPACK/android-ndk-r9b/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm:
-
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\GUIBox.h:
-
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../Models/Point.h:
-
-C:/Shared/Git/IKC_app/IKC/Code/WolfEngine\GUI\../ECS/GameObject.h:

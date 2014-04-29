@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClCompile Include="Code\Components\Card.cpp" />
     <ClCompile Include="Code\GameMain.cpp" />
+    <ClCompile Include="Code\WolfEngine\Audio\Music.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\Camera.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\SpriteRenderer.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\Transform.cpp" />
@@ -104,6 +105,7 @@
   <ItemGroup>
     <ClInclude Include="Code\Components\Card.h" />
     <ClInclude Include="Code\GameMain.h" />
+    <ClInclude Include="Code\WolfEngine\Audio\Music.h" />
     <ClInclude Include="Code\WolfEngine\Components\Camera.h" />
     <ClInclude Include="Code\WolfEngine\Components\SpriteRenderer.h" />
     <ClInclude Include="Code\WolfEngine\Components\Transform.h" />

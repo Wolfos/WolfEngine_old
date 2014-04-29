@@ -12,6 +12,7 @@ class Input{
 		static Keys keys; /// What keys are currently being pressed?
 		static Point mousePosition;
 		static int mouseKeyDown;
+		static int mouseClick;
 		void Update(SDL_Event * eventHandler); 
 };
 #endif

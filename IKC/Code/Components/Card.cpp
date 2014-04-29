@@ -20,8 +20,9 @@ void Card::Reset()
 
 void Card::Update()
 {
-	if (Input::mouseKeyDown&&!checked&&!reset)
+	if (Input::mouseClick&&!checked&&!reset)
 	{
+		printf("Mouse position: %d, %d\n", Input::mousePosition.x, Input::mousePosition.y);
 		if (Input::mousePosition.x > gameObject->transform->position.x && Input::mousePosition.x < gameObject->transform->position.x + width*gameObject->transform->scale.x)
 		{
 			if (Input::mousePosition.y>gameObject->transform->position.y && Input::mousePosition.y < gameObject->transform->position.y + height*gameObject->transform->scale.y)

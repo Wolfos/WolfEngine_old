@@ -1,5 +1,5 @@
 /*
-WolfEngine © 2013-2014 Robin van Ee
+WolfEngine ï¿½ 2013-2014 Robin van Ee
 http://wolfengine.net
 Contact:
 rvanee@wolfengine.net
@@ -18,6 +18,8 @@ SDL_Texture* Image::Load(char* filename, SDL_Renderer* renderer)
 	SDL_Texture* newTexture = NULL;
 #ifdef ANDROID
 	char newFilename[1024] = "Sprites/";
+#elif defined __APPLE__
+    char newFilename[1024] = "WolfEngine.app/Contents/Resources/Assets/Sprites";
 #else
 	char newFilename[1024] = "../Assets/Sprites/";
 #endif
@@ -28,6 +30,7 @@ SDL_Texture* Image::Load(char* filename, SDL_Renderer* renderer)
 	if (!loadedSurface)
 	{
 		printf("Unable to load image %s! SDL_image Error: %s\n", newFilename, IMG_GetError());
+		Debug::Log("Unable to load image");
 	}
 	else
 	{
@@ -36,6 +39,7 @@ SDL_Texture* Image::Load(char* filename, SDL_Renderer* renderer)
 		if (!newTexture)
 		{
 			printf("Unable to create texture from %s! SDL Error: %s\n", newFilename, SDL_GetError());
+			Debug::Log("Unable to create texture");
 		}
 
 		//Get rid of old loaded surface

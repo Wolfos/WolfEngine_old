@@ -1,6 +1,11 @@
 #ifndef _SOUND_H
 #define _SOUND_H
 #include "../Includes.h"
+///
+/// For playing sound effects
+/// Not streamed but many can be played at the same time
+/// For streamed audio, see Music
+///
 class Sound
 {
 public:
@@ -9,6 +14,7 @@ public:
 	void Stop();
 	~Sound();
 private:
-	Mix_Music* sound;
+	Mix_Chunk* sound;
+	int channel;
 };
 #endif

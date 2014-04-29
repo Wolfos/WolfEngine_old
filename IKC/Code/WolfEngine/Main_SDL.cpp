@@ -29,7 +29,7 @@ const int MAXFPS = 60; //FPS to cap at. Set to -1 to disable
 int Init()
 {
 	//Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO || SDL_INIT_EVENTS) < 0)
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		Debug::Log("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 		return 1;
@@ -45,24 +45,30 @@ int Init()
 		screenHeight = mode->h;
 #endif
 		window = SDL_CreateWindow("WolfEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, screenWidth, screenHeight, SDL_WINDOW_SHOWN | SDL_WINDOW_MAXIMIZED | SDL_WINDOW_RESIZABLE);
-		if( window == NULL )
+		if (window == NULL)
 		{
-			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+			Debug::Log("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 			return 1;
 		}
 		else
 		{
-			//Initialize SDL_Image, returns 0 on failure
-			if(!IMG_Init(IMG_INIT_PNG))
+			//Initialize SDL_Image
+			int imgflags = IMG_INIT_PNG;
+			if (!(IMG_Init(imgflags) & imgflags))
 			{
-				printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+				Debug::Log("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
 				return 1;
 			}
-
-			//Initialize SDL_TTF, returns -1 on failure
-			if (TTF_Init()<0)
+			else
 			{
-				printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
+				screenRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+				SDL_SetRenderDrawColor(screenRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+			}
+
+			//Initialize SDL_TTF
+			if (TTF_Init())
+			{
+				Debug::Log("SDL_ttf could not initialize! SDL_ttf Error: %s\n", SDL_GetError());
 				return 1;
 			}
 
@@ -76,12 +82,8 @@ int Init()
 			{
 				Mix_OpenAudio(22050, AUDIO_S16, 2, 4096);
 			}
-
-			screenRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-			SDL_SetRenderDrawColor(screenRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 		}
 	}
-
 	return 0;
 }
 
@@ -132,20 +134,17 @@ void MainLoop()
 		
 		Time::frameTimeS = (double)(curFrameTime - lastFrameTime) / 1000;
 		int fps = (int)(1.f / Time::frameTimeS);
-		//printf("%d\n", fps);
-		//Debug::Log("%d\n",fps);
 
 		//Clear the screen
 		SDL_RenderClear(screenRenderer);
 
-		while(SDL_PollEvent(&eventHandler)!=0)
+		input.Update(&eventHandler);
+
+		if(eventHandler.type == SDL_QUIT)
 		{
-			input.Update(&eventHandler);
-			if(eventHandler.type == SDL_QUIT)
-			{
-				quit = 1;
-			}
+			quit = 1;
 		}
+
 		gameMain.Update();
 
 		//Update the gameObjects

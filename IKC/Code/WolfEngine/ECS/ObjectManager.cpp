@@ -1,11 +1,10 @@
 /*
-WolfEngine © 2013-2014 Robin van Ee
+WolfEngine ï¿½ 2013-2014 Robin van Ee
 http://wolfengine.net
 Contact:
 rvanee@wolfengine.net
 */
 #include "ObjectManager.h"
-#include <malloc.h>
 #include "../Utilities/Debug.h"
 #include "../Components/SpriteRenderer.h"
 #include "../Rendering/Screen.h"

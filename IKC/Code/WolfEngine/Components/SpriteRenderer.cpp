@@ -7,6 +7,7 @@ rvanee@wolfengine.net
 #include "SpriteRenderer.h"
 #include "../Rendering/Screen.h"
 #include "../ECS/GameObject.h"
+#include "../Utilities/Debug.h"
 void SpriteRenderer::Start()
 {
 	center = new SDL_Point;

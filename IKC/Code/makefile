@@ -1,5 +1,6 @@
 WOLFENGINESOURCE = WolfEngine/Main_SDL.cpp \
 WolfEngine/Audio/Sound.cpp \
+WolfEngine/Audio/Music.cpp \
 WolfEngine/Components/Camera.cpp \
 WolfEngine/Components/SpriteRenderer.cpp \
 WolfEngine/Components/Transform.cpp \
