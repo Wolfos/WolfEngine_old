@@ -9,6 +9,10 @@ rvanee@wolfengine.net
 #include "../Utilities/Debug.h"
 #include <string.h>
 
+#ifdef __APPLE__
+#include <mach-o/dyld.h>
+#endif
+
 ///
 ///	Returns a pointer to an SDL_Surface from a filename
 ///
@@ -19,7 +23,7 @@ SDL_Texture* Image::Load(char* filename, SDL_Renderer* renderer)
 #ifdef ANDROID
 	char newFilename[1024] = "Sprites/";
 #elif defined __APPLE__
-    char newFilename[1024] = "WolfEngine.app/Contents/Resources/Assets/Sprites";
+    char newFilename[1024] = "WolfEngine.app/Contents/Resources/Assets/Sprites/";
 #else
 	char newFilename[1024] = "../Assets/Sprites/";
 #endif

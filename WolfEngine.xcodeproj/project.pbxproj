@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6048157190EA39000D04EB0 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6048153190EA39000D04EB0 /* SDL2_image.framework */; };
-		C6048158190EA39000D04EB0 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6048154190EA39000D04EB0 /* SDL2_mixer.framework */; };
-		C6048159190EA39000D04EB0 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6048155190EA39000D04EB0 /* SDL2_ttf.framework */; };
-		C604815A190EA39000D04EB0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6048156190EA39000D04EB0 /* SDL2.framework */; };
-		C604815B190EA3A600D04EB0 /* SDL2_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6048153190EA39000D04EB0 /* SDL2_image.framework */; };
-		C604815C190EA3A600D04EB0 /* SDL2_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6048154190EA39000D04EB0 /* SDL2_mixer.framework */; };
-		C604815D190EA3A600D04EB0 /* SDL2_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6048155190EA39000D04EB0 /* SDL2_ttf.framework */; };
-		C604815E190EA3A600D04EB0 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6048156190EA39000D04EB0 /* SDL2.framework */; };
+		70B0D818191112A7009165EB /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0D814191112A7009165EB /* SDL2_image.framework */; };
+		70B0D819191112A7009165EB /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0D815191112A7009165EB /* SDL2_mixer.framework */; };
+		70B0D81A191112A7009165EB /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0D816191112A7009165EB /* SDL2_ttf.framework */; };
+		70B0D81B191112A7009165EB /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0D817191112A7009165EB /* SDL2.framework */; };
+		70B0D81C191112B5009165EB /* SDL2_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70B0D814191112A7009165EB /* SDL2_image.framework */; };
+		70B0D81D191112B5009165EB /* SDL2_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70B0D815191112A7009165EB /* SDL2_mixer.framework */; };
+		70B0D81E191112B5009165EB /* SDL2_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70B0D816191112A7009165EB /* SDL2_ttf.framework */; };
+		70B0D81F191112B5009165EB /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70B0D817191112A7009165EB /* SDL2.framework */; };
 		C6048196190EA3C700D04EB0 /* Android.mk in Resources */ = {isa = PBXBuildFile; fileRef = C6048160190EA3C700D04EB0 /* Android.mk */; };
 		C6048197190EA3C700D04EB0 /* Android_static.mk in Resources */ = {isa = PBXBuildFile; fileRef = C6048161190EA3C700D04EB0 /* Android_static.mk */; };
 		C6048198190EA3C700D04EB0 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6048163190EA3C700D04EB0 /* Card.cpp */; };
@@ -69,20 +69,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C604815B190EA3A600D04EB0 /* SDL2_image.framework in CopyFiles */,
-				C604815C190EA3A600D04EB0 /* SDL2_mixer.framework in CopyFiles */,
-				C604815D190EA3A600D04EB0 /* SDL2_ttf.framework in CopyFiles */,
-				C604815E190EA3A600D04EB0 /* SDL2.framework in CopyFiles */,
+				70B0D81C191112B5009165EB /* SDL2_image.framework in CopyFiles */,
+				70B0D81D191112B5009165EB /* SDL2_mixer.framework in CopyFiles */,
+				70B0D81E191112B5009165EB /* SDL2_ttf.framework in CopyFiles */,
+				70B0D81F191112B5009165EB /* SDL2.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C6048153190EA39000D04EB0 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = Includes/SDL2_image.framework; sourceTree = "<group>"; };
-		C6048154190EA39000D04EB0 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = Includes/SDL2_mixer.framework; sourceTree = "<group>"; };
-		C6048155190EA39000D04EB0 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = Includes/SDL2_ttf.framework; sourceTree = "<group>"; };
-		C6048156190EA39000D04EB0 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = Includes/SDL2.framework; sourceTree = "<group>"; };
+		70B0D814191112A7009165EB /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = Includes/SDL2_image.framework; sourceTree = "<group>"; };
+		70B0D815191112A7009165EB /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = Includes/SDL2_mixer.framework; sourceTree = "<group>"; };
+		70B0D816191112A7009165EB /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = Includes/SDL2_ttf.framework; sourceTree = "<group>"; };
+		70B0D817191112A7009165EB /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = Includes/SDL2.framework; sourceTree = "<group>"; };
 		C6048160190EA3C700D04EB0 /* Android.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android.mk; sourceTree = "<group>"; };
 		C6048161190EA3C700D04EB0 /* Android_static.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Android_static.mk; sourceTree = "<group>"; };
 		C6048163190EA3C700D04EB0 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
@@ -143,11 +143,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C604815A190EA39000D04EB0 /* SDL2.framework in Frameworks */,
-				C6048159190EA39000D04EB0 /* SDL2_ttf.framework in Frameworks */,
-				C6048158190EA39000D04EB0 /* SDL2_mixer.framework in Frameworks */,
+				70B0D81B191112A7009165EB /* SDL2.framework in Frameworks */,
+				70B0D81A191112A7009165EB /* SDL2_ttf.framework in Frameworks */,
+				70B0D819191112A7009165EB /* SDL2_mixer.framework in Frameworks */,
 				C6DE5F34190E9737002EC7AE /* Cocoa.framework in Frameworks */,
-				C6048157190EA39000D04EB0 /* SDL2_image.framework in Frameworks */,
+				70B0D818191112A7009165EB /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,10 +322,10 @@
 		C6DE5F32190E9737002EC7AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C6048153190EA39000D04EB0 /* SDL2_image.framework */,
-				C6048154190EA39000D04EB0 /* SDL2_mixer.framework */,
-				C6048155190EA39000D04EB0 /* SDL2_ttf.framework */,
-				C6048156190EA39000D04EB0 /* SDL2.framework */,
+				70B0D814191112A7009165EB /* SDL2_image.framework */,
+				70B0D815191112A7009165EB /* SDL2_mixer.framework */,
+				70B0D816191112A7009165EB /* SDL2_ttf.framework */,
+				70B0D817191112A7009165EB /* SDL2.framework */,
 				C6DE5F33190E9737002EC7AE /* Cocoa.framework */,
 				C6DE5F35190E9737002EC7AE /* Other Frameworks */,
 			);
@@ -598,8 +598,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/robinvanee/Documents/XCode\\ Projects/WolfEngine",
-					"/Users/robinvanee/Documents/XCode\\ Projects/WolfEngine/Includes",
+					/Users/robinvanee/Documents/XCode,
+					Projects/WolfEngine,
+					/Users/robinvanee/Documents/XCode,
+					Projects/WolfEngine/Includes,
+					"$(PROJECT_DIR)/Includes",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -617,8 +620,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/robinvanee/Documents/XCode\\ Projects/WolfEngine",
-					"/Users/robinvanee/Documents/XCode\\ Projects/WolfEngine/Includes",
+					/Users/robinvanee/Documents/XCode,
+					Projects/WolfEngine,
+					/Users/robinvanee/Documents/XCode,
+					Projects/WolfEngine/Includes,
+					"$(PROJECT_DIR)/Includes",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
