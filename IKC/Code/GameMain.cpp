@@ -11,7 +11,6 @@ GameObject** cards;
 Point cardSize;
 SDL_Texture* background;
 
-//Called only once when the game starts
 void GameMain::Start()
 {
 	spritesheet = Image::Load("MemoryCards.png", Screen::mainCamera->screen);
@@ -41,9 +40,6 @@ void GameMain::Start()
 	int x = 0;
 	int y = 0;
 
-	//Music* sound2 = new Music("sound2.ogg");
-	//sound2->Play();
-
 	//Set random seed to current time in seconds
 	srand((unsigned int)time(0));
 	//Shuffle the cards
@@ -66,9 +62,6 @@ void GameMain::Start()
 	}
 }
 
-///
-/// The game's main loop
-///
 void GameMain::Update()
 {
 	SDL_RenderCopy(Screen::mainCamera->screen, background, 0, 0);

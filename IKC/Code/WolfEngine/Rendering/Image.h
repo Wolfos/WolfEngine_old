@@ -7,6 +7,7 @@
 ///
 class Image{
 	public:
+		///	Returns a pointer to an SDL_Texture from a filename
 		static SDL_Texture* Load(char* filename, SDL_Renderer* renderer);
 };
 #endif

@@ -9,8 +9,11 @@
 class Music
 {
 public:
+	///	Loads a song from a file located in ../Assets/Audio
 	Music(char* filename);
+	///	Plays the music, loop 0 plays once, loop 1 plays twice, etc
 	void Play(int loop = 0);
+	///	Stops the music
 	void Stop();
 	~Music();
 private:

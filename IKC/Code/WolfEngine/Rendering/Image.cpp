@@ -13,9 +13,7 @@ rvanee@wolfengine.net
 #include <mach-o/dyld.h>
 #endif
 
-///
-///	Returns a pointer to an SDL_Surface from a filename
-///
+
 SDL_Texture* Image::Load(char* filename, SDL_Renderer* renderer)
 {
 	//The final texture

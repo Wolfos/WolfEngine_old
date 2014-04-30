@@ -5,7 +5,7 @@
 #include "../Includes/ECS.h"
 
 ///
-/// A WolfEngine map object
+/// A WolfEngine map object, currently deprecated
 ///
 class Map {
 	public:

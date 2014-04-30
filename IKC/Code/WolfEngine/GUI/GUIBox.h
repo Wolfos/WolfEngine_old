@@ -2,6 +2,9 @@
 #define _GUIBOX_H
 #include "../Models/Point.h"
 #include "../ECS/GameObject.h"
+///
+/// Simple GUI box object
+///
 class GUIBox
 {
 public:

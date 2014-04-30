@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>../Includes/SDL2_ttf-2.0.12\include;../Includes/SDL2_image-2.0.0\include;../Includes/SDL2-2.0.3\include;C:\Developer\SDL2_mixer-2.0.0\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>../Includes/SDL2_ttf-2.0.12\lib\x86;../Includes/SDL2_image-2.0.0\lib\x86;../Includes/SDL2-2.0.3\lib\x86;C:\Developer\SDL2_mixer-2.0.0\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>../Includes/SDL2_ttf-2.0.12\include;../Includes/SDL2_image-2.0.0\include;../Includes/SDL2-2.0.3\include;../Includes/SDL2_mixer-2.0.0/Include;$(IncludePath)</IncludePath>
+    <LibraryPath>../Includes/SDL2_ttf-2.0.12\lib\x86;../Includes/SDL2_image-2.0.0\lib\x86;../Includes/SDL2-2.0.3\lib\x86;../Includes/SDL2_mixer-2.0.0/lib/x86;$(LibraryPath)</LibraryPath>
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
@@ -105,6 +105,7 @@
   <ItemGroup>
     <ClInclude Include="Code\Components\Card.h" />
     <ClInclude Include="Code\GameMain.h" />
+    <ClInclude Include="Code\MiniGames\MiniGame.h" />
     <ClInclude Include="Code\WolfEngine\Audio\Music.h" />
     <ClInclude Include="Code\WolfEngine\Components\Camera.h" />
     <ClInclude Include="Code\WolfEngine\Components\SpriteRenderer.h" />

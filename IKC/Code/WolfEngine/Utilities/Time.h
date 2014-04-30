@@ -7,6 +7,7 @@
 class Time
 {
 public:
-	static double frameTimeS; /// Time in seconds it took the last frame to render
+	/// Time in seconds it took the last frame to render
+	static double frameTimeS; 
 };
 #endif

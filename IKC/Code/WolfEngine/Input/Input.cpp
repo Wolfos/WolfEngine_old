@@ -11,9 +11,6 @@ Point Input::mousePosition;
 int Input::mouseKeyDown = 0;
 int Input::mouseClick = 0;
 
-///
-/// Updates the keys struct, ran each frame by main
-///
 void Input::Update(SDL_Event * eventHandler)
 {
 	mouseClick = 0;
