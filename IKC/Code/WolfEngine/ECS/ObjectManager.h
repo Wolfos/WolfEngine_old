@@ -22,6 +22,7 @@ class ObjectManager{
 
 	private:
 		static std::vector<GameObject*> gameObjects;
+		static int numObjects;
 };
 
 #endif

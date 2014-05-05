@@ -10,5 +10,7 @@ public:
 	virtual void Start() = 0;
 	///	Calls every frame
 	virtual void Update() = 0;
+	/// Calls on exit
+	virtual void Exit() = 0;
 };
 #endif

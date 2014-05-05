@@ -5,8 +5,9 @@ Contact:
 rvanee@wolfengine.net
 */
 #include "GameObject.h"
-#include "stdlib.h"
 #include "../Utilities/Debug.h"
+#include "ObjectManager.h"
+
 void GameObject::Update()
 {
 	for(unsigned i = 0; i!=components.bucket_count(); ++i)
@@ -30,4 +31,5 @@ GameObject::GameObject()
 GameObject::~GameObject()
 {
 	components.clear();
+	ObjectManager::DeleteObject(this);
 }

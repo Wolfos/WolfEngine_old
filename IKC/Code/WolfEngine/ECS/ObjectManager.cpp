@@ -10,6 +10,7 @@ rvanee@wolfengine.net
 #include "../Rendering/Screen.h"
 
 std::vector<GameObject*> ObjectManager::gameObjects;
+int ObjectManager::numObjects = 0;
 
 void ObjectManager::Update()
 {
@@ -48,7 +49,8 @@ GameObject* ObjectManager::NewGameObject(char* name)
 	GameObject* newObject = new GameObject;
 
 	newObject->name = name;
-	newObject->id = gameObjects.size();
+	newObject->id = numObjects;
+	numObjects++;
 
 	gameObjects.push_back(newObject);
 
@@ -58,6 +60,12 @@ GameObject* ObjectManager::NewGameObject(char* name)
 
 void ObjectManager::DeleteObject(GameObject* object)
 {
-	gameObjects.erase(gameObjects.begin() + object->id);
-	if(object)delete object;
+	for (int i = 0; i < gameObjects.size(); i++)
+	{
+		if (gameObjects[i]->id == object->id)
+		{
+			gameObjects.erase(gameObjects.begin() + i);
+			break;
+		}
+	}
 }
