@@ -1,5 +1,5 @@
 /*
-WolfEngine © 2013-2014 Robin van Ee
+WolfEngine ï¿½ 2013-2014 Robin van Ee
 http://wolfengine.net
 Contact:
 rvanee@wolfengine.net
@@ -7,18 +7,30 @@ rvanee@wolfengine.net
 #define _CRT_SECURE_NO_DEPRECATE //MICROSOOOOOOOOFT!
 #include "Music.h"
 
-Music::Music(char* filename)
+#ifdef __APPLE__
+#include "CoreFoundation/CoreFoundation.h"
+#endif
+
+Music::Music(std::string filename)
 {
 #ifdef ANDROID
-	char newFilename[1024] = "Audio/";
+	std::string newFilename = "Audio/";
+#elif defined __APPLE__
+    //Find the resources folder
+    CFBundleRef mainBundle = CFBundleGetMainBundle();
+    CFURLRef resourcesURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
+    char path[PATH_MAX];
+    CFURLGetFileSystemRepresentation(resourcesURL, TRUE, (UInt8 *)path, PATH_MAX);
+    std::string cppPath(path);
+    std::string newFilename = cppPath + "/Assets/Audio/" + filename;
 #else
-	char newFilename[1024] = "../Assets/Audio/";
+    std::string newFilename = "../Assets/Audio/";
 #endif
-	strcat(newFilename, filename);
-	music = Mix_LoadMUS(newFilename);
+    newFilename += filename;
+	music = Mix_LoadMUS(newFilename.c_str());
 	if (!music)
 	{
-		printf("Unable to load audio file %s! SDL_Mixer Error: %s\n", newFilename, Mix_GetError());
+		printf("Unable to load audio file %s! SDL_Mixer Error: %s\n", newFilename.c_str(), Mix_GetError());
 	}
 }
 

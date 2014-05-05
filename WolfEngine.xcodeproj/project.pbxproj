@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7043C4EE191387030015CBCC /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7043C4EC191387030015CBCC /* GameManager.cpp */; };
 		70B0D818191112A7009165EB /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0D814191112A7009165EB /* SDL2_image.framework */; };
 		70B0D819191112A7009165EB /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0D815191112A7009165EB /* SDL2_mixer.framework */; };
 		70B0D81A191112A7009165EB /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0D816191112A7009165EB /* SDL2_ttf.framework */; };
@@ -79,6 +80,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7043C4EB1913820B0015CBCC /* MiniGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniGame.h; sourceTree = "<group>"; };
+		7043C4EC191387030015CBCC /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		7043C4ED191387030015CBCC /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		70B0D814191112A7009165EB /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = Includes/SDL2_image.framework; sourceTree = "<group>"; };
 		70B0D815191112A7009165EB /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = Includes/SDL2_mixer.framework; sourceTree = "<group>"; };
 		70B0D816191112A7009165EB /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = Includes/SDL2_ttf.framework; sourceTree = "<group>"; };
@@ -162,9 +166,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7043C4EA1913820B0015CBCC /* MiniGames */ = {
+			isa = PBXGroup;
+			children = (
+				7043C4EB1913820B0015CBCC /* MiniGame.h */,
+			);
+			path = MiniGames;
+			sourceTree = "<group>";
+		};
 		C604815F190EA3C700D04EB0 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				7043C4EA1913820B0015CBCC /* MiniGames */,
 				C6048160190EA3C700D04EB0 /* Android.mk */,
 				C6048161190EA3C700D04EB0 /* Android_static.mk */,
 				C6048162190EA3C700D04EB0 /* Components */,
@@ -172,6 +185,8 @@
 				C6048166190EA3C700D04EB0 /* GameMain.h */,
 				C6048167190EA3C700D04EB0 /* makefile */,
 				C6048168190EA3C700D04EB0 /* WolfEngine */,
+				7043C4EC191387030015CBCC /* GameManager.cpp */,
+				7043C4ED191387030015CBCC /* GameManager.h */,
 			);
 			name = Code;
 			path = IKC/Code;
@@ -463,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6048199190EA3C700D04EB0 /* GameMain.cpp in Sources */,
+				7043C4EE191387030015CBCC /* GameManager.cpp in Sources */,
 				C6048198190EA3C700D04EB0 /* Card.cpp in Sources */,
 				C604819F190EA3C700D04EB0 /* Transform.cpp in Sources */,
 				C60481A8190EA3C700D04EB0 /* Screen.cpp in Sources */,
