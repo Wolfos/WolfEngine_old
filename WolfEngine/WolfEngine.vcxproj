@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7DA43687-3F83-4485-BB3B-05FC88F21C73}</ProjectGuid>
+    <RootNamespace>WolfEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>../Includes/SDL2_ttf-2.0.12\include;../Includes/SDL2_image-2.0.0\include;../Includes/SDL2-2.0.3\include;../Includes/SDL2_mixer-2.0.0/Include;$(IncludePath)</IncludePath>
+    <LibraryPath>../Includes/SDL2_ttf-2.0.12\lib\x86;../Includes/SDL2_image-2.0.0\lib\x86;../Includes/SDL2-2.0.3\lib\x86;../Includes/SDL2_mixer-2.0.0/lib/x86;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>../Includes/SDL2_ttf-2.0.12\include;../Includes/SDL2_image-2.0.0\include;../Includes/SDL2-2.0.3\include;../Includes/SDL2_mixer-2.0.0/Include;$(IncludePath)</IncludePath>
+    <LibraryPath>../Includes/SDL2_ttf-2.0.12\lib\x86;../Includes/SDL2_image-2.0.0\lib\x86;../Includes/SDL2-2.0.3\lib\x86;../Includes/SDL2_mixer-2.0.0/lib/x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <EnablePREfast>true</EnablePREfast>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Code\MiniGames\MainMenu.cpp" />
+    <ClCompile Include="Code\MiniGames\MainMenu\MenuItem.cpp" />
+    <ClCompile Include="Code\MiniGames\Memory\Card.cpp" />
+    <ClCompile Include="Code\GameMain.cpp" />
+    <ClCompile Include="Code\GameManager.cpp" />
+    <ClCompile Include="Code\MiniGames\Memory.cpp" />
+    <ClCompile Include="Code\WolfEngine\Audio\Music.cpp" />
+    <ClCompile Include="Code\WolfEngine\Components\Camera.cpp" />
+    <ClCompile Include="Code\WolfEngine\Components\SpriteRenderer.cpp" />
+    <ClCompile Include="Code\WolfEngine\Components\Transform.cpp" />
+    <ClCompile Include="Code\WolfEngine\ECS\GameObject.cpp" />
+    <ClCompile Include="Code\WolfEngine\ECS\ObjectManager.cpp" />
+    <ClCompile Include="Code\WolfEngine\GUI\GUIBox.cpp" />
+    <ClCompile Include="Code\WolfEngine\Input\Input.cpp" />
+    <ClCompile Include="Code\WolfEngine\Main_SDL.cpp" />
+    <ClCompile Include="Code\WolfEngine\Models\Point.cpp" />
+    <ClCompile Include="Code\WolfEngine\Rendering\Image.cpp" />
+    <ClCompile Include="Code\WolfEngine\Rendering\Map.cpp" />
+    <ClCompile Include="Code\WolfEngine\Rendering\Screen.cpp" />
+    <ClCompile Include="Code\WolfEngine\Utilities\Debug.cpp" />
+    <ClCompile Include="Code\WolfEngine\Utilities\Time.cpp" />
+    <ClCompile Include="Code\WolfEngine\Audio\Sound.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Code\MiniGames\MainMenu.h" />
+    <ClInclude Include="Code\MiniGames\MainMenu\MenuItem.h" />
+    <ClInclude Include="Code\MiniGames\Memory\Card.h" />
+    <ClInclude Include="Code\GameMain.h" />
+    <ClInclude Include="Code\GameManager.h" />
+    <ClInclude Include="Code\MiniGames\Memory.h" />
+    <ClInclude Include="Code\MiniGames\MiniGame.h" />
+    <ClInclude Include="Code\WolfEngine\Audio\Music.h" />
+    <ClInclude Include="Code\WolfEngine\Components\Camera.h" />
+    <ClInclude Include="Code\WolfEngine\Components\SpriteRenderer.h" />
+    <ClInclude Include="Code\WolfEngine\Components\Transform.h" />
+    <ClInclude Include="Code\WolfEngine\ECS\Component.h" />
+    <ClInclude Include="Code\WolfEngine\ECS\GameObject.h" />
+    <ClInclude Include="Code\WolfEngine\ECS\ObjectManager.h" />
+    <ClInclude Include="Code\WolfEngine\GUI\GUIBox.h" />
+    <ClInclude Include="Code\WolfEngine\Includes.h" />
+    <ClInclude Include="Code\WolfEngine\Includes\ECS.h" />
+    <ClInclude Include="Code\WolfEngine\Input\Input.h" />
+    <ClInclude Include="Code\WolfEngine\Input\Keys.h" />
+    <ClInclude Include="Code\WolfEngine\Models\Point.h" />
+    <ClInclude Include="Code\WolfEngine\Rendering\Image.h" />
+    <ClInclude Include="Code\WolfEngine\Rendering\Map.h" />
+    <ClInclude Include="Code\WolfEngine\Rendering\Screen.h" />
+    <ClInclude Include="Code\WolfEngine\Utilities\Debug.h" />
+    <ClInclude Include="Code\WolfEngine\Utilities\Time.h" />
+    <ClInclude Include="Code\WolfEngine\WolfEngine.h" />
+    <ClInclude Include="Code\WolfEngine\Audio\Sound.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
