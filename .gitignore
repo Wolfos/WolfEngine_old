@@ -179,3 +179,8 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+*.exe
+*.tlog
+WolfEngine/Debug/editormain.nativecodeanalysis.xml
+WolfEngine/Debug/tilepicker.nativecodeanalysis.xml
+WolfEngine/Debug/vc120.idb
