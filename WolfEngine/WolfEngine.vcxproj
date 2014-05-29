@@ -83,12 +83,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Code\MiniGames\MainMenu.cpp" />
-    <ClCompile Include="Code\MiniGames\MainMenu\MenuItem.cpp" />
-    <ClCompile Include="Code\MiniGames\Memory\Card.cpp" />
     <ClCompile Include="Code\GameMain.cpp" />
-    <ClCompile Include="Code\GameManager.cpp" />
-    <ClCompile Include="Code\MiniGames\Memory.cpp" />
     <ClCompile Include="Code\WolfEngine\Audio\Music.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\Camera.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\SpriteRenderer.cpp" />
@@ -107,13 +102,7 @@
     <ClCompile Include="Code\WolfEngine\Audio\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Code\MiniGames\MainMenu.h" />
-    <ClInclude Include="Code\MiniGames\MainMenu\MenuItem.h" />
-    <ClInclude Include="Code\MiniGames\Memory\Card.h" />
     <ClInclude Include="Code\GameMain.h" />
-    <ClInclude Include="Code\GameManager.h" />
-    <ClInclude Include="Code\MiniGames\Memory.h" />
-    <ClInclude Include="Code\MiniGames\MiniGame.h" />
     <ClInclude Include="Code\WolfEngine\Audio\Music.h" />
     <ClInclude Include="Code\WolfEngine\Components\Camera.h" />
     <ClInclude Include="Code\WolfEngine\Components\SpriteRenderer.h" />
