@@ -3,15 +3,12 @@
 
 void GameMain::Start()
 {
-	
 }
 
 void GameMain::Update()
 {
-	
 }
 
 void GameMain::Exit()
 {
-	
 }

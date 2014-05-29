@@ -80,11 +80,10 @@ int Map::Get(int x, int y, int l)
 ///
 /// Renders the map to an SDL_Surface you specify as a target
 ///
-void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
+void Map::Render(SDL_Renderer* target, int layer, SDL_Texture* spritesheet,
 	int tilewidth, int tileheight, int offset, GameObject* camera)
 {
 	SDL_Rect* clip;
-
 
 	//Tiles to start and finish render on
 	int startX;
@@ -99,8 +98,10 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 	int sheetwidth;
 	int sheetheight;
 
-	sheetwidth = spritesheet->clip_rect.w / tilewidth;
-	sheetheight = spritesheet->clip_rect.h / tileheight;
+	SDL_QueryTexture(spritesheet, NULL, NULL, &sheetwidth, &sheetheight);
+
+	sheetwidth /= tilewidth;
+	sheetheight /= tileheight;
 
 	clip = (SDL_Rect*)calloc(sheetwidth*sheetheight, sizeof(SDL_Rect));
 
@@ -161,10 +162,9 @@ void Map::Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
 				sourcerect.x = clip[val].x;
 				sourcerect.y = clip[val].y;
 
-				SDL_BlitSurface(spritesheet, &sourcerect, target, &targetrect);
+				SDL_RenderCopy(target, spritesheet, &sourcerect, &targetrect);
 			}
 
-			//i = x + y*endY;
 			i++;
 		}
 		//Skip over the tiles we're not rendering

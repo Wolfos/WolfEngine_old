@@ -10,6 +10,7 @@
 #include "Components/Camera.h"
 #include "Components/SpriteRenderer.h"
 #include "Components/Transform.h"
+#include "GUI/GUIBox.h"
 #include "Includes/ECS.h"
 #include "Input/Input.h"
 #include "Input/Keys.h"

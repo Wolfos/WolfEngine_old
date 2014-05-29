@@ -15,7 +15,7 @@ class Map {
 		int *data; /// Pointer to the map's tiledata array
 		//int *events; /// Pointer to the map's event data array
 		void Load(char* filename);
-		void Render(SDL_Surface* target, int layer, SDL_Surface* spritesheet,
+		void Render(SDL_Renderer* target, int layer, SDL_Texture* spritesheet,
 			int tilewidth, int tileheight, int offset, GameObject* camera);
 		void Write(char* filename);
 		int Get(int x, int y, int l);
