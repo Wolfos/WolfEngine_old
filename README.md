@@ -1,8 +1,3 @@
-Open source version is no longer maintained
-==========
-As I plan to sell WolfEngine, I have decided to no longer provide it as open source. The existing code will remain on Github but I will not be updating it. I expect a commercial beta to be available within a year.
-
-
 WolfEngine
 ==========
 
