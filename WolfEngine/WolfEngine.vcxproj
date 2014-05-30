@@ -42,7 +42,7 @@
     <IncludePath>../Includes/SDL2_ttf-2.0.12\include;../Includes/SDL2_image-2.0.0\include;../Includes/SDL2-2.0.3\include;../Includes/SDL2_mixer-2.0.0/Include;$(IncludePath)</IncludePath>
     <LibraryPath>../Includes/SDL2_ttf-2.0.12\lib\x86;../Includes/SDL2_image-2.0.0\lib\x86;../Includes/SDL2-2.0.3\lib\x86;../Includes/SDL2_mixer-2.0.0/lib/x86;$(LibraryPath)</LibraryPath>
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>../Includes/SDL2_ttf-2.0.12\include;../Includes/SDL2_image-2.0.0\include;../Includes/SDL2-2.0.3\include;../Includes/SDL2_mixer-2.0.0/Include;$(IncludePath)</IncludePath>
@@ -53,7 +53,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -83,6 +83,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Code\Editor\EditorMain.cpp" />
+    <ClCompile Include="Code\Editor\TilePicker.cpp" />
     <ClCompile Include="Code\GameMain.cpp" />
     <ClCompile Include="Code\WolfEngine\Audio\Music.cpp" />
     <ClCompile Include="Code\WolfEngine\Components\Camera.cpp" />
@@ -102,6 +104,8 @@
     <ClCompile Include="Code\WolfEngine\Audio\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code\Editor\EditorMain.h" />
+    <ClInclude Include="Code\Editor\TilePicker.h" />
     <ClInclude Include="Code\GameMain.h" />
     <ClInclude Include="Code\WolfEngine\Audio\Music.h" />
     <ClInclude Include="Code\WolfEngine\Components\Camera.h" />

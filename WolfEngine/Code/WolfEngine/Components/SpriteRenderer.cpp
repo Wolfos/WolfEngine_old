@@ -8,6 +8,8 @@ rvanee@wolfengine.net
 #include "../Rendering/Screen.h"
 #include "../ECS/GameObject.h"
 #include "../Utilities/Debug.h"
+#include "../Rendering/Image.h"
+
 void SpriteRenderer::Start()
 {
 	center = new SDL_Point;
@@ -61,4 +63,10 @@ void SpriteRenderer::Render()
 	free(clip);
 	delete(dst);
 	delete(rect);
+}
+
+
+void SpriteRenderer::Load(std::string filename)
+{
+	spriteSheet = Image::Load(filename);
 }

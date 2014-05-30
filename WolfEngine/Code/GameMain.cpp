@@ -3,12 +3,16 @@
 
 void GameMain::Start()
 {
+	isEditor = true;
+	if (isEditor) editor.Start();
 }
 
 void GameMain::Update()
 {
+	if (isEditor) editor.Update();
 }
 
 void GameMain::Exit()
 {
+	if (isEditor) editor.Exit();
 }

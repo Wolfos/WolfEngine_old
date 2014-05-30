@@ -3,7 +3,7 @@
 #include "../Components/SpriteRenderer.h"
 #include "../Rendering/Image.h"
 #include "../Rendering/Screen.h"
-GUIBox::GUIBox(Point location, Point scale)
+GUIBox::GUIBox(Point location, Point size)
 {
 	SDL_Texture* sprite = Image::Load("GUI/Box.png");
 	int spritewidth, spriteheight;
@@ -17,8 +17,8 @@ GUIBox::GUIBox(Point location, Point scale)
 	renderer->GetComponent<SpriteRenderer>()->height = spriteheight;
 
 	renderer->transform->position = location;
-	renderer->transform->scale.x = (float)scale.x / spritewidth;
-	renderer->transform->scale.y = (float) scale.y / spriteheight;
+	renderer->transform->scale.x = (float)size.x / spritewidth;
+	renderer->transform->scale.y = (float)size.y / spriteheight;
 }
 
 GUIBox::~GUIBox()

@@ -2,6 +2,8 @@
 #define _SPRITERENDERER_H
 #include "../ECS/Component.h"
 #include "../Includes.h"
+#include <string>
+
 ///
 ///	A component for rendering sprites from a sheet or image
 ///
@@ -26,6 +28,10 @@ public:
 	SDL_Point* center;
 	virtual void Start();
 	virtual void Update();
+
+	///	Loads a file into the spritesheet
+	void Load(std::string filename);
+
 	///	Renders the sprite
 	void Render();
 private:
