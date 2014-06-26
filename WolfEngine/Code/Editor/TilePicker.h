@@ -9,7 +9,9 @@ class TilePicker : public Component
 		virtual void Update();
 	private:
 		GUIBox* guiBox;
-		SpriteRenderer* tileSheet;
+		SDL_Surface* tileSheet;
+		SDL_Surface* renderSheet;
+		GUISprite* guiSpriteSheet;
 };
 
 #endif

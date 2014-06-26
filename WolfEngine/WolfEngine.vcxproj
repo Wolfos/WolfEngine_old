@@ -93,6 +93,7 @@
     <ClCompile Include="Code\WolfEngine\ECS\GameObject.cpp" />
     <ClCompile Include="Code\WolfEngine\ECS\ObjectManager.cpp" />
     <ClCompile Include="Code\WolfEngine\GUI\GUIBox.cpp" />
+    <ClCompile Include="Code\WolfEngine\GUI\GUISprite.cpp" />
     <ClCompile Include="Code\WolfEngine\Input\Input.cpp" />
     <ClCompile Include="Code\WolfEngine\Main_SDL.cpp" />
     <ClCompile Include="Code\WolfEngine\Models\Point.cpp" />
@@ -115,6 +116,7 @@
     <ClInclude Include="Code\WolfEngine\ECS\GameObject.h" />
     <ClInclude Include="Code\WolfEngine\ECS\ObjectManager.h" />
     <ClInclude Include="Code\WolfEngine\GUI\GUIBox.h" />
+    <ClInclude Include="Code\WolfEngine\GUI\GUISprite.h" />
     <ClInclude Include="Code\WolfEngine\Includes.h" />
     <ClInclude Include="Code\WolfEngine\Includes\ECS.h" />
     <ClInclude Include="Code\WolfEngine\Input\Input.h" />
