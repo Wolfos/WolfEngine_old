@@ -9,9 +9,29 @@ rvanee@wolfengine.net
 #include "../Utilities/Debug.h"
 #include "../Components/Transform.h"
 
-///
-/// Loads the map from a file
-///
+
+Map::Map(int w, int h, int l)
+{
+	width = w;
+	height = h;
+	layers = l;
+
+	data = (int*)calloc(width*height*layers, sizeof(int));
+
+	int i = 0;
+	for (int l = 0; l < layers; l++)
+	{
+		for (int x = 0; x < width; x++)
+		{
+			for (int y = 0; y < height; y++)
+			{
+				data[i] = 0;
+				i++;
+			}
+		}
+	}
+}
+
 void Map::Load(char *filename)
 {
 	FILE *f = fopen(filename, "rb");
@@ -31,6 +51,8 @@ void Map::Load(char *filename)
 	layers = l;
 	width = w;
 	height = h;
+
+	if (data) free(data);
 
 	data = (int*)calloc(width*height*layers, sizeof(int));
 
@@ -77,9 +99,16 @@ int Map::Get(int x, int y, int l)
 	return val;
 }
 
-///
-/// Renders the map to an SDL_Surface you specify as a target
-///
+void Map::Put(int x, int y, int l, int value)
+{
+	int pos = x + (y*width);
+
+	//Move to correct layer
+	pos += (width*height)*l;
+
+	data[pos] = value;
+}
+
 void Map::Render(SDL_Renderer* target, int layer, SDL_Texture* spritesheet,
 	int tilewidth, int tileheight, int offset, GameObject* camera)
 {
