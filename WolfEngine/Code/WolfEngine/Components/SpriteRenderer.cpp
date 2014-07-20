@@ -26,12 +26,12 @@ void SpriteRenderer::Update()
 void SpriteRenderer::Render()
 {
 	SDL_Rect* rect = new SDL_Rect;
-	rect->w = width;
-	rect->h = height;
+	rect->w = frameWidth;
+	rect->h = frameHeight;
 
 	SDL_QueryTexture(spriteSheet, 0, 0, &sheetwidth, &sheetheight);
-	if(width != 0) sheetwidth /= width;
-	if(height != 0) sheetheight /= height;
+	if (frameWidth != 0) sheetwidth /= frameWidth;
+	if (frameHeight != 0) sheetheight /= frameHeight;
 
 	clip = (SDL_Rect*)calloc((sheetwidth*sheetheight) + 2 * sheetwidth, sizeof(SDL_Rect));
 
@@ -40,10 +40,10 @@ void SpriteRenderer::Render()
 	{
 		for (int x = 0; x<sheetwidth; x++)
 		{
-			clip[i].x = x*width + (sheetOffset*x);
-			clip[i].y = y*height + (sheetOffset*y);
-			clip[i].w = width;
-			clip[i].h = height;
+			clip[i].x = x*frameWidth + (sheetOffset*x);
+			clip[i].y = y*frameHeight + (sheetOffset*y);
+			clip[i].w = frameWidth;
+			clip[i].h = frameHeight;
 			i++;
 		}
 	}
@@ -53,11 +53,11 @@ void SpriteRenderer::Render()
 	SDL_Rect* dst = new SDL_Rect;
 	dst->x = gameObject->transform->position.x - Screen::mainCamera->gameObject->transform->position.x;
 	dst->y = gameObject->transform->position.y - Screen::mainCamera->gameObject->transform->position.y;
-	dst->w = (int)(width*gameObject->transform->scale.x);
-	dst->h = (int)(height*gameObject->transform->scale.y);
+	dst->w = (int)(frameWidth*gameObject->transform->scale.x);
+	dst->h = (int)(frameHeight*gameObject->transform->scale.y);
 
-	center->x = (int)((width*gameObject->transform->scale.x) / 2);
-	center->y = (int)((width*gameObject->transform->scale.y) / 2);
+	center->x = (int)((frameWidth*gameObject->transform->scale.x) / 2);
+	center->y = (int)((frameHeight*gameObject->transform->scale.y) / 2);
 
 	SDL_RenderCopyEx(Screen::mainCamera->screen, spriteSheet, rect, dst, gameObject->transform->angle, center, SDL_FLIP_NONE);
 	free(clip);

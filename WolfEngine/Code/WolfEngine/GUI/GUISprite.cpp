@@ -13,8 +13,8 @@ GUISprite::GUISprite(char* filename, Point location, Point size)
 
 	renderer->AddComponent<SpriteRenderer>();
 	renderer->GetComponent<SpriteRenderer>()->spriteSheet = sprite;
-	renderer->GetComponent<SpriteRenderer>()->width = spritewidth;
-	renderer->GetComponent<SpriteRenderer>()->height = spriteheight;
+	renderer->GetComponent<SpriteRenderer>()->frameWidth = spritewidth;
+	renderer->GetComponent<SpriteRenderer>()->frameHeight = spriteheight;
 
 	renderer->transform->position = location;
 	renderer->transform->scale.x = (float)size.x / spritewidth;
@@ -30,8 +30,8 @@ GUISprite::GUISprite(SDL_Texture* image, Point location, Point size)
 	
 	renderer->AddComponent<SpriteRenderer>();
 	renderer->GetComponent<SpriteRenderer>()->spriteSheet = image;
-	renderer->GetComponent<SpriteRenderer>()->width = spritewidth;
-	renderer->GetComponent<SpriteRenderer>()->height = spriteheight;
+	renderer->GetComponent<SpriteRenderer>()->frameWidth = spritewidth;
+	renderer->GetComponent<SpriteRenderer>()->frameHeight = spriteheight;
 
 	renderer->transform->position = location;
 	renderer->transform->scale.x = (float)size.x / spritewidth;

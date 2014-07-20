@@ -10,7 +10,6 @@ class GUIBox
 public:
 	GUIBox(Point location, Point size);
 	~GUIBox();
-private:
 	GameObject* renderer;
 };
 #endif

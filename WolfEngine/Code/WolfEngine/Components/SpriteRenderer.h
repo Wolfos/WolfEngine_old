@@ -14,10 +14,10 @@ public:
 	SDL_Texture* spriteSheet;
 	///	Filename, not actually used at the moment
 	char* filename;
-	///	The individual sprite's width (not the spritesheet's), will be renamed to frameWidth
-	int width = 0;
-	///	The individual sprite's height (not the spritesheet's), will be renamed to frameHeight
-	int height = 0;
+	///	The individual sprite's width (not the spritesheet's)
+	int frameWidth = 0;
+	///	The individual sprite's height (not the spritesheet's)
+	int frameHeight = 0;
 	///	The frame we're at (0 to however many there might be on the spritesheet), can animate
 	int frame = 0;
 	///	Blank space between sprites on the sheet
