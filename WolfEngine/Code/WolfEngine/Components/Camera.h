@@ -18,7 +18,7 @@ public:
 	int height = 0;
 	///	The window it's rendered to
 	SDL_Window* window;
-	virtual void Start();
+	virtual void Added();
 	virtual void Update();
 };
 #endif

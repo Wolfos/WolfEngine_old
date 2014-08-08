@@ -8,7 +8,7 @@ class Component
 {
 	public:
 		///	Runs when a component is first added to a GameObject
-		virtual void Start()
+		virtual void Added()
 		{
 
 		}

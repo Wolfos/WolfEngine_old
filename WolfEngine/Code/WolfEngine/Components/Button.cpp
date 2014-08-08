@@ -3,7 +3,7 @@
 #include "../Models/Point.h"
 #include "../Input/Input.h"
 
-void Button::Start()
+void Button::Added()
 {
 	transform = gameObject->GetComponent<Transform>();
 	renderer = gameObject->GetComponent<SpriteRenderer>();

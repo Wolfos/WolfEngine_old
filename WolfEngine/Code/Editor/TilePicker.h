@@ -5,7 +5,7 @@
 class TilePicker : public Component
 {
 	public:
-		virtual void Start();
+		virtual void Added();
 		virtual void Update();
 		virtual void LateUpdate();
 		int selected = 0;

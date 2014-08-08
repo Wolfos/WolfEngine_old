@@ -10,7 +10,7 @@ rvanee@wolfengine.net
 #include "../Utilities/Debug.h"
 #include "../Rendering/Image.h"
 
-void SpriteRenderer::Start()
+void SpriteRenderer::Added()
 {
 	center = new SDL_Point;
 }

@@ -17,7 +17,7 @@ public:
 	void Move(int x, int y);
 	///	Rotation by degrees
 	double angle = 0;
-	virtual void Start();
+	virtual void Added();
 
 };
 #endif

@@ -7,7 +7,7 @@ rvanee@wolfengine.net
 #include "Camera.h"
 #include "../Rendering/Screen.h"
 
-void Camera::Start()
+void Camera::Added()
 {
 	Screen::mainCamera = this;
 }

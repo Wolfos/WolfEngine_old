@@ -26,7 +26,7 @@ public:
 	int layer = 0;
 	/// The sprite's pivot, standard is dead in the center
 	SDL_Point* center;
-	virtual void Start();
+	virtual void Added();
 	virtual void Update();
 
 	///	Loads a file into the spritesheet

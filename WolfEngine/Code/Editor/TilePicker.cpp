@@ -1,6 +1,6 @@
 #include "TilePicker.h"
 
-void TilePicker::Start()
+void TilePicker::Added()
 {
 	//Background
 	guiBox = new GUIBox({ gameObject->transform->position.x, gameObject->transform->position.y }, { 256, 256 });

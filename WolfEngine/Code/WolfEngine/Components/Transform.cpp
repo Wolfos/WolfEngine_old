@@ -8,7 +8,7 @@ rvanee@wolfengine.net
 #include <stdio.h>
 #include "../Utilities/Debug.h"
 
-void Transform::Start()
+void Transform::Added()
 {
 	scale.x = 1;
 	scale.y = 1;

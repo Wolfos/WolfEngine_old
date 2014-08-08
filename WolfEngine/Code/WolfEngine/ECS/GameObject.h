@@ -50,7 +50,7 @@ class GameObject
 			C* component = new C;
 			components[&typeid(*component)] = component;
 			component->gameObject = this;
-			component->Start();
+			component->Added();
 			return component;
 		}
 
