@@ -23,6 +23,9 @@ class GameObject
 
 		///	Runs every frame, runs the Update() function for each component
 		void Update();
+		///	Runs every frame, runs the LateUpdate() function for each component
+		void LateUpdate();
+
 		GameObject();
 		~GameObject();
 

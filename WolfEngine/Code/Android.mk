@@ -14,12 +14,16 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include \ $(LOCAL_PATH)/$(SDL_IMAG
 WOLFENGINE_FILES := WolfEngine/Main_SDL.cpp \
 WolfEngine/Audio/Sound.cpp \
 WolfEngine/Audio/Music.cpp \
+WolfEngine/Components/Button.cpp \
 WolfEngine/Components/Camera.cpp \
 WolfEngine/Components/SpriteRenderer.cpp \
 WolfEngine/Components/Transform.cpp \
 WolfEngine/ECS/GameObject.cpp \
 WolfEngine/ECS/ObjectManager.cpp \
+WolfEngine/GUI/GUIBox.cpp \
+WolfEngine/GUI/GUISprite.cpp \
 WolfEngine/Input/Input.cpp \
+WolfEngine/Models/Point.cpp \
 WolfEngine/Rendering/Image.cpp \
 WolfEngine/Rendering/Map.cpp \
 WolfEngine/Rendering/Screen.cpp \
@@ -30,7 +34,8 @@ WolfEngine/Utilities/Time.cpp
 LOCAL_SRC_FILES := $(SDL_PATH)/src/main/android/SDL_android_main.c \
 	$(WOLFENGINE_FILES) \
 	GameMain.cpp \
-	Components/Card.cpp
+	Editor/EditorMain.cpp \
+	Editor/TilePicker.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2 SDL2_image SDL2_ttf SDL2_mixer
 

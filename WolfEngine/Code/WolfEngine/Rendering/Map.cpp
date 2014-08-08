@@ -8,6 +8,7 @@ rvanee@wolfengine.net
 #include "Map.h"
 #include "../Utilities/Debug.h"
 #include "../Components/Transform.h"
+#include "../Components/Camera.h"
 
 
 Map::Map(int w, int h, int l)
@@ -165,15 +166,15 @@ void Map::Render(SDL_Renderer* target, int layer, SDL_Texture* spritesheet,
 	else startY = 0;
 
 
-	if (((camera->transform->position.x + (int)camera->transform->scale.x) / tilewidth) + 1 <= width)
+	if (((camera->transform->position.x + camera->GetComponent<Camera>()->width*camera->transform->scale.x) / tilewidth) + 1 <= width)
 	{
-		endX = ((camera->transform->position.x + (int)camera->transform->scale.x) / tilewidth) + 1;
+		endX = ((camera->transform->position.x + camera->GetComponent<Camera>()->width * camera->transform->scale.x) / tilewidth) + 1;
 	}
 	else endX = width;
-
-	if (((camera->transform->position.y + (int)camera->transform->scale.y) / tileheight) + 1 <= height)
+	
+	if (((camera->transform->position.y + camera->GetComponent<Camera>()->height * camera->transform->scale.y) / tileheight) + 1 <= height)
 	{
-		endY = ((camera->transform->position.y + (int)camera->transform->scale.y) / tileheight) + 1;
+		endY = ((camera->transform->position.y + camera->GetComponent<Camera>()->height * camera->transform->scale.y) / tileheight) + 1;
 	}
 	else endY = height;
 

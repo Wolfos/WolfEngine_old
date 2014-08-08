@@ -62,7 +62,7 @@ int Init()
 			else
 			{
 				screenRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-				SDL_SetRenderDrawColor(screenRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+				SDL_SetRenderDrawColor(screenRenderer, 0xFF, 0xAB, 0xF4, 0xFF);
 			}
 
 			//Initialize SDL_TTF
@@ -152,6 +152,9 @@ void MainLoop()
 
 		//Render the SpriteRenderers
 		ObjectManager::Render();
+
+		//Late update
+		ObjectManager::LateUpdate();
 
 		SDL_RenderPresent(screenRenderer);
 		lastFrameTime = curFrameTime;

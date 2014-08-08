@@ -10,11 +10,22 @@ rvanee@wolfengine.net
 
 void GameObject::Update()
 {
-	for(unsigned i = 0; i!=components.bucket_count(); ++i)
+	for(unsigned i = 0; i!= components.bucket_count(); ++i)
 	{
 		for (auto local_it = components.begin(i); local_it != components.end(i); ++local_it)
 		{
 			local_it->second->Update();
+		}
+	}
+}
+
+void GameObject::LateUpdate()
+{
+	for (unsigned i = 0; i != components.bucket_count(); ++i)
+	{
+		for (auto local_it = components.begin(i); local_it != components.end(i); ++local_it)
+		{
+			local_it->second->LateUpdate();
 		}
 	}
 }

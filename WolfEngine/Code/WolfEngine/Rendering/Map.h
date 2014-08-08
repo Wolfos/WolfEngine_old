@@ -9,8 +9,8 @@
 ///
 class Map {
 	public:
-		int width; /// Map width
-		int height; /// Map height
+		int width; /// Map width in tiles
+		int height; /// Map height in tiles
 		int layers; /// Number of layers in the map
 		int *data; /// Pointer to the map's tiledata array
 		//int *events; /// Pointer to the map's event data array

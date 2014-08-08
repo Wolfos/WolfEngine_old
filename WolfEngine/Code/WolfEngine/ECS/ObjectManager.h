@@ -13,6 +13,8 @@ class ObjectManager{
 		static void Update();
 		/// Static, looks for SpriteRenderer components and calls their Render() function in order by layer
 		static void Render();
+		/// Static, same as update but runs after the Render function does, allowing the game to render over GameObjects
+		static void LateUpdate();
 		/// Cleans up after itself by destroying all GameObjects
 		static void Exit();
 		///	Returns a new GameObject with a transform component attached

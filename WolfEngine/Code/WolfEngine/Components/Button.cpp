@@ -8,14 +8,14 @@ void Button::Start()
 	transform = gameObject->GetComponent<Transform>();
 	renderer = gameObject->GetComponent<SpriteRenderer>();
 
+#ifndef __ANDROID__
 	if (!renderer) throw "No SpriteRenderer is present on the GameObject";
-	if (!renderer) //Seriously, there is no spriterenderer present
+#endif
 
-	hitBox = { transform->position.x, 
-		transform->position.y, 
-		transform->position.x + renderer->frameWidth * transform->scale.x, 
-		transform->position.y + renderer->frameHeight * transform->scale.y 
-	};
+	hitBox.x = transform->position.x;
+	hitBox.y = transform->position.y;
+	hitBox.w = renderer->frameWidth * transform->scale.x;
+	hitBox.h = renderer->frameHeight * transform->scale.y;
 }
 
 bool Collide(Point point, SDL_Rect rect)
@@ -30,7 +30,7 @@ bool Collide(Point point, SDL_Rect rect)
 
 void Button::Update()
 {
-	if (Collide({ Input::mousePosition.x, Input::mousePosition.y }, hitBox) && Input::mouseClick)
+	if (Input::mouseClick && Collide({ Input::mousePosition.x, Input::mousePosition.y }, hitBox))
 	{
 		clicked = true;
 	}

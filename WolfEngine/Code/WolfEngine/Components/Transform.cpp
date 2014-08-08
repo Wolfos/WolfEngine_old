@@ -19,8 +19,3 @@ void Transform::Move(int x, int y)
 	position.x += x;
 	position.y += y;
 }
-
-void Transform::Update()
-{
-	//Runs every frame
-}

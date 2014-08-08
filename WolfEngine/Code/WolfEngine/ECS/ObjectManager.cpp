@@ -37,6 +37,14 @@ void ObjectManager::Render()
 	}
 }
 
+void ObjectManager::LateUpdate()
+{
+	for (unsigned int i = 0; i<gameObjects.size(); i++)
+	{
+		static_cast<GameObject*>(gameObjects[i])->LateUpdate();
+	}
+}
+
 
 void ObjectManager::Exit()
 {

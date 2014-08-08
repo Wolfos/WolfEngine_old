@@ -8,24 +8,33 @@ void TilePicker::Start()
 	button = guiBox->renderer->AddComponent<Button>();
 
 	//tileSheet = new GUISprite("Terrain.png", { gameObject->transform->position.x + 3, gameObject->transform->position.y + 3 }, { 250, 250 });
-	tileSheet = Image::LoadSurface("Terrain.png");
-	
-	renderSheet = SDL_CreateRGBSurface(0, 1024, 1024, 32, NULL, NULL, NULL, NULL);
+	tilesheet = Image::Load("Terrain.png");
 
-	guiSpriteSheet = new GUISprite(Image::ToTexture(renderSheet), { gameObject->transform->position.x + 3, gameObject->transform->position.y + 3 }, { 250, 250 });
+	tilesheetRect.x = 0;
+	tilesheetRect.y = 0;
+	SDL_QueryTexture(tilesheet, NULL, NULL, &tilesheetRect.w, &tilesheetRect.h);
+
+	tilesheetRect.w = tilesheetRect.w * zoom;
+	tilesheetRect.h = tilesheetRect.w;
 }
 
 
 void TilePicker::Update()
 {
-	//Render the tilesheet
-	//Seriously inefficient, also ugly code. I bet there's a better way
-	SDL_Rect srcRect = { 0, 0, 1024, 1024 };
-	SDL_Rect dstRect = { 0, 0, 1024, 1024 };
-	SDL_BlitSurface(tileSheet, &srcRect, renderSheet, &dstRect);
-	if(texSheet) SDL_DestroyTexture(texSheet);
-	texSheet = Image::ToTexture(renderSheet);
-	guiSpriteSheet->renderer->GetComponent<SpriteRenderer>()->spriteSheet = texSheet;
+	int mouseX = Input::mousePosition.x;
+	int mouseY = Input::mousePosition.y;
 
-	
+	if (button->clicked)
+	{
+		int x = ((mouseX - gameObject->transform->position.x + 2) / (128 * zoom)) * 2;
+		int y = ((mouseY - gameObject->transform->position.y + 2) / (128 * zoom)) * 2;
+		printf("%d, %d \n", x, y);
+		selected = x + (y*(tilesheetRect.w / 128));
+	}
+}
+
+void TilePicker::LateUpdate()
+{
+	SDL_Rect destRect = { gameObject->transform->position.x + 2, gameObject->transform->position.y + 2, 252, 252 };
+	SDL_RenderCopy(Screen::mainCamera->screen, tilesheet, &tilesheetRect, &destRect);
 }
