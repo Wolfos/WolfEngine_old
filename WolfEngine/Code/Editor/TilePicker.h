@@ -10,7 +10,9 @@ class TilePicker : public Component
 		virtual void LateUpdate();
 		int selected = 0;
 	private:
-		float zoom = 0.4f;
+		int tileWidth = 128;
+		int tileHeight = 128;
+		float zoom = 0.5f;
 		SDL_Rect tilesheetRect;
 		GUIBox* guiBox;
 		SDL_Texture* tilesheet;

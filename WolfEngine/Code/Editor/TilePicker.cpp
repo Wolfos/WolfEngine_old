@@ -1,4 +1,5 @@
 #include "TilePicker.h"
+#include <math.h>
 
 void TilePicker::Added()
 {
@@ -21,15 +22,20 @@ void TilePicker::Added()
 
 void TilePicker::Update()
 {
-	int mouseX = Input::mousePosition.x;
-	int mouseY = Input::mousePosition.y;
+	int mouseX = Input::mousePosition.x - gameObject->transform->position.x + 2;
+	int mouseY = Input::mousePosition.y - gameObject->transform->position.y + 2;
+
+	//Actual size of tiles on the screen
+	int screentileWidth = tileWidth / (tilesheetRect.w / 252);
+	int screentileHeight = tileHeight / (tilesheetRect.h / 252);
 
 	if (button->clicked)
 	{
-		int x = ((mouseX - gameObject->transform->position.x + 2) / (128 * zoom)) * 2;
-		int y = ((mouseY - gameObject->transform->position.y + 2) / (128 * zoom)) * 2;
+		int x = floor(mouseX / screentileWidth);
+		int y = floor(mouseY / screentileHeight);
 		printf("%d, %d \n", x, y);
-		selected = x + (y*(tilesheetRect.w / 128));
+		selected = x + y * ((tilesheetRect.w / zoom)/tileWidth);
+		printf("Selected: %d\n\n", selected);
 	}
 }
 
