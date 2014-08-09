@@ -26,7 +26,7 @@ Map::Map(int w, int h, int l)
 		{
 			for (int y = 0; y < height; y++)
 			{
-				data[i] = 0;
+				data[i] = -1;
 				i++;
 			}
 		}

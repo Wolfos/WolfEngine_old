@@ -4,7 +4,7 @@
 void EditorMain::Start()
 {
 	spritesheet = Image::Load("Terrain.png");
-	map = new Map(10, 10, 1);
+	map = new Map(10, 10, 3);
 	
 	tilewidth = 128;
 	tileheight = 128;
@@ -24,11 +24,17 @@ void EditorMain::Update()
 	int selected = tilePicker->GetComponent<TilePicker>()->selected;
 
 	map->Render(Screen::mainCamera->screen, 0, spritesheet, tilewidth, tileheight, 0, Screen::mainCamera->gameObject);
+	map->Render(Screen::mainCamera->screen, 1, spritesheet, tilewidth, tileheight, 0, Screen::mainCamera->gameObject);
+	map->Render(Screen::mainCamera->screen, 2, spritesheet, tilewidth, tileheight, 0, Screen::mainCamera->gameObject);
 
 	if (Input::mouseClick)
 	{
-		map->Put(xMPos, yMPos, 0, selected);
+		map->Put(xMPos, yMPos, layer, selected);
 	}
+
+	if (Input::keys.A > 0) layer = 0;
+	if (Input::keys.B > 0) layer = 1;
+	if (Input::keys.C > 0) layer = 2;
 }
 
 void EditorMain::Exit()

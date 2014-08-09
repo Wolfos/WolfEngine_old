@@ -19,6 +19,7 @@ class EditorMain
 		bool dragging = false;
 		Point initMousePos;
 		Transform* camera;
+		int layer = 0;
 };
 
 
