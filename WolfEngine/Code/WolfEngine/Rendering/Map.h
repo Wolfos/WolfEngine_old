@@ -15,8 +15,8 @@ class Map {
 		int *data; /// Pointer to the map's tiledata array
 		//int *events; /// Pointer to the map's event data array
 
-		///	Create a new map filled with zeroes, doesn't need to be called if you're going to be loading it from file
-		Map(int width, int height, int layers);
+		///	Create a new map filled with the default value, doesn't need to be called if you're going to be loading it from file
+		Map(int width, int height, int layers, int defaultValue);
 
 		///	Load a map from file
 		void Load(char* filename);

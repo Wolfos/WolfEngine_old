@@ -34,8 +34,14 @@ void Button::Update()
 	{
 		clicked = true;
 	}
+	else if (Collide({ Input::mousePosition.x, Input::mousePosition.y }, hitBox))
+	{
+		clicked = false;
+		mouseOver = true;
+	}
 	else
 	{
 		clicked = false;
+		mouseOver = false;
 	}
 }

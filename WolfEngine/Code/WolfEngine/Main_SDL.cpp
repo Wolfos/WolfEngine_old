@@ -12,6 +12,7 @@
 #include "Utilities/Debug.h"
 #include "ECS/ObjectManager.h"
 #include "Rendering/Screen.h"
+#include "GUI/GUI.h"
 
 //Screen dimensions
 int screenWidth = 1280;
@@ -62,7 +63,7 @@ int Init()
 			else
 			{
 				screenRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-				SDL_SetRenderDrawColor(screenRenderer, 0xFF, 0xAB, 0xF4, 0xFF);
+				SDL_SetRenderDrawColor(screenRenderer, 0x1e, 0xAB, 0xF4, 0xFF);
 			}
 
 			//Initialize SDL_TTF
@@ -140,6 +141,12 @@ void MainLoop()
 
 		input.Update(&eventHandler);
 
+		if (eventHandler.type == SDL_WINDOWEVENT_RESIZED)
+		{
+			Screen::mainCamera->width = eventHandler.window.data1;
+			Screen::mainCamera->height = eventHandler.window.data2;
+		}
+
 		if(eventHandler.type == SDL_QUIT)
 		{
 			quit = 1;
@@ -152,6 +159,8 @@ void MainLoop()
 
 		//Render the SpriteRenderers
 		ObjectManager::Render();
+
+		GUI::Update();
 
 		//Late update
 		ObjectManager::LateUpdate();

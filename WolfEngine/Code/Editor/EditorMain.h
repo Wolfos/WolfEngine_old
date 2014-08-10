@@ -2,6 +2,7 @@
 #define _EDITORMAIN_H
 
 #include "../WolfEngine/WolfEngine.h"
+#include "TilePicker.h"
 
 class EditorMain
 {
@@ -12,8 +13,10 @@ class EditorMain
 
 	private:
 		Map* map;
+		Map* grid;
 		SDL_Texture* spritesheet;
-		GameObject* tilePicker;
+		SDL_Texture * gridtex;
+		TilePicker* tilePicker;
 		int tilewidth;
 		int tileheight;
 		bool dragging = false;

@@ -15,6 +15,7 @@ public:
 	virtual void Added();
 	virtual void Update();
 	bool clicked = false;
+	bool mouseOver = false;
 
 private:
 	Transform* transform;

@@ -11,7 +11,7 @@ rvanee@wolfengine.net
 #include "../Components/Camera.h"
 
 
-Map::Map(int w, int h, int l)
+Map::Map(int w, int h, int l, int defaultValue)
 {
 	width = w;
 	height = h;
@@ -26,7 +26,7 @@ Map::Map(int w, int h, int l)
 		{
 			for (int y = 0; y < height; y++)
 			{
-				data[i] = -1;
+				data[i] = defaultValue;
 				i++;
 			}
 		}

@@ -51,8 +51,16 @@ void SpriteRenderer::Render()
 	rect->y = clip[frame].y;
 
 	SDL_Rect* dst = new SDL_Rect;
-	dst->x = gameObject->transform->position.x - Screen::mainCamera->gameObject->transform->position.x;
-	dst->y = gameObject->transform->position.y - Screen::mainCamera->gameObject->transform->position.y;
+	if (!gameObject->transform->ignoreCam)
+	{
+		dst->x = gameObject->transform->position.x - Screen::mainCamera->gameObject->transform->position.x;
+		dst->y = gameObject->transform->position.y - Screen::mainCamera->gameObject->transform->position.y;
+	}
+	else
+	{
+		dst->x = gameObject->transform->position.x;
+		dst->y = gameObject->transform->position.y;
+	}
 	dst->w = (int)(frameWidth*gameObject->transform->scale.x);
 	dst->h = (int)(frameHeight*gameObject->transform->scale.y);
 

@@ -17,6 +17,8 @@ public:
 	void Move(int x, int y);
 	///	Rotation by degrees
 	double angle = 0;
+	///	If we want to ignore the camera position
+	bool ignoreCam = false;
 	virtual void Added();
 
 };

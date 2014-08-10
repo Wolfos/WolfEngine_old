@@ -1,14 +1,8 @@
 #include "TilePicker.h"
 #include <math.h>
 
-void TilePicker::Added()
+TilePicker::TilePicker(int x, int y, int width, int height) : Window(x, y, width, height)
 {
-	//Background
-	guiBox = new GUIBox({ gameObject->transform->position.x, gameObject->transform->position.y }, { 256, 256 });
-
-	button = guiBox->renderer->AddComponent<Button>();
-
-	//tileSheet = new GUISprite("Terrain.png", { gameObject->transform->position.x + 3, gameObject->transform->position.y + 3 }, { 250, 250 });
 	tilesheet = Image::Load("Terrain.png");
 
 	tilesheetRect.x = 0;
@@ -20,27 +14,23 @@ void TilePicker::Added()
 }
 
 
+
 void TilePicker::Update()
 {
-	int mouseX = Input::mousePosition.x - gameObject->transform->position.x + 2;
-	int mouseY = Input::mousePosition.y - gameObject->transform->position.y + 2;
+	int mouseX = Input::mousePosition.x - position.x + 2;
+	int mouseY = Input::mousePosition.y - position.y + 2;
 
 	//Actual size of tiles on the screen
-	int screentileWidth = tileWidth / (tilesheetRect.w / 252);
-	int screentileHeight = tileHeight / (tilesheetRect.h / 252);
+	int screentileWidth = tileWidth / (tilesheetRect.w / (hitbox.w - 4));
+	int screentileHeight = tileHeight / (tilesheetRect.h / (hitbox.h - 4));
 
-	if (button->clicked)
+	if (clicked)
 	{
 		int x = floor(mouseX / screentileWidth);
 		int y = floor(mouseY / screentileHeight);
-		printf("%d, %d \n", x, y);
 		selected = x + y * ((tilesheetRect.w / zoom)/tileWidth);
-		printf("Selected: %d\n\n", selected);
 	}
-}
 
-void TilePicker::LateUpdate()
-{
-	SDL_Rect destRect = { gameObject->transform->position.x + 2, gameObject->transform->position.y + 2, 252, 252 };
+	SDL_Rect destRect = { position.x + 2, position.y + 2, hitbox.w - 4, hitbox.h - 4 };
 	SDL_RenderCopy(Screen::mainCamera->screen, tilesheet, &tilesheetRect, &destRect);
 }
