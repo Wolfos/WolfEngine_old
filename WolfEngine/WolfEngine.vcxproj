@@ -96,6 +96,7 @@
     <ClCompile Include="Code\WolfEngine\GUI\GUI.cpp" />
     <ClCompile Include="Code\WolfEngine\GUI\Window.cpp" />
     <ClCompile Include="Code\WolfEngine\Input\Input.cpp" />
+    <ClCompile Include="Code\WolfEngine\Input\Mouse.cpp" />
     <ClCompile Include="Code\WolfEngine\Main_SDL.cpp" />
     <ClCompile Include="Code\WolfEngine\Models\Point.cpp" />
     <ClCompile Include="Code\WolfEngine\Rendering\Image.cpp" />
@@ -122,7 +123,9 @@
     <ClInclude Include="Code\WolfEngine\Includes.h" />
     <ClInclude Include="Code\WolfEngine\Includes\ECS.h" />
     <ClInclude Include="Code\WolfEngine\Input\Input.h" />
+    <ClInclude Include="Code\WolfEngine\Input\Key.h" />
     <ClInclude Include="Code\WolfEngine\Input\Keys.h" />
+    <ClInclude Include="Code\WolfEngine\Input\Mouse.h" />
     <ClInclude Include="Code\WolfEngine\Models\Point.h" />
     <ClInclude Include="Code\WolfEngine\Rendering\Image.h" />
     <ClInclude Include="Code\WolfEngine\Rendering\Map.h" />

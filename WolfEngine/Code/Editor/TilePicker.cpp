@@ -17,8 +17,8 @@ TilePicker::TilePicker(int x, int y, int width, int height) : Window(x, y, width
 
 void TilePicker::Update()
 {
-	int mouseX = Input::mousePosition.x - position.x + 2;
-	int mouseY = Input::mousePosition.y - position.y + 2;
+	int mouseX = Mouse::position.x - position.x + 2;
+	int mouseY = Mouse::position.y - position.y + 2;
 
 	//Actual size of tiles on the screen
 	int screentileWidth = tileWidth / (tilesheetRect.w / (hitbox.w - 4));

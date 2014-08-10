@@ -2,6 +2,7 @@
 #include "../ECS/GameObject.h"
 #include "../Models/Point.h"
 #include "../Input/Input.h"
+#include "../Input/Mouse.h"
 
 void Button::Added()
 {
@@ -30,11 +31,11 @@ bool Collide(Point point, SDL_Rect rect)
 
 void Button::Update()
 {
-	if (Input::mouseClick && Collide({ Input::mousePosition.x, Input::mousePosition.y }, hitBox))
+	if (Mouse::KeyClicked(1) && Collide({ Mouse::position.x, Mouse::position.y }, hitBox))
 	{
 		clicked = true;
 	}
-	else if (Collide({ Input::mousePosition.x, Input::mousePosition.y }, hitBox))
+	else if (Collide({ Mouse::position.x, Mouse::position.y }, hitBox))
 	{
 		clicked = false;
 		mouseOver = true;

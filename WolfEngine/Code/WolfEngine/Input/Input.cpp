@@ -5,15 +5,16 @@ Contact:
 rvanee@wolfengine.net
 */
 #include "Input.h"
+#include "Mouse.h"
 
 Keys Input::keys;
-Point Input::mousePosition;
-int Input::mouseKeyDown = 0;
-int Input::mouseClick = 0;
 
 void Input::Update(SDL_Event * eventHandler)
 {
-	mouseClick = 0;
+	Mouse::key1.released = false;
+	Mouse::key2.released = false;
+	Mouse::key3.released = false;
+
 	while (SDL_PollEvent(eventHandler) != 0)
 	{
 		if (eventHandler->type == SDL_KEYDOWN)
@@ -280,40 +281,6 @@ void Input::Update(SDL_Event * eventHandler)
 				break;
 			}
 		}
-		if (eventHandler->type == SDL_MOUSEMOTION)
-		{
-			SDL_GetMouseState(&mousePosition.x, &mousePosition.y);
-		}
-		if (eventHandler->type == SDL_MOUSEBUTTONDOWN)
-		{
-			switch (eventHandler->button.button)
-			{
-			case SDL_BUTTON_LEFT:
-				mouseKeyDown = 1;
-				break;
-			case SDL_BUTTON_RIGHT:
-				mouseKeyDown = 2;
-				break;
-			case SDL_BUTTON_MIDDLE:
-				mouseKeyDown = 3;
-				break;
-			}
-		}
-		else if (eventHandler->type == SDL_MOUSEBUTTONUP)
-		{
-			mouseKeyDown = 0;
-			switch (eventHandler->button.button)
-			{
-			case SDL_BUTTON_LEFT:
-				mouseClick = 1;
-				break;
-			case SDL_BUTTON_RIGHT:
-				mouseClick = 2;
-				break;
-			case SDL_BUTTON_MIDDLE:
-				mouseClick = 3;
-				break;
-			}
-		}
+		Mouse::Update(eventHandler);
 	}
 }

@@ -25,8 +25,8 @@ void EditorMain::Update()
 {
 	//tilePicker->transform->position = { Screen::mainCamera->width - 256, 0 };
 
-	int xMPos = (Input::mousePosition.x + camera->position.x) / tilewidth;
-	int yMPos = (Input::mousePosition.y + camera->position.y) / tileheight;
+	int xMPos = (Mouse::position.x + camera->position.x) / tilewidth;
+	int yMPos = (Mouse::position.y + camera->position.y) / tileheight;
 
 	int selected = tilePicker->selected;
 
@@ -36,7 +36,7 @@ void EditorMain::Update()
 
 	if(Input::keys.G) grid->Render(Screen::mainCamera->screen, 0, gridtex, tilewidth, tileheight, 0, Screen::mainCamera->gameObject);
 
-	if (Input::mouseClick && !tilePicker->mouseOver)
+	if (Mouse::KeyReleased(1) && !tilePicker->mouseOver)
 	{
 		map->Put(xMPos, yMPos, layer, selected);
 	}

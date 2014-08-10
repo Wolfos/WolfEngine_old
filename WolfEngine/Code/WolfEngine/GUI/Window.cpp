@@ -2,7 +2,7 @@
 #include "GUI.h"
 #include "../Rendering/Image.h"
 #include "../Rendering/Screen.h"
-#include "../Input/Input.h"
+#include "../Input/Mouse.h"
 
 Window::Window(int x, int y, int width, int height)
 {
@@ -34,11 +34,11 @@ void Window::Render()
 	hitbox.y = position.y;
 	SDL_RenderCopy(Screen::mainCamera->screen, background, NULL, &hitbox);
 
-	if (Collide(Input::mousePosition, hitbox))
+	if (Collide(Mouse::position, hitbox))
 	{
 		mouseOver = true;
 
-		if (Input::mouseClick) clicked = true;
+		if (Mouse::KeyReleased(1)) clicked = true;
 		else clicked = false;
 	}
 	else
