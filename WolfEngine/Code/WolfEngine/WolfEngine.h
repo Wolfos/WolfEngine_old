@@ -16,6 +16,7 @@
 #include "Includes/ECS.h"
 #include "Input/Input.h"
 #include "Input/Mouse.h"
+#include "Input/Keyboard.h"
 #include "Input/Keys.h"
 #include "Models/Point.h"
 #include "Rendering/Image.h"
