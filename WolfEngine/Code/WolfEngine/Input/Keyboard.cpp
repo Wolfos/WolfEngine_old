@@ -46,6 +46,7 @@ void Keyboard::Up(int key)
 {
 	if (!keys[key].released) keys[key].released = true;
 	keys[key].down = false;
+	keys[key].clicked = false;
 }
 
 
